@@ -7,12 +7,15 @@ Rehash was created by [Andy Atkinson](http://webandy.com).
 
 ### Philosophy
 
-Rehash is a minimal publishing application focused on providing a very well-tested Ruby application others can understand and use with confidence. Rehash can serve as a base blogging app suitable for forking for your needs, or can be used as is for personal blog purposes. Third party code in rehash was selected based on it being: understandable, updated recently, and tested.
+Rehash is a minimal publishing application focused on providing a very well-tested Ruby application others can understand and use with confidence. Rehash can serve as a base app suitable for forking, or works great as is for personal publishing. Third party code in rehash was selected for solving a specific problem well, and being tested and updated regularly.
 
 
 ### Testing
 
-Rehash is covered by [Cucumber](http://cukes.info/) features throughout the app. [Shoulda](http://www.thoughtbot.com/projects/shoulda/) is used for controller and model tests.
+Rehash is covered by [Cucumber](http://cukes.info/) features throughout the app. The Cucumber screencasts [1] [2] from Ryan Bates are excellent resources when getting started. [Shoulda](http://www.thoughtbot.com/projects/shoulda/) is used for controller and model tests.
+
+[1] [Beginning with Cucumber](http://railscasts.com/episodes/155-beginning-with-cucumber)
+[2] [More on Cucumber](http://railscasts.com/episodes/159-more-on-cucumber)
 
 
 ### Git
@@ -30,6 +33,7 @@ Rehash uses git submodules to track plugins. Submodules are listed in the `.gitm
 
 `make_resourceful` [Github](http://github.com/hcatlin/make_resourceful/tree/master) Authors: [Hampton Catlin](mailto:contact@hamptoncatlin.com), Nathan Weizenbaum, and Jeff Hardy
 
+`haml` [Website](http://haml-lang.com/) and `sass` [Website](http://sass-lang.com/)
 
 ### Credits
 

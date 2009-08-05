@@ -1,0 +1,12 @@
+Installing as a user on OS X
+----------------------------
+sudo rake gems:install
+sudo rake db:migrate
+cp config/database.sample.yml config/database.yml
+git submodule init
+git submodule update
+
+
+Additional instructions installing as a developer on OS X
+--------------------------------------------------------
+sudo rake gems:install RAILS_ENV=test
