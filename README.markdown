@@ -1,38 +1,44 @@
 rehash
----
+===
 *Rehash is a personal publishing application with an emphasis on simplicity and well-tested code.*
 
-Rehash was created by [Andy Atkinson](andy@webandy.com).
+Rehash was created by [Andy Atkinson](http://webandy.com).
 
-I selected third party code with the following criteria: understandable, recently updated (as of August 2009), and tested.
+
+### Philosophy
+
+Rehash is a minimal publishing application focused on providing a very well-tested Ruby application others can understand and use with confidence. Rehash can serve as a base blogging app suitable for forking for your needs, or can be used as is for personal blog purposes. Third party code in rehash was selected based on it being: understandable, updated recently, and tested.
+
 
 ### Testing
 
-Rehash is covered by Cucumber features throughout the app. Shoulda is used for controller tests and model tests.
+Rehash is covered by [Cucumber](http://cukes.info/) features throughout the app. [Shoulda](http://www.thoughtbot.com/projects/shoulda/) is used for controller and model tests.
+
 
 ### Git
 
-Rehash uses git submodules to track plugins, check the `.gitmodules` file.
+Rehash uses git submodules to track plugins. Submodules are listed in the `.gitmodules` file.
 
 
 ### Plugins and gems
 
-`acts_as_taggable_on_steroids` [Github](http://github.com/jviney/acts_as_taggable_on_steroids/tree/master) Contact person: [Jonathan Viney](jonathan.viney@gmail.com)
+`acts_as_taggable_on_steroids` [Github](http://github.com/jviney/acts_as_taggable_on_steroids/tree/master) Contact person: [Jonathan Viney](mailto:jonathan.viney@gmail.com)
 
-`acts_as_markup` [Github](http://github.com/vigetlabs/acts_as_markup/tree/master) Contact person: [Brian Landau](brian.landau@viget.com)
+`acts_as_markup` [Github](http://github.com/vigetlabs/acts_as_markup/tree/master) Contact person: [Brian Landau](mailto:brian.landau@viget.com)
 
-`friendly_id` [Github](http://github.com/norman/friendly_id/tree/master) [RDoc](http://friendly-id.rubyforge.org/) Authors: [Norman Clarke](norman@randomba.org), [Adrian Mugnolo](adrian@randomba.org), [Emilio Tagua](miloops@gmail.com)
+`friendly_id` [Github](http://github.com/norman/friendly_id/tree/master) [RDoc](http://friendly-id.rubyforge.org/) Authors: [Norman Clarke](mailto:norman@randomba.org), [Adrian Mugnolo](mailto:adrian@randomba.org), [Emilio Tagua](mailto:miloops@gmail.com)
 
-`make_resourceful` [Github](http://github.com/hcatlin/make_resourceful/tree/master) Authors: [Hampton Catlin](contact@hamptoncatlin.com), Nathan Weizenbaum, and Jeff Hardy
+`make_resourceful` [Github](http://github.com/hcatlin/make_resourceful/tree/master) Authors: [Hampton Catlin](mailto:contact@hamptoncatlin.com), Nathan Weizenbaum, and Jeff Hardy
+
 
 ### Credits
 
 Much credit goes to [Ryan Bates](http://www.workingwithrails.com/person/6491-ryan-bates) and his [Railscasts.com](http://railscasts.com/) screencasts.
 
 
-### MIT license
+### MIT License
 
-Copyright (c) 2009 Andy Atkinson, http://webandy.com
+Copyright (c) 2009 Andy Atkinson http://webandy.com
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
