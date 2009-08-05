@@ -1,0 +1,12 @@
+- title "Tag"
+
+%p
+  %strong Name:
+  =h @tag.name
+
+- content_for :sidebar do
+  %p.admin-links
+    = link_to "Edit", edit_tag_path(@tag)
+    = link_to "Destroy", @tag, :confirm => 'Are you sure?', :method => :delete, :id => "delete_tag_#{@tag.id}"
+
+%p= link_to "Back to tags", tags_path

@@ -1,0 +1,5 @@
+- title "Edit Comment"
+
+= render 'form', {:article => @article, :comment => @comment}
+
+%p= link_to 'Back to article', article_path(@article)

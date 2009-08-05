@@ -1,0 +1,24 @@
+- form_for @site do |f|
+  = f.error_messages
+  %p
+    = f.label :name
+    %br
+    = f.text_field :name
+  %p
+    = f.label :tagline
+    %br
+    = f.text_field :tagline
+  %p
+    = f.label :owner_name
+    %br
+    = f.text_field :owner_name
+  %p
+    = f.label :owner_email
+    %br
+    = f.text_field :owner_email
+  %p
+    = f.label :password
+    %br
+    = f.password_field :password
+  %p
+    = f.submit "Submit"

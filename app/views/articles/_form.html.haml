@@ -1,0 +1,27 @@
+- form_for @article do |f|
+  = f.error_messages
+  %p
+    = f.label :title
+    %br
+    = f.text_field :title
+  %p
+    = f.label :description
+    %br
+    = f.text_field :description
+  %p
+    = f.label :body
+    %br
+    = f.text_area :body, :class => 'big'
+  %p
+    = f.label :published
+    %br
+    = f.check_box :published
+  %h4= "Tags"
+  %ul.tags
+    - for tag in Tag.all
+      %li
+        = tag.name
+        = check_box_tag 'article[tag_list][]', tag.name, @article.tag_list.include?(tag.name), :id => "check_tag_#{tag.id}"
+  %p
+    = f.submit "Submit"
+    = link_to "Cancel", @article, :class => 'cancel'

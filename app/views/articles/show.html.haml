@@ -1,0 +1,21 @@
+- title "Article", false
+- meta_description @article.description
+- meta_keywords @article.tag_list
+
+.article
+  %h1
+    = @article.title
+    %span.published= @article.created_at
+    %span.tags= @article.tag_list.join(' ')
+  %p= @article.body.to_html
+
+%h3= pluralize @article.comments.size, 'comment'
+#comments= render :partial => 'comments/comment', :collection => @article.comments
+%h3= 'Leave a comment'
+%p= render 'comments/form', {:article => @article, :comment => @article.comments.build}
+  
+- content_for :sidebar do
+  - if admin?
+    %p.admin-links
+      = link_to 'Edit', edit_article_path(@article)
+      = link_to 'Destroy', @article, :confirm => 'Are you sure?', :method => :delete, :id => "delete_article_#{@article.id}"

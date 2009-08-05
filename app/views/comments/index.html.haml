@@ -1,0 +1,7 @@
+- title "Comments"
+
+%p= "Comments for article #{@article.title}"
+
+#comments= render :partial => 'comment', :collection => @comments
+      
+%p= link_to 'Back to article', article_path(@article)

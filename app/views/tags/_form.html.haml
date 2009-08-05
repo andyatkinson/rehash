@@ -1,0 +1,15 @@
+- form_for @tag do |f|
+  = f.error_messages
+  %p
+    = f.label :name
+    %br
+    = f.text_field :name
+  %p
+    = f.submit "Submit"
+    = link_to "Cancel", @tag, :class => 'cancel'
+
+- content_for :sidebar do
+  %h4= 'Existing tags'
+  %ul.tags
+    - for tag in Tag.all
+      %li= link_to tag.name, tag

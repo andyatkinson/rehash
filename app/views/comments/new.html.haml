@@ -1,0 +1,5 @@
+- title "New Comment"
+
+%p= "Leave comment for article #{@article.title}"
+
+= render 'form', {:article => @article, :comment => @article.comments.build}

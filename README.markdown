@@ -1,0 +1,55 @@
+rehash
+---
+*Rehash is a personal publishing application with an emphasis on simplicity and well-tested code.*
+
+Rehash was created by [Andy Atkinson](andy@webandy.com).
+
+I selected third party code with the following criteria: understandable, recently updated (as of August 2009), and tested.
+
+### Testing
+
+Rehash is covered by Cucumber features throughout the app. Shoulda is used for controller tests and model tests.
+
+### Git
+
+Rehash uses git submodules to track plugins.
+
+
+### Plugins and gems
+
+`acts_as_taggable_on_steroids` [Github](http://github.com/jviney/acts_as_taggable_on_steroids/tree/master) Contact person: [Jonathan Viney](jonathan.viney@gmail.com)
+
+`acts_as_markup` [Github](http://github.com/vigetlabs/acts_as_markup/tree/master) Contact person: [Brian Landau](brian.landau@viget.com)
+
+`friendly_id` [Github](http://github.com/norman/friendly_id/tree/master) [RDoc](http://friendly-id.rubyforge.org/) Authors: [Norman Clarke](norman@randomba.org), [Adrian Mugnolo](adrian@randomba.org), [Emilio Tagua](miloops@gmail.com)
+
+
+### Credits
+
+Much credit goes to [Ryan Bates](http://www.workingwithrails.com/person/6491-ryan-bates) and his [Railscasts.com](http://railscasts.com/) screencasts.
+
+
+### MIT license
+
+Copyright (c) 2009 Andy Atkinson, http://webandy.com
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.

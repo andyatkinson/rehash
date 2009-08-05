@@ -1,0 +1,22 @@
+!!! Strict
+%html{html_attrs}
+  
+  %head
+    %title= "Create your site"
+    %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}/
+    = stylesheet_link_tag 'application'
+  
+  %body
+    #wrapper
+      #container
+        #main
+          - flash.each do |name, msg|
+            = content_tag :div, msg, :id => "flash_#{name}"
+
+          - if show_title?
+            %h1=h yield(:title)
+
+          = yield
+        .clear
+      #powered-by
+        = "<em>Powered by</em> #{link_to 'rehash', 'http://webandy.com'}"
