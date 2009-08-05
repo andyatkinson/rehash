@@ -1,0 +1,10 @@
+.DS_Store
+log/*.log
+tmp/**/*
+db/*.sqlite3
+*.tmproj
+coverage/*
+*.swp
+config/database.yml
+features_rcov/
+tags_db.sqlite3
