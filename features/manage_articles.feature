@@ -31,15 +31,6 @@ Feature: Manage Articles
     And I should see "Minneapolis is a great city!"
     And I should have 1 article
     
-  Scenario: Create an unpublished article
-    Given I have no articles
-    Given I am on the list of articles
-    When I follow "New Article"
-    And I fill in "Title" with "Minneapolis"
-    And I fill in "Body" with "Minneapolis is a great city!"
-    And I press "Submit"
-    Then I should see "Unpublished article"
-    
   Scenario: Edit Valid Article
     Given I have articles titled Minneapolis, St. Paul
     When I go to the article titled Minneapolis

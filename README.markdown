@@ -12,7 +12,7 @@ Rehash is covered by Cucumber features throughout the app. Shoulda is used for c
 
 ### Git
 
-Rehash uses git submodules to track plugins.
+Rehash uses git submodules to track plugins, check the `.gitmodules` file.
 
 
 ### Plugins and gems
@@ -23,6 +23,7 @@ Rehash uses git submodules to track plugins.
 
 `friendly_id` [Github](http://github.com/norman/friendly_id/tree/master) [RDoc](http://friendly-id.rubyforge.org/) Authors: [Norman Clarke](norman@randomba.org), [Adrian Mugnolo](adrian@randomba.org), [Emilio Tagua](miloops@gmail.com)
 
+`make_resourceful` [Github](http://github.com/hcatlin/make_resourceful/tree/master) Authors: [Hampton Catlin](contact@hamptoncatlin.com), Nathan Weizenbaum, and Jeff Hardy
 
 ### Credits
 

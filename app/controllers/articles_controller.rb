@@ -15,7 +15,6 @@ class ArticlesController < ApplicationController
   def show
     if @article && !@article.published?
       if admin?
-        flash.now[:caution] = "Unpublished article"
         @article if admin?
       else
         flash.now[:error] = "Error"
