@@ -33,3 +33,7 @@ end
 Then /^I should see the site title$/ do
   response.should contain(Site.first.name) 
 end
+
+Given /^I have unpublished articles "([^\"]*)"$/ do |title|
+  Article.create! :title => title, :body => "body", :published => false
+end

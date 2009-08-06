@@ -13,7 +13,10 @@ Feature: Search articles
     Then I should see "Minneapolis"
     And I should not see "St. Paul"
   
-  
-  
-
-  
+  Scenario: Unpublished articles are not visible
+    Given I have a site "My Site"
+    And I have unpublished articles "Secret Blog post"
+    When I go to the list of articles
+    And I fill in "q" with "Secret"
+    And I press "Go"
+    Then I should not see "Secret"

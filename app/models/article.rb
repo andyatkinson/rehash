@@ -7,10 +7,6 @@ class Article < ActiveRecord::Base
   named_scope :released, :conditions => {:published => true}
   
   def self.search(search)
-    if search
-      find(:all, :conditions => ['title LIKE ?', "%#{search}%"])
-    else
-      find(:all)
-    end
+    search.blank? ? [] : released.find(:all, :conditions => ['title LIKE ?', "%#{search}%"])
   end
 end
