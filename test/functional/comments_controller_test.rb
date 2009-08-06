@@ -41,7 +41,7 @@ class CommentsControllerTest < ActionController::TestCase
 
       context "and a valid comment" do
         setup do
-          @comment = @article.comments.create! :body => "body"
+          @comment = @article.comments.create! :name => "name", :body => "body", :email => "email@email.com"
         end
 
         context "show action" do

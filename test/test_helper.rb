@@ -40,9 +40,9 @@ class ActiveSupport::TestCase
     Site.create! :name => "MySite", :tagline => "Site tagline", :owner_name => "Owner", :password => "1234"
   end
   def log_in
-     old_controller = @controller
-     @controller = SessionsController.new
-     post :create, :password => "1234"
-     @controller = old_controller
-   end
+    old_controller = @controller
+    @controller = SessionsController.new
+    post :create, :password => "1234"
+    @controller = old_controller
+  end
 end

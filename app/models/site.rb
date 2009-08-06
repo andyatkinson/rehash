@@ -3,7 +3,7 @@ class Site < ActiveRecord::Base
   validates_presence_of :name, :tagline, :owner_name
   validates_presence_of :password, :on => :create
   EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
-  validates_format_of :owner_email, :with => EMAIL_REGEX, :message => 'must be a valid email address', :if => :owner_email?  
+  validates_format_of :owner_email, :with => EMAIL_REGEX, :if => :owner_email?
   before_create :hash_password
 
   def default_tags

@@ -20,6 +20,7 @@ Feature: Manage comments
   Scenario: Create a new comment
     When I go to the article titled Minneapolis
     When I fill in "Name" with "John Doe"
+    And I fill in "Email" with "email@email.com"
     And I fill in "Body" with "Interesting article!"
     And I press "Submit"
     Then I should see "Create successful!"
