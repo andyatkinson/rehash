@@ -17,7 +17,7 @@ class SitesControllerTest < ActionController::TestCase
 
     should "redirect when model is valid" do
       post :create, :site => {:name => "MySite", :tagline => "Site tagline", :owner_name => "Owner", :password => "1234"}
-      assert_redirected_to root_path
+      assert_redirected_to edit_site_path(assigns(:site))
     end
   end
   

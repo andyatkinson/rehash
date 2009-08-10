@@ -6,6 +6,8 @@ cp config/database.sample.yml config/database.yml
 git submodule init
 git submodule update
 
+# install imagemagick e.g. `sudo port install imagemagick` or `brew install imagemagick`
+
 
 Additional instructions installing as a developer on OS X
 --------------------------------------------------------

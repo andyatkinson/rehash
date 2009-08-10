@@ -1,0 +1,97 @@
+.menu
+  .heading
+    :-moz-border-radius-topleft 4px
+    :-moz-border-radius-topright 4px
+    :-webkit-border-top-left-radius 4px
+    :-webkit-border-top-right-radius 4px
+  .last
+    :-moz-border-radius-bottomleft 4px
+    :-moz-border-radius-bottomright 4px
+    :-webkit-border-bottom-left-radius 4px
+    :-webkit-border-bottom-right-radius 4px
+  :position relative
+  :left 21px
+  :top 12px
+  ul
+    padding: 0
+    margin: 0
+    list-style: none
+    :-moz-box-shadow #333 2px 2px 4px
+    :-webkit-box-shadow #333 2px 2px 4px
+    li
+      float: left
+      position: relative
+      a
+        display: block
+        text-decoration: none
+        color: #000
+        font-weight:bold
+        width: 95px
+        height: 23px
+        text-align: center
+        background: #fff
+        border:1px solid #eee
+        line-height: 22px
+        font-size: 14px
+        overflow: hidden
+        &:visited
+          display: block
+          text-decoration: none
+          color: #000
+          width: 93px
+          height: 20px
+          text-align: center
+          border: 1px solid #fff
+          line-height: 20px
+          font-size: 14px
+          overflow: hidden
+      ul
+        display: none
+      &:hover
+        a
+          :text-shadow 1px 1px 0 #fff
+          color: #fff
+          background: #000
+        a.heading
+          :text-shadow 1px 1px 0 #555
+        ul
+          display: block
+          position: absolute
+          top: 21px
+          left: 0
+          width: 93px
+          li
+            a.hide
+              background: #aaa
+              color: #fff
+            &:hover a.hide
+              background: #aaa
+              color: #000
+            ul
+              display: none
+            a
+              :border-bottom 1px solid #ddd
+              display: block
+              background: #eee
+              color: #888
+              &:hover
+                :text-shadow 1px 1px 0 #000
+                background: #555
+                color: #fff
+            a.last
+              :width 95px
+              :border-left #555
+              :border-right #555
+              :border-bottom #555
+            a.first
+              :width 95px
+              :border-left #555
+              :border-right #555
+              :border-top #555
+            &:hover ul
+              display: block
+              position: absolute
+              left: 93px
+              top: 0
+              &.left
+                left: -105px

@@ -1,4 +1,4 @@
-- javascript 'edit_site'
+- javascript 'edit_site', 'theme_switcher'
 - form_for @site do |f|
   = f.error_messages
   %p
@@ -17,6 +17,13 @@
     = f.label :owner_email
     %br
     = f.text_field :owner_email
+  - unless website.nil?
+    %h3= "Choose a theme"
+    .themes
+      %ul
+        %li=link_to(image_tag('blue_thumbnail.png'), change_theme_site_path(:theme_name => 'blue'), :class => "theme", :title => 'blue')
+        %li= link_to(image_tag('basic_thumbnail.png'), change_theme_site_path(:theme_name => 'basic'), :class => "theme", :title => 'basic')
+    .clear
   #password
     %p
       = f.label :password

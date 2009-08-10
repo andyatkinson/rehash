@@ -15,6 +15,7 @@ class SitesController < ApplicationController
       render :file => "#{RAILS_ROOT}/public/500.html", :status => 401
     else
       @site = Site.new
+      @site.theme = "blue"
       flash.now[:error] = "Please create your site"
       render 'new', :layout => 'create_site'
     end
@@ -23,11 +24,30 @@ class SitesController < ApplicationController
     @site = Site.new(params[:site])
     if @site.save
       flash[:notice] = "Site created!"
-      session[:password] = @site.password
-      redirect_to root_path
+      session[:password] = @site.hashed_password
+      redirect_to edit_site_path(@site)
     else
       flash.now[:error] = "Error"
       render 'new', :layout => 'create_site'
+    end
+  end
+  def change_theme
+    respond_to do |format|
+      format.html {
+        @site = Site.find(params[:id])
+        if params[:theme_name]
+          @site.update_attribute(:theme, params[:theme_name])
+          flash.now[:notice] = 'Theme changed'
+        end
+        render 'edit'
+      }
+      format.json {
+        @site = Site.find(params[:id])
+        if params[:theme_name]
+          @site.update_attribute(:theme, params[:theme_name])
+          render :text => 'success'
+        end
+      }
     end
   end
 end

@@ -1,4 +1,5 @@
 Given /^I have pages (.+)$/ do |names|
+  Page.destroy_all
   names.split(', ').each do |name|
     Page.create! :name => name, :body => 'body'
   end

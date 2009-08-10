@@ -54,6 +54,3 @@ Feature: Manage Articles
     When I go to the feed
     Then I should see "Minneapolis"
     And I should see the site title
-  
-  
-  

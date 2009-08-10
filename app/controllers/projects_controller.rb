@@ -21,8 +21,9 @@ class ProjectsController < ApplicationController
       flash[:notice] = "Upload saved"
       redirect_to @project
     else
+      # if you get here verify that imagemagick is installed
       flash[:error] = "Upload not saved."
-      render :add_upload
+      render :new_upload
     end
   end
 end

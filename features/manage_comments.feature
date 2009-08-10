@@ -27,6 +27,7 @@ Feature: Manage comments
   
   # admin
   Scenario: Delete an existing comment
+    Given I have no comments
     Given the admin is logged in
     Given I have a comment from "John Doe" for the article "Minneapolis"
     And I go to the list of comments for "Minneapolis"
@@ -44,6 +45,7 @@ Feature: Manage comments
     And I should see "Minneapolis"
     
   Scenario: Edit existing comments as an admin
+    Given I have no comments
     Given the admin is logged in
     Given I have a comment from "John Doe" for the article "Minneapolis"
     When I go to the list of comments
@@ -52,5 +54,5 @@ Feature: Manage comments
     And I fill in "Name" with "New name"
     And I press "Submit"
     Then I should see "Comment saved"
-    Then I should see "New name"
+    And I should see "New name"
     And I should not see "John Doe"
