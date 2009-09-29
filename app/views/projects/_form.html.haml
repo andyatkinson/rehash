@@ -1,0 +1,30 @@
+- form_for @project, :html => {:multipart => true} do |f|
+  = f.error_messages
+  %p
+    = f.label :name
+    %br
+    = f.text_field :name
+  %p
+    = f.label :description
+    %br
+    = f.text_area :description
+  %p
+    = f.label :role
+    %br
+    = f.text_field :role
+  %p
+    = f.label :url
+    %br
+    = f.text_field :url
+  %p
+    = f.label :duration
+    %br
+    = f.text_field :duration
+  %p
+    = label_tag 'Uploads'
+    %br
+    - f.fields_for :uploads do |upload_form|
+      = upload_form.file_field :data
+  %p
+    = f.submit "Save"
+    = link_to "Cancel", projects_path, :class => 'cancel'

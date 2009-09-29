@@ -1,0 +1,16 @@
+.project_title
+  %h1= @project.name
+  %span= link_to 'Project link', @project.url unless @project.url.blank?
+  .clear
+  
+- @project.uploads.each do |upload|
+  = image_tag upload.data.url
+
+%p= @project.description
+%p= "Role: #{@project.role}"
+%p= "Duration: #{@project.duration}"
+
+- content_for :sidebar do
+  - if admin?
+    %p.admin-links
+      = link_to 'Edit', edit_project_path(@project)

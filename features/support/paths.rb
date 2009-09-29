@@ -10,6 +10,12 @@ module NavigationHelpers
     
     when /the homepage/
       '/'
+    
+    when /the list of projects/
+      projects_path
+      
+    when /the new project page/
+      new_project_path
 
     when /the list of articles/
       articles_path

@@ -292,3 +292,8 @@ textarea {
       color: #aaa;
       text-decoration: none;
       text-shadow: 1px 1px 5px #fff; }
+
+.project_title h1 {
+  display: inline; }
+.project_title span {
+  float: right; }
