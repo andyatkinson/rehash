@@ -1,0 +1,10 @@
+- form_for @upload, :url => create_upload_project_path(@project), :html => {:multipart => true} do |f|
+  = hidden_field_tag :attachable_type, @project.class.to_s.underscore
+  = hidden_field_tag :attachable_id, @project.id
+  %p
+    = f.label :data, 'Pick a file'
+    %br
+    = f.file_field :data
+  %p
+    = f.submit "Save"
+    = link_to "Cancel", projects_path, :class => 'cancel'

@@ -293,7 +293,20 @@ textarea {
       text-decoration: none;
       text-shadow: 1px 1px 5px #fff; }
 
-.project_title h1 {
-  display: inline; }
-.project_title span {
-  float: right; }
+.project .title span {
+  position: relative;
+  top: -4px;
+  font-size: 12px;
+  color: #aaa; }
+.project .images {
+  position: relative;
+  left: -42px; }
+  .project .images ul li {
+    float: left;
+    margin: 0 3px; }
+    .project .images ul li a {
+      display: block; }
+      .project .images ul li a img {
+        border: 3px solid #ddd; }
+    .project .images ul li a:hover img {
+      border: 3px solid #002b40; }

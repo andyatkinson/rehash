@@ -1,0 +1,4 @@
+%ul
+  - @project.uploads.each do |upload|
+    %li= link_to image_tag(upload.data.url(:square)), upload.data.url(:large)
+.clear

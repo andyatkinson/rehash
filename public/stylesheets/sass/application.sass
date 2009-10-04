@@ -297,8 +297,24 @@ textarea
       :text-shadow 1px 1px 5px #fff
 
 //projects
-.project_title
-  h1
-    :display inline
-  span
-    :float right
+.project
+  .title
+    span
+      :position relative
+      :top -4px
+      :font-size 12px
+      :color #aaa
+  .images
+    :position relative
+    :left -42px
+    ul
+      li
+        :float left
+        :margin 0 3px
+        a
+          :display block
+          img
+            :border 3px solid #ddd
+        a:hover
+          img
+            :border 3px solid #002b40

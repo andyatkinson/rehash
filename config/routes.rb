@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :sites, :only => [:new, :create, :edit, :update]
   map.resources :pages
-  map.resources :projects, :except => [:destroy]
+  map.resources :projects, :member => [:new_upload, :create_upload], :except => [:destroy]
 
   map.search 'search', :controller => 'articles', :action => 'search'
   map.resources :tags

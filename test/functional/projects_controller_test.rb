@@ -48,7 +48,7 @@ class ProjectsControllerTest < ActionController::TestCase
       end
       should "redirect when model is valid" do
         post :create, :project => @project.attributes
-        assert_redirected_to projects_path
+        assert_redirected_to project_path(assigns(:project))
       end
       
         context "show action" do
@@ -75,7 +75,7 @@ class ProjectsControllerTest < ActionController::TestCase
             should "redirect when model is valid" do
               Project.any_instance.stubs(:valid?).returns(true)
               put :update, :id => @project.id
-              assert_redirected_to projects_path
+              assert_redirected_to project_path(assigns(:project))
             end
           end
    
