@@ -4,7 +4,8 @@ class ArticlesController < ApplicationController
   before_filter :find_article, :only => [:show, :edit, :update, :destroy]
   
   def index
-    @articles = Article.all # converted from published named_scope due to friendly_id problems
+    @articles = Article.ordered
+    # BUG published named_scope caused friendly_id problems
     @articles.reject!{|a| !a.published} unless admin?
     respond_to do |format|
       format.html
