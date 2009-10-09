@@ -1,5 +1,5 @@
 .project
-  %h1.title= @project.url.blank? ? @project.name : "#{link_to @project.name, @project.url} <span>(View Site)</span>"
+  %h1.title= @project.url.blank? ? @project.name : "#{@project.name} #{link_to '<span>(View Site)</span>', @project.url}"
 
   .images
     = render :partial => 'images'
