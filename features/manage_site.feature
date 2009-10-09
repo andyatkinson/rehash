@@ -13,6 +13,7 @@ Feature: Manage site
     And I fill in "Owner name" with "Andy"
     And I fill in "Owner email" with "foo@bar.com"
     And I fill in "Password" with "1234"
+    And I fill in "Password confirmation" with "1234"
     And I press "Submit"
     Then I should see "Site created!"
     And I should have 1 site
@@ -39,3 +40,13 @@ Feature: Manage site
     And I should see "New homepage"
     And I should not see "My Site"
     And I should have 1 site
+    
+  Scenario: Update site password
+    Given I have a site "My Site"
+    Given the admin is logged in
+    When I go to the home page
+    And I follow "Edit Site"
+    When I fill in "Password" with "New password"
+    And I fill in "Password confirmation" with "New password"
+    And I press "Submit"
+    Then I should see "Site updated!"
