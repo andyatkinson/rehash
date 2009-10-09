@@ -19,3 +19,8 @@ end
 When /^I attach a file onto "([^\"]*)"$/ do |field|
   attach_file(field, File.join(RAILS_ROOT, 'public', 'images', 'segovia.jpg'))
 end
+
+When /^I edit the project "([^\"]*)"$/ do |name|
+  project = Project.find_by_name(name)
+  click_link "edit_project_#{project.id}"
+end

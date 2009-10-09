@@ -11,4 +11,4 @@
   - content_for :sidebar do
     - if admin?
       %p.admin-links
-        = link_to 'Edit', edit_project_path(@project)
+        = link_to 'Edit', edit_project_path(@project), :id => "edit_project_#{@project.id}"

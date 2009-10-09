@@ -18,7 +18,7 @@ Feature: Manage site
     Then I should see "Site created!"
     And I should have 1 site
     
-  Scenario: Cant create site with invalid data
+  Scenario: Can't create site with invalid data
     Given I have no site
     When I go to the home page
     Then I should see "Please create your site"
@@ -33,7 +33,7 @@ Feature: Manage site
     Given the admin is logged in
     When I go to the home page
     Then I should see "Logout"
-    And I follow "Edit Site"
+    And I follow "edit_site"
     When I fill in "Name" with "New homepage"
     And I press "Submit"
     Then I should see "Site updated!"
@@ -45,7 +45,7 @@ Feature: Manage site
     Given I have a site "My Site"
     Given the admin is logged in
     When I go to the home page
-    And I follow "Edit Site"
+    And I follow "edit_site"
     When I fill in "Password" with "New password"
     And I fill in "Password confirmation" with "New password"
     And I press "Submit"

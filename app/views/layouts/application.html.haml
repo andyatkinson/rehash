@@ -8,22 +8,40 @@
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}/
     %meta{ :name => "description", :content => yield(:meta_description) || website.tagline }
     %meta{ :name => "keywords", :content => yield(:meta_keywords) || website.default_tags }
-    = stylesheet_link_tag 'application'
+    = stylesheet_link_tag 'application', 'menu'
     = javascript_include_tag 'jquery-1.3.2.min', 'search_box', 'admin'
     = yield(:head)
   
-  %body
+  %body              
     - if admin?
       #admin-area
         %span.login= link_to 'Logout', logout_path
-        %ul
-          %li= link_to 'Home', root_path
-          %li= "#{link_to 'New Article', new_article_path} #{link_to '(all)', articles_path}"
-          %li= "#{link_to 'New Page', new_page_path} #{link_to '(all)', pages_path}"
-          %li= "#{link_to 'New Project', new_project_path} #{link_to '(all)', projects_path}"
-          %li= "#{link_to 'New Tag', new_tag_path} #{link_to '(all)', tags_path}"
-          %li= "#{link_to 'Comments', comments_path}"
-          %li= "#{link_to 'Edit Site', edit_site_path(website), :id => 'foo'}"
+        .menu
+          %ul
+            %li
+              = link_to 'Home', root_path, :class => 'first last'
+            %li
+              = link_to 'New', '#', :class => 'first'
+              %ul
+                %li
+                  = link_to 'Article', new_article_path
+                  = link_to 'Page', new_page_path
+                  = link_to 'Project', new_project_path
+                  = link_to 'Tag', new_tag_path, :class => 'last'
+            %li
+              = link_to 'Edit', '#', :class => 'first'
+              %ul
+                %li
+                  = link_to 'Comments', comments_path
+                  = link_to 'Site', edit_site_path(website), :id => 'edit_site', :class => 'last'
+            %li
+              = link_to 'View', '#', :class => 'first'
+              %ul
+                %li
+                  = link_to 'Articles', articles_path
+                  = link_to 'Pages', pages_path
+                  = link_to 'Projects', projects_path
+                  = link_to 'Tags', tags_path, :class => 'last'
           
     #headline
       %h1= link_to website.name, root_path

@@ -180,11 +180,84 @@ a {
     right: 20px; }
     #admin-area .login a {
       color: #000; }
-  #admin-area ul li {
-    display: inline;
-    margin-right: 15px; }
-    #admin-area ul li a {
-      color: #000; }
+  #admin-area .menu {
+    position: relative;
+    left: 21px;
+    top: 12px; }
+    #admin-area .menu .first {
+      -moz-border-radius-topleft: 5px;
+      -moz-border-radius-topright: 5px; }
+    #admin-area .menu .last {
+      -moz-border-radius-bottomleft: 5px;
+      -moz-border-radius-bottomright: 5px; }
+    #admin-area .menu ul {
+      padding: 0;
+      margin: 0;
+      list-style: none; }
+      #admin-area .menu ul li {
+        float: left;
+        position: relative; }
+        #admin-area .menu ul li a {
+          display: block;
+          text-decoration: none;
+          color: #000;
+          width: 95px;
+          height: 23px;
+          text-align: center;
+          background: #fff;
+          line-height: 22px;
+          font-size: 14px;
+          overflow: hidden; }
+          #admin-area .menu ul li a:visited {
+            display: block;
+            text-decoration: none;
+            color: #000;
+            width: 95px;
+            height: 20px;
+            text-align: center;
+            color: #fff;
+            border: 1px solid #fff;
+            line-height: 20px;
+            font-size: 14px;
+            overflow: hidden; }
+        #admin-area .menu ul li ul {
+          display: none; }
+        #admin-area .menu ul li:hover a {
+          text-shadow: 1px 1px 0 #fff;
+          color: #fff;
+          background: #000; }
+        #admin-area .menu ul li:hover a.first {
+          text-shadow: 1px 1px 0 #555; }
+        #admin-area .menu ul li:hover ul {
+          display: block;
+          position: absolute;
+          top: 21px;
+          left: 0;
+          width: 95px; }
+          #admin-area .menu ul li:hover ul li a.hide {
+            background: #aaa;
+            color: #fff; }
+          #admin-area .menu ul li:hover ul li:hover a.hide {
+            background: #aaa;
+            color: #000; }
+          #admin-area .menu ul li:hover ul li ul {
+            display: none; }
+          #admin-area .menu ul li:hover ul li a {
+            border-bottom: 1px solid #ddd;
+            display: block;
+            background: #eee;
+            color: #888; }
+            #admin-area .menu ul li:hover ul li a:hover {
+              text-shadow: 1px 1px 0 #000;
+              background: #555;
+              color: #fff; }
+          #admin-area .menu ul li:hover ul li:hover ul {
+            display: block;
+            position: absolute;
+            left: 105px;
+            top: 0; }
+            #admin-area .menu ul li:hover ul li:hover ul.left {
+              left: -105px; }
 
 .admin-links {
   padding: 10px; }

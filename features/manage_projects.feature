@@ -11,7 +11,7 @@ Feature: Manage projects
   Scenario: Create a new project
     Given I have no projects
     When I go to the list of projects
-    And I follow "New Project"
+    And I follow "Project"
     And I fill in "Name" with "First Project"
     And I fill in "Description" with "Some details about the project"
     And I fill in "Role" with "Web developer"
@@ -34,7 +34,7 @@ Feature: Manage projects
     Given I have projects "Project One, Project Two"
     When I go to the list of projects
     And I follow "Project One"
-    And I follow "Edit"
+    And I edit the project "Project One"
     When I fill in "Name" with "Changed project name"
     And I press "Save"
     Then I should see "Save successful!"
@@ -46,8 +46,9 @@ Feature: Manage projects
     Given I have no uploads
     Given I have projects "Project One, Project Two"
     When I go to the list of projects
+    When I go to the list of projects
     And I follow "Project One"
-    And I follow "Edit"
+    And I edit the project "Project One"
     When I follow "Add Upload"
     And I attach a file onto "upload_data"
     And I press "Save"

@@ -17,7 +17,7 @@ Feature: Manage pages
   Scenario: Create a new page
     Given I have no pages
     When I go to the list of pages
-    And I follow "New Page"
+    And I follow "Page"
     And I fill in "Name" with "About"
     And I fill in "Body" with "Some about page text"
     And I press "Submit"
@@ -28,7 +28,7 @@ Feature: Manage pages
   Scenario: Edit an existing page
     Given I have pages About, Contact
     When I go to the page About
-    And I follow "Edit"
+    And I edit the page About
     And I fill in "Body" with "lorem ipsum"
     And I press "Submit"
     Then I should see "lorem ipsum"
