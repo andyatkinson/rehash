@@ -1,8 +1,10 @@
 - div_for comment do
+  - if admin?
+    %strong= comment.article.title
   %p.author-line
     = "<span class='name'>#{h(comment.name)}</span> wrote on #{comment.created_at}"
   %p=h comment.body
   - if admin?
     %p.admin-links
-      = link_to 'Edit', edit_article_comment_path(comment.article, comment)
+      = link_to 'Edit', edit_article_comment_path(comment.article, comment), :id => "edit_comment_#{comment.id}"
       = link_to 'Destroy', article_comment_path(comment.article, comment), :confirm => 'Are you sure?', :method => :delete, :id => "delete_comment_#{comment.id}"
