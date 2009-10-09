@@ -8,7 +8,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.comments 'comments', :controller => 'comments', :action => 'all'
   map.resources :articles, :collection => {:search => :get, :tagged => :get} do |article|
-    article.resources :comments
+    article.resources :comments, :except => [:show]
   end
   map.feed '/feed', :controller => 'articles', :action => 'index', :format => 'atom'
 

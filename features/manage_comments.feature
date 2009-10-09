@@ -4,6 +4,15 @@ Feature: Manage comments
   As a visitor to the site
   I want to create a new comment
   
+  # Scenario: Edit an existing comment
+  #   Given I have a comment from "John Doe" for the article "Minneapolis"
+  #   When I go to the article titled Minneapolis
+  #   And I follow "Edit"
+  #   And I fill in "Name" with "New name"
+  #   And I press "Submit"
+  #   Then I should see "Save successful!"
+  #   Then I should see "New name"
+  
   Background:
     Given I have a site "My Site"
     Given the admin is logged in
@@ -23,17 +32,8 @@ Feature: Manage comments
     And I fill in "Email" with "email@email.com"
     And I fill in "Body" with "Interesting article!"
     And I press "Submit"
-    Then I should see "Create successful!"
+    Then I should see "Comment created"
     And I should see "Interesting article!"
-    
-  Scenario: Edit an existing comment
-    Given I have a comment from "John Doe" for the article "Minneapolis"
-    When I go to the comment from "John Doe"
-    And I follow "Edit"
-    And I fill in "Name" with "New name"
-    And I press "Submit"
-    Then I should see "Save successful!"
-    Then I should see "New name"
 
   Scenario: Delete an existing comment
     Given I have a comment from "John Doe" for the article "Minneapolis"
@@ -48,3 +48,5 @@ Feature: Manage comments
     Given I have a comment from "John Doe" for the article "Minneapolis"
     When I go to the list of comments
     Then I should see "John Doe"
+    
+    

@@ -3,7 +3,12 @@ class CommentsController < ApplicationController
   
   make_resourceful do
     belongs_to :article
-    actions :all
+    actions :index, :new, :create, :edit, :update, :destroy
+    
+    response_for :create do
+      flash[:notice] = 'Comment created'
+      redirect_to @comment.article
+    end
   end
   
   def all
