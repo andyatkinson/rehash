@@ -1,3 +1,4 @@
+- javascript 'edit_site'
 - form_for @site do |f|
   = f.error_messages
   %p
@@ -16,9 +17,14 @@
     = f.label :owner_email
     %br
     = f.text_field :owner_email
-  %p
-    = f.label :password
-    %br
-    = f.password_field :password
+  #password
+    %p
+      = f.label :password
+      %br
+      = f.password_field :password
+    %p
+      = f.label :password_confirmation
+      %br
+      = f.password_field :password_confirmation
   %p
     = f.submit "Submit"

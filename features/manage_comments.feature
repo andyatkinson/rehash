@@ -3,10 +3,9 @@ Feature: Manage comments
   In order to create new comments on articles
   As a visitor to the site
   I want to create a new comment
-  
+
   Background:
     Given I have a site "My Site"
-    Given the admin is logged in
     Given the following articles
     | title       | body            |
     | Minneapolis | Is a cool city  |
@@ -23,19 +22,12 @@ Feature: Manage comments
     And I fill in "Email" with "email@email.com"
     And I fill in "Body" with "Interesting article!"
     And I press "Submit"
-    Then I should see "Create successful!"
+    Then I should see "Comment saved"
     And I should see "Interesting article!"
-    
-  Scenario: Edit an existing comment
-    Given I have a comment from "John Doe" for the article "Minneapolis"
-    When I go to the comment from "John Doe"
-    And I follow "Edit"
-    And I fill in "Name" with "New name"
-    And I press "Submit"
-    Then I should see "Save successful!"
-    Then I should see "New name"
-
+  
+  # admin
   Scenario: Delete an existing comment
+    Given the admin is logged in
     Given I have a comment from "John Doe" for the article "Minneapolis"
     And I go to the list of comments for "Minneapolis"
     Then I should see "John Doe"
@@ -45,6 +37,20 @@ Feature: Manage comments
     And I should have 0 comments
     
   Scenario: View all comments as an admin
+    Given the admin is logged in
     Given I have a comment from "John Doe" for the article "Minneapolis"
     When I go to the list of comments
     Then I should see "John Doe"
+    And I should see "Minneapolis"
+    
+  Scenario: Edit existing comments as an admin
+    Given the admin is logged in
+    Given I have a comment from "John Doe" for the article "Minneapolis"
+    When I go to the list of comments
+    Then I should see "John Doe"
+    When I edit the comment from "John Doe"
+    And I fill in "Name" with "New name"
+    And I press "Submit"
+    Then I should see "Comment saved"
+    Then I should see "New name"
+    And I should not see "John Doe"

@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
       @website ||= Site.first
     end
     def admin?
-      session[:password] == website.password
+      session[:password] == website.hashed_password
     end
     def require_admin
       render :file => "#{RAILS_ROOT}/public/500.html", :status => 401 unless admin?

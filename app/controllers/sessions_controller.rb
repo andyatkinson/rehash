@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   
   def create
     if Site.authenticate(params[:password])
-      session[:password] = website.password
+      session[:password] = website.hashed_password
       flash[:notice] = "Successfully logged in"
       redirect_to root_path
     else
