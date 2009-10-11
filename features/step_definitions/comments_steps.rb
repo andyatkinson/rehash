@@ -7,3 +7,8 @@ When /^I delete the comment from "([^\"]*)"$/ do |name|
   comment = Comment.find_by_name(name)
   click_link "delete_comment_#{comment.id}"
 end
+
+When /^I edit the comment from "([^\"]*)"$/ do |name|
+  comment = Comment.find_by_name(name)
+  click_link "edit_comment_#{comment.id}"
+end

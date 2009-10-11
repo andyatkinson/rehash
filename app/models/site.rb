@@ -1,10 +1,13 @@
 class Site < ActiveRecord::Base
-  attr_accessible :name, :tagline, :owner_name, :owner_email, :password
+  attr_accessible :name, :tagline, :owner_name, :owner_email, :password, :password_confirmation
   validates_presence_of :name, :tagline, :owner_name
-  validates_presence_of :password, :on => :create
+  validates_confirmation_of :password, :if => :perform_password_validation?
+  validates_presence_of :password, :if => :perform_password_validation?
   EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
   validates_format_of :owner_email, :with => EMAIL_REGEX, :if => :owner_email?
   before_create :hash_password
+  
+  attr_accessor :password
 
   def default_tags
     Tag.all.first(10).join(',')
@@ -12,16 +15,18 @@ class Site < ActiveRecord::Base
   
   def self.authenticate(pwd)
     website = Site.first
-    website.password == encrypted_password(pwd) ? true : false
+    website.hashed_password == encrypted_password(pwd) ? true : false
   end
   
   private
     def hash_password
-      self.password = Site.encrypted_password(self.password)
+      self.hashed_password = Site.encrypted_password(self.password)
     end
     def self.encrypted_password(password)
       string_to_hash = password + 'rehash'
       Digest::SHA1.hexdigest(string_to_hash)
     end
-
+    def perform_password_validation?
+      self.new_record? ? true : !self.password.blank?
+    end
 end

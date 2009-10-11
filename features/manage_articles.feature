@@ -21,7 +21,7 @@ Feature: Manage Articles
   Scenario: Create Valid Article
     Given I have no articles
     Given I am on the list of articles
-    When I follow "New Article"
+    When I follow "Article"
     And I fill in "Title" with "Minneapolis"
     And I fill in "Body" with "Minneapolis is a great city!"
     And I check "Published"
@@ -34,7 +34,7 @@ Feature: Manage Articles
   Scenario: Edit Valid Article
     Given I have articles titled Minneapolis, St. Paul
     When I go to the article titled Minneapolis
-    And I follow "Edit"
+    And I edit the article Minneapolis
     And I fill in "Title" with "Roseville"
     And I press "Submit"
     Then I should see "Save successful!"

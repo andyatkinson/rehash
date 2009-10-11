@@ -1,0 +1,14 @@
+.project
+  %h1.title= @project.url.blank? ? @project.name : "#{@project.name} #{link_to '<span>(View Site)</span>', @project.url}"
+
+  .images
+    = render :partial => 'images'
+
+  %p= @project.description
+  %p= "Role: #{@project.role}"
+  %p= "Duration: #{@project.duration}"
+
+  - content_for :sidebar do
+    - if admin?
+      %p.admin-links
+        = link_to 'Edit', edit_project_path(@project), :id => "edit_project_#{@project.id}"

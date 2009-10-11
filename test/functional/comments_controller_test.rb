@@ -35,20 +35,13 @@ class CommentsControllerTest < ActionController::TestCase
           Comment.any_instance.stubs(:valid?).returns(true)
           post :create, :article_id => @article.id, :comment => {:body => "body"}
           assert_response :redirect
-          assert_redirected_to article_comment_path(@article, assigns(:comment))
+          assert_redirected_to article_path(assigns(:comment).article)
         end
       end
 
       context "and a valid comment" do
         setup do
           @comment = @article.comments.create! :name => "name", :body => "body", :email => "email@email.com"
-        end
-
-        context "show action" do
-          should "render show template" do
-            get :show, :article_id => @article.id, :id => @comment
-            assert_template 'show'
-          end
         end
 
         context "edit action" do
@@ -69,7 +62,7 @@ class CommentsControllerTest < ActionController::TestCase
             Comment.any_instance.stubs(:valid?).returns(true)
             put :update, :article_id => @article.id, :id => @comment
             assert_response :redirect
-            assert_redirected_to article_comment_path(@article, assigns(:comment))
+            assert_redirected_to comments_path
           end
         end
 

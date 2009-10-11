@@ -1,13 +1,14 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :sites, :only => [:new, :create, :edit, :update]
   map.resources :pages
+  map.resources :projects, :member => [:new_upload, :create_upload], :except => [:destroy]
 
   map.search 'search', :controller => 'articles', :action => 'search'
   map.resources :tags
 
   map.comments 'comments', :controller => 'comments', :action => 'all'
   map.resources :articles, :collection => {:search => :get, :tagged => :get} do |article|
-    article.resources :comments
+    article.resources :comments, :except => [:show]
   end
   map.feed '/feed', :controller => 'articles', :action => 'index', :format => 'atom'
 

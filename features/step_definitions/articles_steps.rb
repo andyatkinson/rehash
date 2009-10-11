@@ -20,6 +20,11 @@ When /^I delete the article (.+)$/ do |title|
   click_link "delete_article_#{article.id}"
 end
 
+When /^I edit the article (.+)$/ do |title|
+  article = Article.find_by_title(title)
+  click_link "edit_article_#{article.id}"
+end
+
 Given /^I have unpublished articles titled (.+)$/ do |title|
   Article.create! :title => title, :body => "some text"
 end

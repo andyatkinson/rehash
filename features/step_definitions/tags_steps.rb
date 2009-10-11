@@ -25,3 +25,8 @@ When /^I delete the tag (.+)$/ do |name|
   tag = Tag.find_by_name(name)
   click_link "delete_tag_#{tag.id}"
 end
+
+When /^I edit the tag (.+)$/ do |name|
+  tag = Tag.find_by_name(name)
+  click_link "edit_tag_#{tag.id}"
+end

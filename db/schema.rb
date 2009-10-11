@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090805015846) do
+ActiveRecord::Schema.define(:version => 20091009024154) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -37,6 +37,16 @@ ActiveRecord::Schema.define(:version => 20090805015846) do
     t.datetime "updated_at"
   end
 
+  create_table "projects", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "role"
+    t.string   "duration"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "sites", :force => true do |t|
     t.string   "name"
     t.string   "tagline"
@@ -44,7 +54,7 @@ ActiveRecord::Schema.define(:version => 20090805015846) do
     t.string   "owner_email"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "password"
+    t.string   "hashed_password"
   end
 
   create_table "slugs", :force => true do |t|
@@ -71,6 +81,16 @@ ActiveRecord::Schema.define(:version => 20090805015846) do
 
   create_table "tags", :force => true do |t|
     t.string "name"
+  end
+
+  create_table "uploads", :force => true do |t|
+    t.string   "data_file_name"
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.string   "attachable_type"
+    t.integer  "attachable_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

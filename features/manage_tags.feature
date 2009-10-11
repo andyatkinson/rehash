@@ -19,7 +19,7 @@ Feature: Manage tags
     Given I have tags Foo, Bar
     Then I should have 2 tags
     When I go to the list of tags
-    Then I follow "New tag"
+    Then I follow "Tag"
     And I fill in "Name" with "Baz"
     And I press "Submit"
     Then I should see "Create successful!"
@@ -31,7 +31,7 @@ Feature: Manage tags
     And I have articles with tag Foo titled Minneapolis
     When I go to the article titled Minneapolis
     Then article Minneapolis should have 1 tag
-    And I follow "Edit"
+    And I edit the article Minneapolis
     And I check tag Foo
     And I press "Submit"
     Then I should see "Save successful!"
@@ -41,7 +41,7 @@ Feature: Manage tags
   Scenario: Edit a tag
     Given I have tags Foo, Bar
     When I go to the tag Foo
-    And I follow "Edit"
+    And I edit the tag Foo
     And I fill in "Name" with "Travel"
     And I press "Submit"
     Then I should see "Save successful!"
@@ -64,7 +64,7 @@ Feature: Manage tags
     And I follow "Bar"
     Then I should see "No results"
     When I go to the article titled Minneapolis
-    And I follow "Edit"
+    And I edit the article Minneapolis
     And I check tag Foo
     And I press "Submit"
     Then I should see "Save successful!"

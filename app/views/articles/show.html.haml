@@ -17,5 +17,5 @@
 - content_for :sidebar do
   - if admin?
     %p.admin-links
-      = link_to 'Edit', edit_article_path(@article)
+      = link_to 'Edit', edit_article_path(@article), :id => "edit_article_#{@article.id}"
       = link_to 'Destroy', @article, :confirm => 'Are you sure?', :method => :delete, :id => "delete_article_#{@article.id}"

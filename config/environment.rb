@@ -20,8 +20,9 @@ Rails::Initializer.run do |config|
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem 'haml', :version => '>= 2.2.2'
-  config.gem "acts_as_markup"
-  config.gem "friendly_id"
+  config.gem 'acts_as_markup'
+  config.gem 'friendly_id'
+  config.gem 'thoughtbot-paperclip', :lib => 'paperclip'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
