@@ -7,7 +7,7 @@ Rehash was created by [Andy Atkinson](http://webandy.com).
 
 ### Philosophy
 
-Rehash is a minimal publishing application focused on providing a very well-tested Ruby application others can understand and use with confidence. Rehash can serve as a base app suitable for forking, or works great as is for personal publishing. Third party code in rehash was selected for solving a specific problem well, and being tested and updated regularly.
+Rehash is a minimal publishing application focused on providing a very well-tested Ruby application others can understand and use with confidence. Rehash can serve as a base app suitable for forking, or works great as is for personal publishing. Third party code in rehash was selected for solving a specific problem well, and being tested and updated regularly. Functionality is designed to degrade gracefully, e.g. file uploads and theme switching works without JavaScript. Ajax can be added to certain features where full page loads are not ideal.
 
 
 ### Testing

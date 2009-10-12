@@ -50,3 +50,11 @@ Feature: Manage site
     And I fill in "Password confirmation" with "New password"
     And I press "Submit"
     Then I should see "Site updated!"
+    
+  Scenario: Change the site theme
+    Given I have a site "My Site"
+    Given the admin is logged in
+    When I go to the home page
+    And I follow "edit_site"
+    And I choose a new theme
+    Then I should see "Theme changed"

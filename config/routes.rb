@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :sites, :only => [:new, :create, :edit, :update]
+  map.resources :sites, :only => [:new, :create, :edit, :update], :member => [:change_theme]
   map.resources :pages
   map.resources :projects, :member => [:new_upload, :create_upload], :except => [:destroy]
 

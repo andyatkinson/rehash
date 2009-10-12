@@ -3,6 +3,7 @@ Given /^I have no projects$/ do
 end
 
 Given /^I have projects "([^\"]*)"$/ do |names|
+  Project.destroy_all
   names.split(',').each{|name| Project.create! :name => name, :description => "desc", 
     :duration => "2 months", :role => "role", :url => "http://google.com" }
 end

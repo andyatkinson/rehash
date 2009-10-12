@@ -1,4 +1,5 @@
 Given /^I have tags (.+)$/ do |names|
+  Tag.destroy_all
   names.split(', ').each do |name|
     Tag.create! :name => name
   end
