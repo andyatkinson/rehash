@@ -1,5 +1,5 @@
 body {
-  background-color: #4b7399;
+  background-color: #dddddd;
   font-family: Verdana, Helvetica, Arial;
   font-size: 14px; }
 
@@ -21,21 +21,11 @@ a {
   border: solid 1px black;
   margin-top: 20px; }
 
-#flash_notice,
-#flash_error {
-  padding: 5px 8px;
-  margin: 10px 0; }
+#left_column {
+  float: left; }
 
-#flash_notice {
-  background-color: #CFC;
-  border: solid 1px #6C6; }
-
-#flash_error {
-  background-color: #FCC;
-  border: solid 1px #C66; }
-
-.fieldWithErrors {
-  display: inline; }
+#right_column {
+  float: right; }
 
 #errorExplanation {
   width: 400px;

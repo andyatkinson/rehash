@@ -1,3 +1,14 @@
 - title "Create your site"
 
-= render :partial => 'form'
+#left_column
+  - if show_title?
+    %h1=h yield(:title)
+  = render :partial => 'form'
+
+#right_column
+  %h2= "Rehash is a personal publishing tool."
+  %ol
+    %li= "Complete site details on the left"
+    %li= "Site is created with these details"
+    %li= "Being creating articles, pages, and projects!"
+.clear

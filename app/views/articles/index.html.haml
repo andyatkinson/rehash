@@ -1,16 +1,10 @@
 - title "Articles", false
 
-- for article in @articles
-  - div_for article do
-    %h1
-      = link_to h(article.title), article
-      %span.published= article.created_at
-      %span.count= link_to "#{pluralize article.comments.size, 'comment'}", "#{article_path(article)}#comments" if article.comments.any?
-      %span.tags= article.tag_list.join(' ')
-    %p= article.description
-
-- content_for :sidebar do
-  %h4= "Tags"
-  %ul.tag-list
-    - for tag in Tag.all
-      %li= link_to tag.name, tagged_articles_path(:tag => tag.name)
+- @articles.each do |article|
+  .article
+    %h1= link_to h(article.title), article
+    .published= h(article.created_at)
+    .count= link_to "#{pluralize article.comments.size, 'comment'}", "#{article_path(article)}#comments" if article.comments.any?
+    .clear
+    .description= h(article.description)
+    .clear

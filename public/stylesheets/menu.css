@@ -1,93 +1,107 @@
-.menu {
-  position: relative;
-  left: 21px;
-  top: 12px; }
-  .menu .heading {
-    -moz-border-radius-topleft: 4px;
-    -moz-border-radius-topright: 4px;
-    -webkit-border-top-left-radius: 4px;
-    -webkit-border-top-right-radius: 4px; }
-  .menu .last {
-    -moz-border-radius-bottomleft: 4px;
-    -moz-border-radius-bottomright: 4px;
-    -webkit-border-bottom-left-radius: 4px;
-    -webkit-border-bottom-right-radius: 4px; }
-  .menu ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    -moz-box-shadow: #333 2px 2px 4px;
-    -webkit-box-shadow: #333 2px 2px 4px; }
-    .menu ul li {
-      float: left;
-      position: relative; }
-      .menu ul li a {
-        display: block;
-        text-decoration: none;
-        color: #000;
-        width: 95px;
-        height: 23px;
-        text-align: center;
-        background: #fff;
-        line-height: 22px;
-        font-size: 14px;
-        overflow: hidden; }
-        .menu ul li a:visited {
+/* admin area links */
+#admin-area {
+  height: 3em;
+  background: #000;
+  border-bottom: 1px solid #555; }
+  #admin-area .login {
+    float: right;
+    position: relative;
+    top: 14px; }
+    #admin-area .login a {
+      color: #fff; }
+    #admin-area .login a:hover {
+      text-decoration: underline; }
+  #admin-area .menu {
+    z-index: 9999;
+    position: relative;
+    top: 12px; }
+    #admin-area .menu .heading {
+      -moz-border-radius: 4px;
+      -webkit-border-radius: 4px; }
+    #admin-area .menu .last {
+      -moz-border-radius-bottomleft: 4px;
+      -moz-border-radius-bottomright: 4px;
+      -webkit-border-bottom-left-radius: 4px;
+      -webkit-border-bottom-right-radius: 4px; }
+    #admin-area .menu ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      -moz-box-shadow: #333 2px 2px 4px;
+      -webkit-box-shadow: #333 2px 2px 4px; }
+      #admin-area .menu ul li {
+        margin-right: 5px;
+        float: left;
+        position: relative; }
+        #admin-area .menu ul li a {
           display: block;
           text-decoration: none;
+          background: #fff;
           color: #000;
-          width: 93px;
-          height: 20px;
+          width: 95px;
+          height: 23px;
           text-align: center;
-          border: 1px solid #fff;
-          line-height: 20px;
+          background: #fff;
+          line-height: 22px;
           font-size: 14px;
           overflow: hidden; }
-      .menu ul li ul {
-        display: none; }
-      .menu ul li:hover a {
-        text-shadow: 1px 1px 0 #fff;
-        color: #fff;
-        background: #000; }
-      .menu ul li:hover a.heading {
-        text-shadow: 1px 1px 0 #555; }
-      .menu ul li:hover ul {
-        display: block;
-        position: absolute;
-        top: 21px;
-        left: 0;
-        width: 93px; }
-        .menu ul li:hover ul li a.hide {
-          background: #aaa;
-          color: #fff; }
-        .menu ul li:hover ul li:hover a.hide {
-          background: #aaa;
-          color: #000; }
-        .menu ul li:hover ul li ul {
+          #admin-area .menu ul li a:visited {
+            display: block;
+            text-decoration: none;
+            color: #000;
+            width: 93px;
+            height: 20px;
+            text-align: center;
+            border: 1px solid #fff;
+            line-height: 20px;
+            font-size: 14px;
+            overflow: hidden; }
+        #admin-area .menu ul li ul {
           display: none; }
-        .menu ul li:hover ul li a {
-          border-bottom: 1px solid #ddd;
-          display: block;
-          background: #eee;
-          color: #888; }
-          .menu ul li:hover ul li a:hover {
-            text-shadow: 1px 1px 0 #000;
-            background: #555;
-            color: #fff; }
-        .menu ul li:hover ul li a.last {
-          width: 95px;
-          border-left: #555;
-          border-right: #555;
-          border-bottom: #555; }
-        .menu ul li:hover ul li a.first {
-          width: 95px;
-          border-left: #555;
-          border-right: #555;
-          border-top: #555; }
-        .menu ul li:hover ul li:hover ul {
+        #admin-area .menu ul li:hover a {
+          text-shadow: 1px 1px 0 #fff;
+          color: #fff;
+          background: #333; }
+        #admin-area .menu ul li:hover a.heading {
+          text-shadow: 1px 1px 0 #555; }
+        #admin-area .menu ul li:hover ul {
           display: block;
           position: absolute;
-          left: 93px;
-          top: 0; }
-          .menu ul li:hover ul li:hover ul.left {
-            left: -105px; }
+          top: 21px;
+          left: 0;
+          width: 93px; }
+          #admin-area .menu ul li:hover ul li a.hide {
+            background: #aaa;
+            color: #fff; }
+          #admin-area .menu ul li:hover ul li:hover a.hide {
+            background: #ccc;
+            color: #000; }
+          #admin-area .menu ul li:hover ul li ul {
+            display: none; }
+          #admin-area .menu ul li:hover ul li a {
+            border-bottom: 1px solid #ddd;
+            display: block;
+            background: #eee;
+            color: #888;
+            text-shadow: 2px 2px 0 #fff; }
+            #admin-area .menu ul li:hover ul li a:hover {
+              text-shadow: 1px 1px 0 #000;
+              background: #555;
+              color: #fff; }
+          #admin-area .menu ul li:hover ul li a.last {
+            width: 95px;
+            border-left: #555;
+            border-right: #555;
+            border-bottom: #555; }
+          #admin-area .menu ul li:hover ul li a.first {
+            width: 95px;
+            border-left: #555;
+            border-right: #555;
+            border-top: #555; }
+          #admin-area .menu ul li:hover ul li:hover ul {
+            display: block;
+            position: absolute;
+            left: 93px;
+            top: 0; }
+            #admin-area .menu ul li:hover ul li:hover ul.left {
+              left: -105px; }

@@ -2,7 +2,7 @@
 .images, .themes
   :padding 0 0 10px 0
   :position relative
-  :left -42px
+  :left -5px
   ul
     li
       :float left
@@ -14,3 +14,74 @@
       a:hover
         img
           :border 3px solid #002b40
+//projects
+.project
+  .title
+    span
+      :position relative
+      :top -4px
+      :font-size 12px
+      :color #aaa
+      
+#search
+  :white-space nowrap
+#search input[type="text"]#q
+  :width 175px
+  :margin 0 0 20px 0
+  :font-size 16px
+  :-webkit-border-radius 2px
+  :-moz-border-radius 2px
+  :letter-spacing -1px
+  :padding 2px
+#search input[type="submit"]
+  :position relative
+  :top -2px
+  :height 25px
+  
+//some global styles
+label
+  :color #555
+input[type="submit"]
+  :border 1px solid #bbb
+  :height 30px
+  :-webkit-border-radius 3px
+  :-moz-border-radius 3px
+input[type=text],input[type=password]
+  :font-size 1.3em
+  :width 300px
+  :border 1px solid #ccc
+  &:focus
+    :border 1px solid #666
+textarea
+  :width 400px
+  :height 200px
+  :font-size 1.3em
+  :border 1px solid #ccc
+  &:focus
+    :border 1px solid #666
+    
+#flash_notice,
+#flash_error,
+#flash_caution
+  :padding 5px 8px
+  :margin 10px 0
+
+#flash_notice
+  :background-color #CFC
+  :border solid 1px #6C6
+
+#flash_error
+  :background-color #FCC
+  :border solid 1px #C66
+  
+#flash_caution
+  :background-color #FFF6BF
+  :border solid 1px #FFD324
+
+.fieldWithErrors
+  :display inline
+  
+.new_comment
+  :padding 10px 0
+.change_password
+  :color #000
