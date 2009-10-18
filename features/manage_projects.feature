@@ -46,13 +46,11 @@ Feature: Manage projects
     Given I have no uploads
     Given I have projects "Project One, Project Two"
     When I go to the list of projects
-    When I go to the list of projects
     And I follow "Project One"
     And I edit the project "Project One"
     When I follow "Add Upload"
     And I attach a file onto "upload_data"
     And I press "Save"
     Then I should see "Upload saved"
-    And I should not see "Project Two"
     And I should have 2 projects
     And I should have 1 upload
