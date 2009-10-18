@@ -1,7 +1,8 @@
 - title @page.name
 
-.body
-  %p= @page.body
+.page
+  .body
+    %p= @page.body
 
 - content_for :sidebar do
   - if admin?

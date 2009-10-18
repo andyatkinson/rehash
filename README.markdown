@@ -4,10 +4,14 @@ rehash
 
 Rehash was created by [Andy Atkinson](http://webandy.com).
 
+### Install
+
+Please see the INSTALL file.
+
 
 ### Philosophy
 
-Rehash is a minimal publishing application focused on providing a very well-tested Ruby application others can understand and use with confidence. Rehash can serve as a base app suitable for forking, or works great as is for personal publishing. Third party code in rehash was selected for solving a specific problem well, and being tested and updated regularly. Functionality is designed to degrade gracefully, e.g. file uploads and theme switching works without JavaScript. Ajax can be added to certain features where full page loads are not ideal.
+Rehash is a minimal publishing application focused on providing a very well-tested Ruby application others can understand and use with confidence. Rehash can serve as a base app suitable for forking, or works great as is for personal blogging and portfolio display. Third party code in rehash was selected for solving a specific problem well, and being tested and updated regularly. Functionality is designed to degrade gracefully, e.g. file uploads and theme switching work without JavaScript. Ajax is added to certain features where full page loads are not ideal.
 
 
 ### Testing
@@ -34,6 +38,8 @@ Rehash uses git submodules to track plugins. Submodules are listed in the `.gitm
 `make_resourceful` [Github](http://github.com/hcatlin/make_resourceful/tree/master) Authors: [Hampton Catlin](mailto:contact@hamptoncatlin.com), Nathan Weizenbaum, and Jeff Hardy
 
 `haml` [Website](http://haml-lang.com/) and `sass` [Website](http://sass-lang.com/)
+
+`will_paginate` [Website](http://github.com/mislav/will_paginate) Contact person: [Mislav](mailto:mislav.marohnic@gmail.com)
 
 ### Credits
 

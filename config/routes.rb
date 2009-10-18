@@ -17,4 +17,5 @@ ActionController::Routing::Routes.draw do |map|
   map.logout 'logout', :controller => 'sessions', :action => 'destroy'
 
   map.root :controller => 'articles', :action => 'index'
+  map.page_slug ':id', :controller => 'pages', :action => 'show'
 end

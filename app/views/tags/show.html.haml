@@ -9,4 +9,5 @@
     = link_to "Edit", edit_tag_path(@tag), :id => "edit_tag_#{@tag.id}"
     = link_to "Destroy", @tag, :confirm => 'Are you sure?', :method => :delete, :id => "delete_tag_#{@tag.id}"
 
-%p= link_to "Back to tags", tags_path
+%div= link_to 'Create another', new_tag_path
+.back= link_to "&larr; Back to tags", tags_path

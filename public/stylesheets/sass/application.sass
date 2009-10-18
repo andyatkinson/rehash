@@ -16,13 +16,20 @@
           :border 3px solid #002b40
 //projects
 .project
+  .images
+    :padding 10px 0
+  p
+    :line-height 16px
+    :padding 5px 0
   .title
+    :font-size 30px
     span
       :position relative
       :top -4px
       :font-size 12px
       :color #aaa
-      
+.back
+  :padding 20px 0
 #search
   :white-space nowrap
 #search input[type="text"]#q
@@ -118,3 +125,55 @@ pre
     :line-height 20px
   input#comment_submit
     :margin 10px 0
+    
+    
+//pagination
+.rehash_pagination
+  :background white
+  a, span
+    :padding .2em .5em
+    :display block
+    :float left
+    :margin-right 1px
+  span.disabled
+    :color #999
+    :border 1px solid #DDD
+  span.current
+    :font-weight bold
+    :background #2E6AB1
+    :color white
+    :border 1px solid #2E6AB1
+  a
+    :text-decoration none
+    :color #105CB6
+    :border 1px solid #9AAFE5
+    &:hover, &:focus
+      :color #003
+      :border-color #003
+  .page_info
+    :background #2E6AB1
+    :color white
+    :padding .4em .6em
+    :width 22em
+    :margin-bottom .3em
+    :text-align center
+    b
+      :color #003
+      :background = #2E6AB1 + 60
+      :padding .1em .25em
+  
+  &:after
+    :content "."
+    :display block
+    :height 0
+    :clear both
+    :visibility hidden
+  * html &
+    :height 1%
+  *:first-child+html &
+    :overflow hidden
+.page
+  .body
+    p
+      :line-height 16px
+      :padding 5px 0

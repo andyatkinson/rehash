@@ -15,7 +15,7 @@
     - if admin?
       #admin-area
         .wrap
-          %span.login= link_to 'Logout', logout_path
+          %span.logout= link_to 'Logout', logout_path
           .menu
             %ul
               %li
@@ -51,7 +51,7 @@
           = link_to 'Home', root_path
           = link_to 'Projects', projects_path if Project.all.any?
           - for page in Page.released
-            = link_to page.name, page
+            = link_to page.name, page_slug_path(page)
     #wrapper
       #container.wrap
         #main
@@ -74,14 +74,17 @@
     #footer
       .wrap
         #page-list
+          %h4= 'Pages' if Page.released.any?
           %ul
           - for page in Page.released
-            %li= link_to page.name, page
+            %li= link_to page.name, page_slug_path(page)
         #project-list
+          %h4= 'Projects' if Project.all.any?
           %ul
           - for project in Project.all
             %li= link_to project.name, project
         #tag-list
+          %h4= 'Tags' if Tag.all.any?
           %ul
           - for tag in Tag.all
             %li= link_to tag.name, tagged_articles_path(:tag => tag.name)
@@ -90,7 +93,5 @@
             %li.flickr= link_to website.flickr_username, "http://flickr.com/photos/#{website.flickr_username}" if website.flickr_username
             %li.twitter= link_to website.twitter_username, "http://twitter.com/#{website.twitter_username}" if website.twitter_username
         .clear
-        #copyright
-          = "Copyright #{Time.now.year} &copy; #{website.owner_name}"
-        #powered-by
-          = "<em>Powered by</em> #{link_to 'rehash', 'http://webandy.com'}"
+        #copyright= "Copyright #{Time.now.year} &copy; #{website.owner_name}"
+        #powered-by= "<em>Powered by</em> #{link_to 'rehash', 'http://github.com/webandy/rehash'}"

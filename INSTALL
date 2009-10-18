@@ -1,14 +1,19 @@
 Installing as a user on OS X
 ----------------------------
-sudo rake gems:install
-sudo rake db:migrate
-cp config/database.sample.yml config/database.yml
-git submodule init
-git submodule update
 
-# install imagemagick e.g. `sudo port install imagemagick` or `brew install imagemagick`
+ rake gems:install
+ rake db:migrate
+ cp config/database.sample.yml config/database.yml
+ git submodule init
+ git submodule update
+
+# ImageMagick is used with Paperclip for project file uploads.
+sudo port install imagemagick   # MacPorts
+brew install imagemagick        # Homebrew
 
 
 Additional instructions installing as a developer on OS X
 --------------------------------------------------------
-sudo rake gems:install RAILS_ENV=test
+
+# Cucumber and shoulda will be installed if you specify the test environment
+ rake gems:install RAILS_ENV=test

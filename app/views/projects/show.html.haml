@@ -1,14 +1,17 @@
+- javascript 'jquery.easing.1.3', 'jquery.fancybox', 'projects_show'
+- stylesheet '/stylesheets/fancybox/jquery.fancybox.css'
+
 .project
   %h1.title= @project.url.blank? ? @project.name : "#{@project.name} #{link_to '<span>(View Site)</span>', @project.url}"
-
   .images
     = render :partial => 'images'
 
   %p= @project.description
-  %p= "Role: #{@project.role}"
-  %p= "Duration: #{@project.duration}"
+  %p= "Role: <strong>#{@project.role}</strong>"
+  %p= "Duration: <strong>#{@project.duration}</strong>"
 
-  - content_for :sidebar do
-    - if admin?
-      %p.admin-links
-        = link_to 'Edit', edit_project_path(@project), :id => "edit_project_#{@project.id}"
+.back= link_to '&larr; Back to Projects', projects_path
+- content_for :sidebar do
+  - if admin?
+    %p.admin-links
+      = link_to 'Edit', edit_project_path(@project), :id => "edit_project_#{@project.id}"

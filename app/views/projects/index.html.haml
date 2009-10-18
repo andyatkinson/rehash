@@ -1,4 +1,12 @@
 - title 'Projects'
 
-- @projects.each do |project|
-  %h1= "#{link_to project.name, project}"
+.index
+  - @projects.each do |project|
+    .project
+      %h1= "#{link_to project.name, project}"
+      .images
+        %ul
+          - project.uploads.each do |upload|
+            %li= link_to image_tag(upload.data.url(:square)), project
+      .description= project.description
+      .clear

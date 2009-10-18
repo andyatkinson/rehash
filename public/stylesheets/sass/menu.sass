@@ -1,19 +1,23 @@
 /*admin area links*/
 #admin-area
-  :height 3em
-  :background #000
-  :border-bottom 1px solid #555
-  .login
+  :height 46px
+  :background url(/images/admin_navigation_background.png) repeat-x top left
+  :border-bottom 1px solid #aaa
+  .logout
     :float right
     :position relative
-    :top 14px
+    :top 15px
     a
-      :color #fff
+      :color #333
+      :text-shadow 0px 1px 0px #ccc
     a:hover
+      :color #fff
+      :text-shadow none
       :text-decoration underline
   .menu
-    :z-index 9999
+    :z-index 1
     .heading
+      :font-weight bold
       :-moz-border-radius 4px
       :-webkit-border-radius 4px
     .last
@@ -64,7 +68,7 @@
           a
             :text-shadow 1px 1px 0 #fff
             color: #fff
-            background: #333
+            background: #000
           a.heading
             :text-shadow 1px 1px 0 #555
           ul

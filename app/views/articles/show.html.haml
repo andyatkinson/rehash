@@ -5,7 +5,6 @@
 .article
   %h1= h(@article.title)
   .published= h(@article.created_at)
-  
   .clear
   .body= @article.body.to_html
 
@@ -16,6 +15,7 @@
   %p= render 'comments/form', {:article => @article, :comment => @article.comments.build}
 - else
   %p= "Commenting for this article is closed."
+.back= link_to '&larr; Back to Articles', articles_path
   
 - content_for :sidebar do
   - if @article.tags.any?

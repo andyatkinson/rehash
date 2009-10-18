@@ -16,12 +16,15 @@
     = f.label :published
     %br
     = f.check_box :published
-  %h4= "Tags"
-  %ul.tags
-    - for tag in Tag.all
-      %li
-        = tag.name
-        = check_box_tag 'article[tag_list][]', tag.name, @article.tag_list.include?(tag.name), :id => "check_tag_#{tag.id}"
+  - if Tag.all.empty?
+    = link_to 'Create a tag', new_tag_path
+  - else
+    %h4= "Tags"
+    %ul.tags
+      - for tag in Tag.all
+        %li
+          = tag.name
+          = check_box_tag 'article[tag_list][]', tag.name, @article.tag_list.include?(tag.name), :id => "check_tag_#{tag.id}"
   %p
     = f.submit "Submit"
     = link_to "Cancel", @article, :class => 'cancel'

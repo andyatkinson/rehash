@@ -23,8 +23,8 @@ a, a:visited {
 
 #header {
   width: 100%;
-  height: 167px;
-  background: transparent url(/images/theme/blue-header.png) top left repeat-x;
+  height: 115px;
+  background: transparent url(/images/theme/blue_header.png) top left repeat-x;
   color: #fff; }
   #header a {
     color: #fff; }
@@ -102,6 +102,12 @@ a, a:visited {
 
 #right {
   float: left; }
+  #right h3 {
+    padding: 10px 0; }
+  #right .tags a {
+    font-size: 20px;
+    color: #555;
+    margin-right: 5px; }
 
 .body {
   padding: 20px 0; }
@@ -209,15 +215,18 @@ table tr td.name {
   margin: 0 auto; }
 
 #footer {
-  padding: 10px;
+  padding: 0px 0px 30px 0;
   border-top: 5px solid #ccc;
   border-bottom: 1px solid #bbb;
-  background: #ddd;
-  height: 100px; }
+  background: #ddd; }
   #footer #page-list, #footer #tag-list, #footer #project-list {
     float: left;
     padding: 20px 0;
     width: 200px; }
+    #footer #page-list h4, #footer #tag-list h4, #footer #project-list h4 {
+      font-weight: normal;
+      color: #888;
+      text-shadow: 1px 1px 0 #fff; }
     #footer #page-list a, #footer #tag-list a, #footer #project-list a {
       color: #000; }
     #footer #page-list a:hover, #footer #tag-list a:hover, #footer #project-list a:hover {
@@ -246,3 +255,24 @@ table tr td.name {
       color: #000;
       position: relative;
       right: 20px; }
+
+.rehash_pagination a, .rehash_pagination a:visited, .rehash_pagination a:hover {
+  color: #10306A; }
+.rehash_pagination span.current {
+  border: 1px solid #10306A;
+  background: #10306A; }
+
+.index .project .images {
+  float: left;
+  width: 300px; }
+.index .project h1 {
+  font-size: 30px;
+  padding: 20px 0; }
+.index .project .description {
+  float: left;
+  font-style: italic;
+  color: #aaa;
+  width: 350px; }
+.index .project p {
+  padding: 6px 0;
+  line-height: 16px; }

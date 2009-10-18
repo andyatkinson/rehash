@@ -71,3 +71,4 @@ Feature: Manage tags
     When I go to the list of articles
     When I follow "Foo"
     Then I should see "Minneapolis"
+    And I should see "Articles tagged Foo"

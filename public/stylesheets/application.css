@@ -12,11 +12,21 @@
     .images ul li a:hover img, .themes ul li a:hover img {
       border: 3px solid #002b40; }
 
-.project .title span {
-  position: relative;
-  top: -4px;
-  font-size: 12px;
-  color: #aaa; }
+.project .images {
+  padding: 10px 0; }
+.project p {
+  line-height: 16px;
+  padding: 5px 0; }
+.project .title {
+  font-size: 30px; }
+  .project .title span {
+    position: relative;
+    top: -4px;
+    font-size: 12px;
+    color: #aaa; }
+
+.back {
+  padding: 20px 0; }
 
 #search {
   white-space: nowrap; }
@@ -116,3 +126,51 @@ pre {
   line-height: 20px; }
 #new_comment input#comment_submit {
   margin: 10px 0; }
+
+.rehash_pagination {
+  background: white; }
+  .rehash_pagination a, .rehash_pagination span {
+    padding: .2em .5em;
+    display: block;
+    float: left;
+    margin-right: 1px; }
+  .rehash_pagination span.disabled {
+    color: #999;
+    border: 1px solid #DDD; }
+  .rehash_pagination span.current {
+    font-weight: bold;
+    background: #2E6AB1;
+    color: white;
+    border: 1px solid #2E6AB1; }
+  .rehash_pagination a {
+    text-decoration: none;
+    color: #105CB6;
+    border: 1px solid #9AAFE5; }
+    .rehash_pagination a:hover, .rehash_pagination a:focus {
+      color: #003;
+      border-color: #003; }
+  .rehash_pagination .page_info {
+    background: #2E6AB1;
+    color: white;
+    padding: .4em .6em;
+    width: 22em;
+    margin-bottom: .3em;
+    text-align: center; }
+    .rehash_pagination .page_info b {
+      color: #003;
+      background: #6aa6ed;
+      padding: .1em .25em; }
+  .rehash_pagination:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  * html .rehash_pagination {
+    height: 1%; }
+  *:first-child+html .rehash_pagination {
+    overflow: hidden; }
+
+.page .body p {
+  line-height: 16px;
+  padding: 5px 0; }
