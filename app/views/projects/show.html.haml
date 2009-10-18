@@ -4,15 +4,15 @@
 - title h(@project.name), false
 
 .project
-  %h1.title= @project.url.blank? ? @project.name : "#{@project.name} #{link_to '<span>(View Site)</span>', @project.url}"
+  %h1.title= @project.url.blank? ? @project.name : "#{@project.name} #{link_to "<span>(#{t(:view_site)})</span>", @project.url}"
   .images
     = render :partial => 'images'
 
-  %p= @project.description
-  %p= "Role: <strong>#{@project.role}</strong>"
-  %p= "Duration: <strong>#{@project.duration}</strong>"
+  .description= @project.description
+  .role= "#{t(:project_role)}: <strong>#{@project.role}</strong>"
+  .duration= "#{t(:project_duration)}: <strong>#{@project.duration}</strong>"
 
-.back= link_to '&larr; Back to Projects', projects_path
+.back= link_to "&larr; #{t(:back_to_projects)}", projects_path
 - content_for :sidebar do
   - if admin?
     %p.admin-links

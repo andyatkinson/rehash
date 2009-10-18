@@ -4,9 +4,9 @@ rehash
 
 Rehash was created by [Andy Atkinson](http://webandy.com).
 
-### Install
+### Install and Documentation
 
-Please see the INSTALL file.
+Please see the INSTALL file for set up instructions. Please see the [Rehash Github wiki](http://wiki.github.com/webandy/rehash) for documentation.
 
 
 ### Philosophy

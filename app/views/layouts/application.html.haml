@@ -17,37 +17,37 @@
           .menu
             %ul
               %li
-                = link_to 'Home', root_path, :class => 'heading last'
+                = link_to t(:nav_home), root_path, :class => 'heading last'
               %li
-                = link_to 'New', '#', :class => 'heading'
+                = link_to t(:nav_new), '#', :class => 'heading'
                 %ul
                   %li
-                    = link_to 'Article', new_article_path, :class => 'first'
-                    = link_to 'Page', new_page_path
-                    = link_to 'Project', new_project_path
-                    = link_to 'Tag', new_tag_path, :class => 'last'
+                    = link_to t(:nav_article), new_article_path, :class => 'first'
+                    = link_to t(:nav_page), new_page_path
+                    = link_to t(:nav_project), new_project_path
+                    = link_to t(:nav_tag), new_tag_path, :class => 'last'
               %li
-                = link_to 'Edit', '#', :class => 'heading'
+                = link_to t(:nav_edit), '#', :class => 'heading'
                 %ul
                   %li
-                    = link_to 'Site', edit_site_path(website), :id => 'edit_site', :class => 'first last'
+                    = link_to t(:nav_site), edit_site_path(website), :id => 'edit_site', :class => 'first last'
               %li
-                = link_to 'View', '#', :class => 'heading'
+                = link_to t(:nav_view), '#', :class => 'heading'
                 %ul
                   %li
-                    = link_to 'Articles', articles_path, :class => 'first'
-                    = link_to 'Comments', comments_path
-                    = link_to 'Pages', pages_path
-                    = link_to 'Projects', projects_path
-                    = link_to 'Tags', tags_path, :class => 'last'
+                    = link_to t(:nav_articles), articles_path, :class => 'first'
+                    = link_to t(:nav_comments), comments_path
+                    = link_to t(:nav_pages), pages_path
+                    = link_to t(:nav_projects), projects_path
+                    = link_to t(:nav_tags), tags_path, :class => 'last'
     #header
       .wrap
         #name
           %h1= link_to website.name, root_path
           %h2= website.tagline
         #navigation
-          = link_to 'Home', root_path
-          = link_to 'Projects', projects_path if Project.all.any?
+          = link_to t(:home), root_path
+          = link_to t(:projects), projects_path if Project.all.any?
           - for page in Page.released
             = link_to page.name, page_slug_path(page)
     #wrapper
@@ -63,8 +63,8 @@
         #sidebar
           #search
             - form_tag search_path, :method => 'get' do
-              = text_field_tag :q, ''
-              = submit_tag "Go", :name => nil
+              = text_field_tag :q, t(:search_box_text)
+              = submit_tag t(:search_button), :name => nil
             = link_to image_tag('feed.png', :title => 'Subscribe to this site'), feed_path
           #right
             = yield(:sidebar)
@@ -72,17 +72,17 @@
     #footer
       .wrap
         #page-list
-          %h4= 'Pages' if Page.released.any?
+          %h4= t(:pages) if Page.released.any?
           %ul
           - for page in Page.released
             %li= link_to page.name, page_slug_path(page)
         #project-list
-          %h4= 'Projects' if Project.all.any?
+          %h4= t(:projects) if Project.all.any?
           %ul
           - for project in Project.all
             %li= link_to project.name, project
         #tag-list
-          %h4= 'Tags' if Tag.all.any?
+          %h4= t(:tags) if Tag.all.any?
           %ul
           - for tag in Tag.all
             %li= link_to tag.name, tagged_articles_path(:tag => tag.name)
@@ -91,5 +91,5 @@
             %li.flickr= link_to website.flickr_username, "http://flickr.com/photos/#{website.flickr_username}" if website.flickr_username
             %li.twitter= link_to website.twitter_username, "http://twitter.com/#{website.twitter_username}" if website.twitter_username
         .clear
-        #copyright= "Copyright #{Time.now.year} &copy; #{website.owner_name}"
-        #powered-by= "<em>Powered by</em> #{link_to 'rehash', 'http://github.com/webandy/rehash'}"
+        #copyright= "&copy; #{Time.now.year} #{website.owner_name}"
+        #powered-by= "<em>#{t(:powered_by)}</em> #{link_to 'rehash', 'http://github.com/webandy/rehash'}"

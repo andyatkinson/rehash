@@ -1,4 +1,4 @@
-- title 'Projects'
+- title t(:projects)
 
 .index
   - @projects.each do |project|
@@ -8,5 +8,7 @@
         %ul
           - project.uploads.each do |upload|
             %li= link_to image_tag(upload.data.url(:square)), project
-      .description= project.description
+      .description
+        = truncate project.description, 200
+        = link_to 'more', project
       .clear

@@ -7,6 +7,7 @@ db/*.sqlite3
 coverage/*
 *.swp
 config/database.yml
+config/deployment.yml
 features_rcov/
 tags_db.sqlite3
 public/system

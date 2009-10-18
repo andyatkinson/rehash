@@ -1,0 +1,32 @@
+es:
+  nav_home: Inicio
+  nav_projects: Proyectos
+  nav_new: Nuevo
+  nav_article: Artículo
+  nav_page: Página
+  nav_project: Proyecto
+  nav_tag: Tag
+  nav_edit: Editar
+  nav_site: Sitio
+  nav_view: Ver
+  nav_articles: Artículos
+  nav_comments: Comentario
+  nav_pages: Páginas
+  nav_projects: Proyectos
+  nav_tags: Tags
+  
+  home: Inicio
+  projects: Proyectos
+  search_box_text: Buscar artículos...
+  pages: Páginas
+  tags: Tags
+  search_button: buscar
+  powered_by: Hecho con
+  
+  articles: Artículos
+  view_site: Visita página web
+  back_to_projects: Regresa a proyectos
+  login_button_text: Entrar
+  
+  project_role: Oficio
+  project_duration: Duración

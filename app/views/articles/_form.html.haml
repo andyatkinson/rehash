@@ -17,7 +17,7 @@
     %br
     = f.check_box :published
   - if Tag.all.empty?
-    = link_to 'Create a tag', new_tag_path
+    = "No tags yet. Create one after saving this article."
   - else
     %h4= "Tags"
     %ul.tags

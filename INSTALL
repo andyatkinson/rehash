@@ -17,3 +17,14 @@ Additional instructions installing as a developer on OS X
 
 # Cucumber and shoulda will be installed if you specify the test environment
  rake gems:install RAILS_ENV=test
+ 
+ 
+Deployment
+---
+ 
+After running Rehash locally, deployment is possible with the included deploy file, which is set up to deploy from a github repo to a Passenger gem server. You must have access to the github repo, which probably means you forked the original Rehash repo to one on your own github account.
+
+The first step is to copy from the sample to a deployment file you can customize.
+ cp config/deployment.sample.yml config/deployment.yml
+ 
+ More instructions coming soon.

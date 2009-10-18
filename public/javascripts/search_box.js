@@ -1,5 +1,5 @@
 $(function() {
-  var text = 'Search for articles...';
+  var text = $('#search #q').val();
   $('#search #q').css('color', '#aaa');
   $('#search #q').val(text);
   $('#search #q').focus(function() {

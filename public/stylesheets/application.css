@@ -12,6 +12,10 @@
     .images ul li a:hover img, .themes ul li a:hover img {
       border: 3px solid #002b40; }
 
+.project .description ul {
+  padding: 20px; }
+  .project .description ul li {
+    list-style-type: disc; }
 .project .images {
   padding: 10px 0; }
 .project p {

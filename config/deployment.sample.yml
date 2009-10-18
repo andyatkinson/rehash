@@ -1,0 +1,14 @@
+application:
+  domain.com
+port:
+  22
+deploy_user:
+  user
+deploy_to:
+  /path/to/app
+github_username:
+  fakeuser
+repo_name:
+  myrehashrepo
+branch:
+  master
