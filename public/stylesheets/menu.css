@@ -67,7 +67,8 @@
           color: #fff;
           background: #000; }
         #admin-area .menu ul li:hover a.heading {
-          text-shadow: 1px 1px 0 #555; }
+          text-shadow: 1px 1px 0 #555;
+          border: 1px solid #000; }
         #admin-area .menu ul li:hover ul {
           display: block;
           position: absolute;
