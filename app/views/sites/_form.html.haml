@@ -33,5 +33,15 @@
       = f.label :password_confirmation
       %br
       = f.password_field :password_confirmation
+  .optional
+  %h3= "Optional services"
+  %p
+    = f.label :flickr_username
+    %br
+    = f.text_field :flickr_username
+  %p
+    = f.label :twitter_username
+    %br
+    = f.text_field :twitter_username
   %p
     = f.submit "Submit"

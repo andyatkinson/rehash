@@ -9,4 +9,7 @@ module ApplicationHelper
     links
   end
   
+  def article_eligible_for_comments?(article)
+    article.published? && (Time.now < (article.created_at + 3.months))
+  end
 end

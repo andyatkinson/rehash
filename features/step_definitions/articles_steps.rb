@@ -11,7 +11,7 @@ end
 
 Given /^the following articles$/ do |table|
   table.hashes.each do |t|
-    Article.create! :title => t[:title], :body => t[:body]
+    Article.create! :title => t[:title], :body => t[:body], :published => true
   end
 end
 

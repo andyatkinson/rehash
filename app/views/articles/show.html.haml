@@ -11,12 +11,16 @@
 
 %h3= pluralize @article.comments.size, 'comment'
 #comments= render :partial => 'comments/comment', :collection => @article.comments
-%h3= 'Leave a comment'
-%p= render 'comments/form', {:article => @article, :comment => @article.comments.build}
+- if article_eligible_for_comments?(@article)
+  %h3= 'Leave a comment'
+  %p= render 'comments/form', {:article => @article, :comment => @article.comments.build}
+- else
+  %p= "Commenting for this article is closed."
   
 - content_for :sidebar do
-  %h3= 'Tags'
-  .tags= tag_links_for_article(@article)
+  - if @article.tags.any?
+    %h3= 'Tags'
+    .tags= tag_links_for_article(@article)
   - if admin?
     %p.admin-links
       = link_to 'Edit', edit_article_path(@article), :id => "edit_article_#{@article.id}"

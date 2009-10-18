@@ -113,18 +113,17 @@ a, a:visited {
     font-size: 35px;
     margin-right: 10px; }
   .article .published {
+    float: right;
+    color: #aaa;
+    font-style: italic;
+    text-align: right; }
+  .article .count a {
     position: relative;
     top: 10px;
     float: left;
-    color: #aaa;
-    font-style: italic; }
-  .article .count {
-    float: right; }
-    .article .count a {
-      position: relative;
-      top: 10px;
-      float: left;
-      color: #555; }
+    color: #555;
+    font-style: normal;
+    font-weight: bold; }
   .article .tags a {
     position: relative;
     top: 10px;
@@ -140,6 +139,10 @@ a, a:visited {
   .article h3.author {
     color: #aaa;
     margin: -20px 0 10px 0; }
+
+.index .article {
+  margin: 20px 0;
+  border-bottom: 1px solid #ddd; }
 
 #comments .comment {
   margin: 20px 0; }
@@ -159,6 +162,9 @@ a, a:visited {
     .comment .author-line .name {
       font-weight: bold;
       font-size: 1.2em; }
+
+#new_comment label {
+  color: #888; }
 
 .admin-links {
   padding: 20px 0; }
@@ -208,13 +214,13 @@ table tr td.name {
   border-bottom: 1px solid #bbb;
   background: #ddd;
   height: 100px; }
-  #footer #page-list, #footer #tag-list, #footer #service-list {
+  #footer #page-list, #footer #tag-list, #footer #project-list {
     float: left;
     padding: 20px 0;
-    width: 300px; }
-    #footer #page-list a, #footer #tag-list a, #footer #service-list a {
+    width: 200px; }
+    #footer #page-list a, #footer #tag-list a, #footer #project-list a {
       color: #000; }
-    #footer #page-list a:hover, #footer #tag-list a:hover, #footer #service-list a:hover {
+    #footer #page-list a:hover, #footer #tag-list a:hover, #footer #project-list a:hover {
       text-decoration: underline; }
   #footer #copyright {
     color: #777;
@@ -225,14 +231,18 @@ table tr td.name {
     color: #777;
     font-size: 12px;
     text-shadow: 1px 1px 0 #fff;
-    float: right; }
-  #footer #service-list .twitter {
-    background: url(/images/services/twitter.png) no-repeat top left; }
-  #footer #service-list .flickr {
-    background: url(/images/services/flickr.png) no-repeat top left; }
-  #footer #service-list a {
-    position: relative;
-    left: 20px; }
-  #footer #service-list a {
-    font-weight: bold;
-    color: #555; }
+    float: right;
+    text-align: right; }
+  #footer #service-list {
+    float: right;
+    text-align: right;
+    padding: 20px 0;
+    width: 300px; }
+    #footer #service-list .twitter {
+      background: url(/images/services/twitter.png) no-repeat top right; }
+    #footer #service-list .flickr {
+      background: url(/images/services/flickr.png) no-repeat top right; }
+    #footer #service-list a {
+      color: #000;
+      position: relative;
+      right: 20px; }

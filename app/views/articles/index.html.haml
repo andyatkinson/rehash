@@ -1,10 +1,12 @@
 - title "Articles", false
 
-- @articles.each do |article|
-  .article
-    %h1= link_to h(article.title), article
-    .published= h(article.created_at)
-    .count= link_to "#{pluralize article.comments.size, 'comment'}", "#{article_path(article)}#comments" if article.comments.any?
-    .clear
-    .description= h(article.description)
-    .clear
+.index
+  - @articles.each do |article|
+    .article
+      %h1= link_to h(article.title), article
+      .published
+        = h(article.created_at)
+        .count= link_to "#{pluralize article.comments.size, 'comment'}", "#{article_path(article)}#comments" if article.comments.any?
+      .clear
+      .description= h(article.description)
+      .clear

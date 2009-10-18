@@ -8,7 +8,7 @@ class CommentsControllerTest < ActionController::TestCase
     end
     context "and a valid article" do
       setup do
-        @article = Article.create! :title => "title", :body => "body"
+        @article = Article.create! :title => "title", :body => "body", :published => true
       end
       context "index action" do
         should "render index template" do
@@ -30,18 +30,23 @@ class CommentsControllerTest < ActionController::TestCase
           post :create, :article_id => @article.id, :comment => {:body => "body"}
           assert_template 'new'
         end
+        
+        should "render new template when challenge is incorrect" do
+          post :create, :article_id => @article.id, :comment => {:body => "body", :challenge => "3"}
+          assert_template 'new'
+        end
 
         should "redirect when model is valid" do
-          Comment.any_instance.stubs(:valid?).returns(true)
-          post :create, :article_id => @article.id, :comment => {:body => "body"}
+          post :create, :article_id => @article.id, :comment => {:name => "name", :email => "email@email.com", :body => "body", :challenge => "4"}
           assert_response :redirect
           assert_redirected_to article_path(assigns(:comment).article)
+          assert_equal 1, assigns(:article).comments.count
         end
       end
 
       context "and a valid comment" do
         setup do
-          @comment = @article.comments.create! :name => "name", :body => "body", :email => "email@email.com"
+          @comment = @article.comments.create! :name => "name", :body => "body", :email => "email@email.com", :challenge => "4"
         end
 
         context "edit action" do

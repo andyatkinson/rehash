@@ -1,5 +1,5 @@
 class Site < ActiveRecord::Base
-  attr_accessible :name, :tagline, :owner_name, :owner_email, :password, :password_confirmation
+  attr_accessible :name, :tagline, :owner_name, :owner_email, :password, :password_confirmation, :flickr_username, :twitter_username
   validates_presence_of :name, :tagline, :owner_name
   validates_confirmation_of :password, :if => :perform_password_validation?
   validates_presence_of :password, :if => :perform_password_validation?

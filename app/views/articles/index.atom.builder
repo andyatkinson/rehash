@@ -1,6 +1,6 @@
 atom_feed do |feed|
   feed.title(h(website.name))
-  feed.updated(Article.first.updated_at || Time.now)
+  Article.first.nil? ? Time.now : feed.updated(Article.first.updated_at)
   
   @articles.each do |article|
     feed.entry(article) do |entry|

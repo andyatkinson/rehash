@@ -111,18 +111,18 @@ a, a:visited
     :font-size 35px
     :margin-right 10px
   .published
-    :position relative
-    :top 10px
-    :float left
+    :float right
     :color #aaa
     :font-style italic
+    :text-align right
   .count
-    :float right
     a
       :position relative
       :top 10px
       :float left
       :color #555
+      :font-style normal
+      :font-weight bold
   .tags
     a
       :position relative
@@ -139,6 +139,11 @@ a, a:visited
   h3.author
     :color #aaa
     :margin -20px 0 10px 0
+.index
+  .article
+    :margin 20px 0
+    :border-bottom 1px solid #ddd
+    .published
 
 #comments .comment
   :margin 20px 0
@@ -157,7 +162,10 @@ a, a:visited
     .name
       :font-weight bold
       :font-size 1.2em
-        
+      
+#new_comment
+  label
+    :color #888
       
 .admin-links
   :padding 20px 0
@@ -210,10 +218,10 @@ table
   :border-bottom 1px solid #bbb
   :background #ddd
   :height 100px
-  #page-list, #tag-list, #service-list
+  #page-list, #tag-list, #project-list
     :float left
     :padding 20px 0
-    :width 300px
+    :width 200px
     a
       :color #000
     a:hover
@@ -228,14 +236,17 @@ table
     :font-size 12px
     :text-shadow 1px 1px 0 #fff
     :float right
+    :text-align right
   #service-list
+    :float right
+    :text-align right
+    :padding 20px 0
+    :width 300px
     .twitter
-      :background url(/images/services/twitter.png) no-repeat top left
+      :background url(/images/services/twitter.png) no-repeat top right
     .flickr
-      :background url(/images/services/flickr.png) no-repeat top left
+      :background url(/images/services/flickr.png) no-repeat top right
     a
+      :color #000
       :position relative
-      :left 20px
-    a
-      :font-weight bold
-      :color #555
+      :right 20px

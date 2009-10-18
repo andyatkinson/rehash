@@ -51,7 +51,7 @@ input[type=text],input[type=password]
   :width 300px
   :border 1px solid #ccc
   &:focus
-    :border 1px solid #666
+    :border 1px solid #888
 textarea
   :width 400px
   :height 200px
@@ -85,3 +85,36 @@ textarea
   :padding 10px 0
 .change_password
   :color #000
+  
+  
+//styles that exist across all themes
+.article
+  p
+    :line-height 16px
+    :margin 15px 0
+  .body
+    ul
+      :padding 10px 20px
+      li
+        :list-style-type disc
+    h1,h2
+      :float none
+      :clear both
+      :padding 10px 0
+    h1
+      :font-size 25px
+code
+  :background #EEEEFF
+  :border 1px solid #DDDDDD
+pre
+  :padding 10px
+  :overflow auto
+  :background #EEEEFF
+  :border 1px solid #DDDDDD
+  code
+    :border none
+#new_comment
+  p
+    :line-height 20px
+  input#comment_submit
+    :margin 10px 0

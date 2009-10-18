@@ -21,6 +21,7 @@ Feature: Manage comments
     When I fill in "Name" with "John Doe"
     And I fill in "Email" with "email@email.com"
     And I fill in "Body" with "Interesting article!"
+    And I fill in "comment_challenge" with "4"
     And I press "Submit"
     Then I should see "Comment saved"
     And I should see "Interesting article!"
