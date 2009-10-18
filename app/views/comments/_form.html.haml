@@ -6,7 +6,7 @@
       %br
       = f.text_field :name
     %p
-      = f.label :email
+      = f.label :email, 'Email (not published)'
       %br
       = f.text_field :email
     %p
@@ -19,4 +19,4 @@
         %br
         = f.text_field :challenge
     %p
-      = f.submit "Submit"
+      = f.submit "Save comment"

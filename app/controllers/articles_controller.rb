@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_filter :ensure_site_exists
-  before_filter :require_admin, :except => [:index, :show, :search]
+  before_filter :require_admin, :except => [:index, :show, :search, :tagged]
   before_filter :find_article, :only => [:show, :edit, :update, :destroy]
   
   def index

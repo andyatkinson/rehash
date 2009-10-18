@@ -11,6 +11,16 @@ class ArticlesControllerTest < ActionController::TestCase
         assert_template 'index'
       end
     end
+    context "and a article that has tags" do
+      setup do
+        @article = Article.create! :title => "title", :body => "body", :tag_list => "awesome"
+      end
+      should "render tagged articles for all visitors" do
+        get :tagged, :tag => "awesome"
+        assert_response :success
+        assert_template 'index'
+      end
+    end
   end
   
   context "and admin user" do

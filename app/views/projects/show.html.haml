@@ -1,6 +1,8 @@
 - javascript 'jquery.easing.1.3', 'jquery.fancybox', 'projects_show'
 - stylesheet '/stylesheets/fancybox/jquery.fancybox.css'
 
+- title h(@project.name), false
+
 .project
   %h1.title= @project.url.blank? ? @project.name : "#{@project.name} #{link_to '<span>(View Site)</span>', @project.url}"
   .images

@@ -22,7 +22,7 @@ Feature: Manage comments
     And I fill in "Email" with "email@email.com"
     And I fill in "Body" with "Interesting article!"
     And I fill in "comment_challenge" with "4"
-    And I press "Submit"
+    And I press "Save comment"
     Then I should see "Comment saved"
     And I should see "Interesting article!"
   
@@ -53,7 +53,7 @@ Feature: Manage comments
     Then I should see "John Doe"
     When I edit the comment from "John Doe"
     And I fill in "Name" with "New name"
-    And I press "Submit"
+    And I press "Save comment"
     Then I should see "Comment saved"
     And I should see "New name"
     And I should not see "John Doe"

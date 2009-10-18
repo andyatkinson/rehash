@@ -1,4 +1,4 @@
-- title "Article", false
+- title h(@article.title), false
 - meta_description @article.description
 - meta_keywords @article.tag_list
 
@@ -19,7 +19,7 @@
   
 - content_for :sidebar do
   - if @article.tags.any?
-    %h3= 'Tags'
+    %h3= "Tags for #{@article.title}"
     .tags= tag_links_for_article(@article)
   - if admin?
     %p.admin-links
