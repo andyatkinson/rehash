@@ -18,8 +18,14 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @upload = Upload.new(params[:upload])
     if @project.uploads << @upload
-      flash[:notice] = "Upload saved"
-      redirect_to @project
+      if params[:Filename] 
+        # coming from Flash, if HTTP 200 javascript will redirect
+        # response doesn't really matter
+        render :text => "success", :status => :ok
+      else # regular HTML form post
+        flash[:notice] = "Upload saved"
+        redirect_to @project
+      end
     else
       # if you get here verify that imagemagick is installed
       flash[:error] = "Upload not saved."
