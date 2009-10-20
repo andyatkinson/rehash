@@ -11,7 +11,7 @@ Feature: Search articles
     Given I have articles titled Minneapolis, St. Paul
     When I go to the list of articles
     When I fill in "q" with "Minneapolis"
-    And I press "Go"
+    And I press "Search"
     Then I should see "Minneapolis"
     And I should not see "St. Paul"
   
@@ -19,5 +19,5 @@ Feature: Search articles
     And I have unpublished articles "Secret Blog post"
     When I go to the list of articles
     And I fill in "q" with "Secret"
-    And I press "Go"
+    And I press "Search"
     Then I should not see "Secret"

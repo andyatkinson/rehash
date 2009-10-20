@@ -1,4 +1,4 @@
-- form_for @article do |f|
+- form_for @article, :html => {:class => 'form'} do |f|
   = f.error_messages
   %p
     = f.label :title
@@ -10,6 +10,7 @@
     = f.text_field :description
   %p
     = f.label :body
+    %span= "Markdown or HTML is ok."
     %br
     = f.text_area :body, :class => 'big'
   %p

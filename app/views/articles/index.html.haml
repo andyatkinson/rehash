@@ -1,3 +1,4 @@
+- stylesheet 'pagination'
 - title t(:articles), false
 
 .index
@@ -11,4 +12,4 @@
       .description= h(article.description)
       .clear
 
-= will_paginate @articles, :class => 'rehash_pagination'
+= will_paginate @articles, :class => 'pagination'

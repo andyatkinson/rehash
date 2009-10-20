@@ -1,4 +1,4 @@
-- form_for @page do |f|
+- form_for @page, :html => {:class => 'form'} do |f|
   = f.error_messages
   %p
     = f.label :name
@@ -6,6 +6,7 @@
     = f.text_field :name
   %p
     = f.label :body
+    %span= "Plain HTML only"
     %br
     = f.text_area :body, :class => 'big'
   %p

@@ -27,7 +27,7 @@ class SitesController < ApplicationController
       session[:password] = @site.hashed_password
       redirect_to edit_site_path(@site)
     else
-      flash.now[:error] = "Error"
+      flash[:error] = "Error"
       render 'new', :layout => 'create_site'
     end
   end

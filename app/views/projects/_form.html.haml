@@ -1,4 +1,4 @@
-- form_for @project do |f|
+- form_for @project, :html => {:class => 'form'} do |f|
   = f.error_messages
   %p
     = f.label :name
@@ -6,6 +6,7 @@
     = f.text_field :name
   %p
     = f.label :description
+    %span= "Plain HTML only"
     %br
     = f.text_area :description
   %p

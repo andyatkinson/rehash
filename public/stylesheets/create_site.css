@@ -26,7 +26,8 @@ a {
 
 #right_column {
   float: right;
-  width: 370px; }
+  width: 370px;
+  background: pink; }
 
 #errorExplanation {
   width: 400px;

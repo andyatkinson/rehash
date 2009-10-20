@@ -1,5 +1,5 @@
 .new_comment
-  - form_for [article, comment] do |f|
+  - form_for [article, comment], :html => {:class => 'form'} do |f|
     = f.error_messages
     %p
       = f.label :name

@@ -51,41 +51,39 @@
           - for page in Page.released
             = link_to page.name, page_slug_path(page)
     #wrapper
-      #container.wrap
-        #main
-          - flash.each do |name, msg|
-            = content_tag :div, msg, :id => "flash_#{name}"
-          - if show_title?
-            %h1=h yield(:title)
-            
-          = yield
-          
-        #sidebar
-          #search
-            - form_tag search_path, :method => 'get' do
-              = text_field_tag :q, t(:search_box_text)
-              = submit_tag t(:search_button), :name => nil
-            = link_to image_tag('feed.png', :title => 'Subscribe to this site'), feed_path
-          #right
-            = yield(:sidebar)
-        .clear
+      #main
+        - flash.each do |name, msg|
+          = content_tag :div, msg, :id => "flash_#{name}"
+        - if show_title?
+          %h1=h yield(:title)
+        
+        = yield
+      #sidebar
+        #search
+          - form_tag search_path, :method => 'get' do
+            = text_field_tag :q, t(:search_box_text)
+            = submit_tag t(:search_button), :name => nil
+          .clear
+        #feed= link_to image_tag('feed.png', :title => 'Subscribe to this site'), feed_path
+        = yield(:sidebar)
+    .clear
     #footer
       .wrap
         #page-list
           %h4= t(:pages) if Page.released.any?
           %ul
-          - for page in Page.released
-            %li= link_to page.name, page_slug_path(page)
+            - for page in Page.released
+              %li= link_to page.name, page_slug_path(page)
         #project-list
           %h4= t(:projects) if Project.all.any?
           %ul
-          - for project in Project.all
-            %li= link_to project.name, project
+            - for project in Project.all
+              %li= link_to project.name, project
         #tag-list
           %h4= t(:tags) if Tag.all.any?
           %ul
-          - for tag in Tag.all
-            %li= link_to tag.name, tagged_articles_path(:tag => tag.name)
+            - for tag in Tag.all
+              %li= link_to tag.name, tagged_articles_path(:tag => tag.name)
         #service-list
           %ul
             %li.flickr= link_to website.flickr_username, "http://flickr.com/photos/#{website.flickr_username}" if website.flickr_username
