@@ -13,6 +13,7 @@ Feature: Search articles
     When I fill in "q" with "Minneapolis"
     And I press "Search"
     Then I should see "Minneapolis"
+    And I should see "Found articles for Minneapolis"
     And I should not see "St. Paul"
   
   Scenario: Unpublished articles are not visible

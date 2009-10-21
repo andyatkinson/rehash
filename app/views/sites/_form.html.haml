@@ -46,6 +46,10 @@
         = f.label :password_confirmation
         %br
         = f.password_field :password_confirmation
+    - if !@site.new_record?
+      %p
+        = "Disable article comments 3 months after posted"
+        = check_box_tag '', '', true, :disabled => true
   .clear
   %p
     = f.submit "Submit"

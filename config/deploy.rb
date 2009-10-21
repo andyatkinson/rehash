@@ -33,6 +33,7 @@ set :branch, "#{CONFIG['branch']}"
 # set deploy to copy to local first, then upload
 set :deploy_via, :copy
 set :runner, user
+set :git_enable_submodules, 1
 
 #############################################################
 #	Passenger and application configuration

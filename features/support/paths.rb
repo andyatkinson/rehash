@@ -9,50 +9,38 @@ module NavigationHelpers
     case page_name
     
     when /the homepage/
-      '/'
-    
+      root_path
     when /the list of projects/
       projects_path
-      
     when /the new project page/
       new_project_path
-
     when /the list of articles/
       articles_path
-
     when /the article titled (.+)/
       article_path(Article.find_by_title($1))
-      
     when /the comment from "([^\"]*)"/
       c = Comment.find_by_name($1)
       article_comment_path(c.article, c)
-      
     when /the list of comments for "([^\"]*)"/
       a = Article.find_by_title($1)
       article_comments_path(a)
-      
     when /the list of comments/
       comments_path
-
     when /the list of tags/
       tags_path
-    
     when /the tag (.+)/
       tag_path(Tag.find_by_name($1))
-      
-    when /login/
+    when /the logout path/
+      logout_path
+    when /$the login path^/
       login_path
-      
     when /the feed/
       feed_path
-    
     when /the list of pages/
       pages_path
-      
     when /the page (.+)/
       page = Page.find_by_name($1)
       page_path(page)
-      
     when /the home page/
       root_path
     

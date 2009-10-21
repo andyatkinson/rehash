@@ -23,6 +23,3 @@ Feature: Hide and show certain items
     Given I have pages About, Contact
     When I go to the list of pages
     Then I should not see "About"
-  
-  
-  

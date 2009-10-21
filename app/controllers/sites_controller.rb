@@ -1,15 +1,6 @@
 class SitesController < ApplicationController
   before_filter :require_admin, :only => [:edit]
   
-  make_resourceful do
-    actions :edit, :update
-
-    response_for :update do
-      flash[:notice] = "Site updated!"
-      redirect_to root_path
-    end
-  end
-  
   def new
     if website
       render :file => "#{RAILS_ROOT}/public/500.html", :status => 401
@@ -29,6 +20,20 @@ class SitesController < ApplicationController
     else
       flash[:error] = "Error"
       render 'new', :layout => 'create_site'
+    end
+  end
+  def edit
+    @site = Site.find(params[:id])
+  end
+  def update
+    @site = Site.find(params[:id])
+    if @site.update_attributes(params[:site])
+      @site.update_attribute(:hashed_password, Site.encrypted_password(params[:site][:password]))
+      session[:password] = @site.hashed_password
+      flash[:notice] = "Site updated!"
+      redirect_to root_path
+    else
+      render 'edit'
     end
   end
   def change_theme

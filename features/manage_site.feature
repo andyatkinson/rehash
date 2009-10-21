@@ -46,10 +46,19 @@ Feature: Manage site
     Given the admin is logged in
     When I go to the home page
     And I follow "edit_site"
-    When I fill in "Password" with "New password"
-    And I fill in "Password confirmation" with "New password"
+    When I fill in "Password" with "pwd"
+    And I fill in "Password confirmation" with "pwd"
     And I press "Submit"
     Then I should see "Site updated!"
+    When I log out
+    Then I should see "Successfully logged out"
+    And I should not see "New"
+    #   TODO reset_session maybe not working, works in app
+    #   but this doesn't pass in cucumber
+    # When I visit the login page
+    # And I fill in "Password" with "pwd"
+    # And I should not see "Error"
+    # And I should see "Successfully logged in"
     
   Scenario: Change the site theme
     Given I have a site "My Site"

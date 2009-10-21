@@ -15,7 +15,7 @@ class Site < ActiveRecord::Base
   
   def self.authenticate(pwd)
     website = Site.first
-    website.hashed_password == encrypted_password(pwd) ? true : false
+    website.hashed_password == Site.encrypted_password(pwd) ? true : false
   end
   
   private

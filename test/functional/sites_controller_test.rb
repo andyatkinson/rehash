@@ -41,8 +41,7 @@ class SitesControllerTest < ActionController::TestCase
       end
 
       should "redirect when model is valid" do
-        Site.any_instance.stubs(:valid?).returns(true)
-        put :update, :id => @site
+        put :update, :id => @site, :site => {:name => "MySite", :tagline => "Site tagline", :owner_name => "Owner", :password => "test", :password_confirmation => "test"}
         assert_redirected_to root_path
       end
     end
