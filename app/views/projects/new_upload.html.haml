@@ -22,6 +22,7 @@
         $('form.new_upload').prepend('<p class="success">Upload completed.</p>');
       }, 
       'onAllComplete': function(event, data) {
+        $('form.new_upload').prepend("<p>Redirecting or <a href='/projects/#{params[:id]}'>click here</a>...</p>");
         window.location = '/projects/#{params[:id]}';
       },
       'onError':function() {
