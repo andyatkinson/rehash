@@ -8,7 +8,8 @@
   .clear
   .body= @article.body.to_html
 
-%h3= pluralize @article.comments.size, 'comment'
+  .meta
+    %h3= pluralize @article.comments.size, 'comment'
 #comments= render :partial => 'comments/comment', :collection => @article.comments
 - if article_eligible_for_comments?(@article)
   %h3= 'Leave a comment'

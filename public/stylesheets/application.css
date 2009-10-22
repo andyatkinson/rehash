@@ -27,23 +27,6 @@ a.cancel {
   top: 2px;
   font-weight: normal; }
 
-label {
-  color: #555; }
-
-.form input[type=text], .form input[type=password] {
-  font-size: 1.3em;
-  width: 300px;
-  border: 1px solid #ccc; }
-  .form input[type=text]:focus, .form input[type=password]:focus {
-    border: 1px solid #888; }
-.form textarea {
-  width: 400px;
-  height: 200px;
-  font-size: 1.3em;
-  border: 1px solid #ccc; }
-  .form textarea:focus {
-    border: 1px solid #666; }
-
 #flash_notice,
 #flash_error,
 #flash_caution {
@@ -139,19 +122,48 @@ form p {
     border: 1px solid #ddd;
     text-shadow: 0 -1px 0 #fff; }
 
-.images, .themes {
+.images {
   padding: 0 0 10px 0;
   position: relative;
   left: -5px; }
-  .images ul li, .themes ul li {
+  .images ul li {
     float: left;
     margin: 0 3px; }
-    .images ul li a, .themes ul li a {
+    .images ul li a {
       display: block; }
-      .images ul li a img, .themes ul li a img {
+      .images ul li a img {
         border: 3px solid #ddd; }
-    .images ul li a:hover img, .themes ul li a:hover img {
+    .images ul li a:hover img {
       border: 3px solid #002b40; }
+
+.themes {
+  padding: 0 0 10px 0;
+  position: relative;
+  left: -5px; }
+  .themes ul li {
+    float: left;
+    height: 150px;
+    margin: 0 10px 20px 0; }
+    .themes ul li a {
+      display: block; }
+      .themes ul li a img {
+        border: 3px solid #ddd; }
+    .themes ul li a:hover img {
+      border: 3px solid #002b40; }
+    .themes ul li .overlay {
+      background: #000;
+      opacity: .5;
+      height: 156px;
+      width: 155px;
+      position: relative;
+      top: -155px; }
+      .themes ul li .overlay .progress {
+        background: #000 url(/images/loading.gif) no-repeat top left;
+        height: 20px;
+        width: 100px;
+        position: relative;
+        top: 50px;
+        left: 54px; }
 
 .project .description ul {
   padding: 20px; }
@@ -190,8 +202,6 @@ form p {
 .article .body h1 {
   font-size: 25px; }
 
-#new_comment p {
-  line-height: 20px; }
 #new_comment input#comment_submit {
   margin: 10px 0; }
 
@@ -237,11 +247,12 @@ form p {
   line-height: 16px; }
 
 .form .left {
-  float: left; }
+  float: left;
+  width: 400px; }
 .form .right {
   padding: 10px;
   float: right;
-  width: 300px;
+  width: 270px;
   background: #f0f0f0;
   border: 1px solid #ddd; }
   .form .right a {

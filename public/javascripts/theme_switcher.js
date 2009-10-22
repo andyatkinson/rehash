@@ -3,6 +3,8 @@
 $(function() {
   $('.themes a.theme').click(function(e) {
     e.preventDefault();
+    var overlay = $(this).parent('li').find('.overlay');
+    overlay.show();
     var theme_name = $(this).attr('title');
     var base_uri = $(this).attr('href').split(/(.+)(\?)/)[1]; // get the base URI
     var ajaxUrl = base_uri + '.json';
@@ -10,6 +12,7 @@ $(function() {
       if(data == 'success') {
         $('link[rel=stylesheet theme]').attr('href', '/stylesheets/'+theme_name+'.css');
       }
+      overlay.hide();
     });
   });
 });

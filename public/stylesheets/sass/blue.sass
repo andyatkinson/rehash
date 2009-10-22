@@ -1,3 +1,20 @@
+label
+  :color #555
+.form
+  input[type=text],input[type=password]
+    :font-size 1.3em
+    :width 250px
+    :border 1px solid #ccc
+    &:focus
+      :border 1px solid #888
+  textarea
+    :width 400px
+    :height 200px
+    :font-size 1.3em
+    :border 1px solid #ccc
+    &:focus
+      :border 1px solid #666
+
 .article,.page
   .body
     :padding 20px 0
@@ -35,6 +52,9 @@
     :margin-bottom 20px
     :border-bottom 1px solid #ddd
 
+#new_comment
+  p
+    :line-height 20px
 .comment
   :background #f0f0f0
   :border-bottom 1px solid #ddd

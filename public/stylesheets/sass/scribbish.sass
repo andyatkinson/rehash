@@ -1,0 +1,145 @@
+body
+  :font-family "lucida grande",verdana,arial,helvetica,sans-serif
+
+#header
+  :color #000
+  :border-bottom none
+  :height 75px
+  :background #FFFFFF url(/images/theme/scribbish/background.gif) repeat-x left top
+  .wrap
+    :height 70px
+    :background url(/images/theme/scribbish/header_shadow.gif) repeat-x left bottom
+    #name
+      h2
+        :display none
+  a
+    &:link, &:visited
+      :color #000
+      :text-decoration none
+    &:hover, &:active
+      :color #930
+      :background transparent
+      :text-decoration none
+  h1
+    :font bold 410% georgia, serif
+    :letter-spacing -1px
+    :margin 0
+    :float left
+  #navigation
+    :font-size 11px
+    a
+      :padding 0
+      :text-decoration underline
+      &:hover
+        :background #000
+        :color #fff
+
+.article
+  :padding 10px 0
+  .body
+    :font-family "lucida grande",verdana,arial,helvetica,sans-serif
+    h1,h2
+      :font-family "lucida grande",verdana,arial,helvetica,sans-serif
+  h1
+    :font-weight normal
+    :font-family georgia,times
+    :line-height 99%
+    :letter-spacing -1.5px
+    :font-size 30px
+    a
+    &:hover
+      :text-decoration underline
+  .description
+    :background #eee
+    :border 1px solid #DDDDDD
+    :padding 5px
+    :font-size 10px
+  .published
+    :font-family helvetica,arial,verdana,sans-serif
+    :font-size 14px
+    :color #A9A9A9
+    :line-height 14px
+    :letter-spacing -1px
+  .meta
+    h3
+      :border-bottom 1px dotted #AAAAAA
+      :letter-spacing -1px
+      :font-family georgia,times
+      :font-size 20px
+      :margin 1.2em 0 0.3em
+      :font-weight normal
+      :background #ffd
+
+.new_comment
+  form
+    :width 662px
+    :background #F2F2F2
+    :border-top 1px solid #ddd
+    :margin 1em 0.5em 1em 0
+    :padding 23px 0 0 16px
+    label
+      :font-size 12px
+      :font-weight bold
+      :font-family "lucida grande",verdana,arial,helvetica,sans-serif
+      :color #000
+    p
+      :margin 0 0 1.2em
+      :line-height 14px
+      textarea
+        :width 90%
+        :height 150px
+        :padding 3px
+
+.back
+  :font-family "lucida grande",verdana,arial,helvetica,sans-serif
+  :font-size 12px
+  :text-decoration underline
+  a
+    :color #000
+    &:hover
+      :color #fff
+      :background #000
+  
+#wrapper
+  #sidebar
+    :width 195px
+    :border-left 1px dotted #DDDDDD
+    :font-size 11px
+    :padding-left 12px
+    :margin-left 24px
+    h3
+      :font bold 14px "lucidamac bold", "lucida grande", verdana, arial, helvetica, sans-serif
+      :margin 0 0 0.5em
+      a
+        &:link, &:visited
+          :color #000
+          :text-decoration none
+        &:hover, &:active
+          :background transparent
+          :text-decoration underline
+    ul
+      list-style-type: none
+      margin: 0 0 2em
+      padding: 0
+    li
+      margin: 0
+      padding: 1px 0
+    em
+      :font-style normal
+    .search p
+      margin: 0
+      input
+        font-size: 11px
+        width: 92%
+#footer
+  :font-size 11px
+  :border-top none
+  .wrap
+    :border-top 1px solid #CCCCCC
+  :border-bottom none
+  :background #fff
+  a
+    :text-decoration underline
+    &:hover
+      :background #000
+      :color #fff

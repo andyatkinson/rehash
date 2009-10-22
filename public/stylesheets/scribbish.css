@@ -1,0 +1,139 @@
+body {
+  font-family: "lucida grande",verdana,arial,helvetica,sans-serif; }
+
+#header {
+  color: #000;
+  border-bottom: none;
+  height: 75px;
+  background: #FFFFFF url(/images/theme/scribbish/background.gif) repeat-x left top; }
+  #header .wrap {
+    height: 70px;
+    background: url(/images/theme/scribbish/header_shadow.gif) repeat-x left bottom; }
+    #header .wrap #name h2 {
+      display: none; }
+  #header a:link, #header a:visited {
+    color: #000;
+    text-decoration: none; }
+  #header a:hover, #header a:active {
+    color: #930;
+    background: transparent;
+    text-decoration: none; }
+  #header h1 {
+    font: bold 410% georgia, serif;
+    letter-spacing: -1px;
+    margin: 0;
+    float: left; }
+  #header #navigation {
+    font-size: 11px; }
+    #header #navigation a {
+      padding: 0;
+      text-decoration: underline; }
+      #header #navigation a:hover {
+        background: #000;
+        color: #fff; }
+
+.article {
+  padding: 10px 0; }
+  .article .body {
+    font-family: "lucida grande",verdana,arial,helvetica,sans-serif; }
+    .article .body h1, .article .body h2 {
+      font-family: "lucida grande",verdana,arial,helvetica,sans-serif; }
+  .article h1 {
+    font-weight: normal;
+    font-family: georgia,times;
+    line-height: 99%;
+    letter-spacing: -1.5px;
+    font-size: 30px; }
+    .article h1:hover {
+      text-decoration: underline; }
+  .article .description {
+    background: #eee;
+    border: 1px solid #DDDDDD;
+    padding: 5px;
+    font-size: 10px; }
+  .article .published {
+    font-family: helvetica,arial,verdana,sans-serif;
+    font-size: 14px;
+    color: #A9A9A9;
+    line-height: 14px;
+    letter-spacing: -1px; }
+  .article .meta h3 {
+    border-bottom: 1px dotted #AAAAAA;
+    letter-spacing: -1px;
+    font-family: georgia,times;
+    font-size: 20px;
+    margin: 1.2em 0 0.3em;
+    font-weight: normal;
+    background: #ffd; }
+
+.new_comment form {
+  width: 662px;
+  background: #F2F2F2;
+  border-top: 1px solid #ddd;
+  margin: 1em 0.5em 1em 0;
+  padding: 23px 0 0 16px; }
+  .new_comment form label {
+    font-size: 12px;
+    font-weight: bold;
+    font-family: "lucida grande",verdana,arial,helvetica,sans-serif;
+    color: #000; }
+  .new_comment form p {
+    margin: 0 0 1.2em;
+    line-height: 14px; }
+    .new_comment form p textarea {
+      width: 90%;
+      height: 150px;
+      padding: 3px; }
+
+.back {
+  font-family: "lucida grande",verdana,arial,helvetica,sans-serif;
+  font-size: 12px;
+  text-decoration: underline; }
+  .back a {
+    color: #000; }
+    .back a:hover {
+      color: #fff;
+      background: #000; }
+
+#wrapper #sidebar {
+  width: 195px;
+  border-left: 1px dotted #DDDDDD;
+  font-size: 11px;
+  padding-left: 12px;
+  margin-left: 24px; }
+  #wrapper #sidebar h3 {
+    font: bold 14px "lucidamac bold", "lucida grande", verdana, arial, helvetica, sans-serif;
+    margin: 0 0 0.5em; }
+    #wrapper #sidebar h3 a:link, #wrapper #sidebar h3 a:visited {
+      color: #000;
+      text-decoration: none; }
+    #wrapper #sidebar h3 a:hover, #wrapper #sidebar h3 a:active {
+      background: transparent;
+      text-decoration: underline; }
+  #wrapper #sidebar ul {
+    list-style-type: none;
+    margin: 0 0 2em;
+    padding: 0; }
+  #wrapper #sidebar li {
+    margin: 0;
+    padding: 1px 0; }
+  #wrapper #sidebar em {
+    font-style: normal; }
+  #wrapper #sidebar .search p {
+    margin: 0; }
+    #wrapper #sidebar .search p input {
+      font-size: 11px;
+      width: 92%; }
+
+#footer {
+  font-size: 11px;
+  border-top: none;
+  border-bottom: none;
+  background: #fff; }
+  #footer .wrap {
+    border-top: 1px solid #CCCCCC; }
+  #footer a {
+    text-decoration: underline; }
+    #footer a:hover {
+      background: #000;
+      color: #fff; }

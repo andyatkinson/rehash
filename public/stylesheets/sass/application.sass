@@ -21,23 +21,7 @@ a.cancel
   :left 2px
   :top 2px
   :font-weight normal
-//some global styles
-label
-  :color #555
-.form
-  input[type=text],input[type=password]
-    :font-size 1.3em
-    :width 300px
-    :border 1px solid #ccc
-    &:focus
-      :border 1px solid #888
-  textarea
-    :width 400px
-    :height 200px
-    :font-size 1.3em
-    :border 1px solid #ccc
-    &:focus
-      :border 1px solid #666
+
 #flash_notice,
 #flash_error,
 #flash_caution
@@ -128,7 +112,7 @@ form
     :text-shadow 0 -1px 0 #fff
 
 // lists of thumbnails
-.images, .themes
+.images
   :padding 0 0 10px 0
   :position relative
   :left -5px
@@ -143,6 +127,37 @@ form
       a:hover
         img
           :border 3px solid #002b40
+        
+.themes
+  :padding 0 0 10px 0
+  :position relative
+  :left -5px
+  ul
+    li
+      :float left
+      :height 150px
+      :margin 0 10px 20px 0
+      a
+        :display block
+        img
+          :border 3px solid #ddd
+      a:hover
+        img
+          :border 3px solid #002b40
+      .overlay
+        :background #000
+        :opacity .5
+        :height 156px
+        :width 155px
+        :position relative
+        :top -155px
+        .progress
+          :background #000 url(/images/loading.gif) no-repeat top left
+          :height 20px
+          :width 100px
+          :position relative
+          :top 50px
+          :left 54px
 //projects
 .project
   .description
@@ -186,8 +201,6 @@ form
       :font-size 25px
 
 #new_comment
-  p
-    :line-height 20px
   input#comment_submit
     :margin 10px 0
     
@@ -236,10 +249,11 @@ form
 .form
   .left
     :float left
+    :width 400px
   .right
     :padding 10px
     :float right
-    :width 300px
+    :width 270px
     :background #f0f0f0
     :border 1px solid #ddd
     a
