@@ -17,5 +17,7 @@ ActionController::Routing::Routes.draw do |map|
   map.logout 'logout', :controller => 'sessions', :action => 'destroy'
 
   map.root :controller => 'articles', :action => 'index'
+  map.create_contact_form_email '/contact/create_contact_form_email', :controller => "sites", :action => "create_contact_form_email"
+  map.contact '/contact', :controller => "sites", :action => "new_contact_form_email"
   map.page_slug ':id', :controller => 'pages', :action => 'show'
 end

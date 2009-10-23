@@ -9,10 +9,10 @@ Feature: Manage pages
     Given the admin is logged in
 
   Scenario: View a list of pages
-    Given I have pages About, Contact
+    Given I have pages About, Resume
     When I go to the list of pages
     Then I should see "About"
-    And I should see "Contact"
+    And I should see "Resume"
     
   Scenario: Create a new page
     Given I have no pages
@@ -26,7 +26,7 @@ Feature: Manage pages
     And I should have 1 page
     
   Scenario: Edit an existing page
-    Given I have pages About, Contact
+    Given I have pages About, Resume
     When I go to the page About
     And I edit the page About
     And I fill in "Body" with "lorem ipsum"
@@ -36,7 +36,7 @@ Feature: Manage pages
     And I should have 2 pages
     
   Scenario: Delete an existing page
-    Given I have pages About, Contact
+    Given I have pages About, Resume
     When I go to the page About
     Then I delete the page About
     Then I should see "Record deleted!"

@@ -41,6 +41,8 @@ module NavigationHelpers
     when /the page (.+)/
       page = Page.find_by_name($1)
       page_path(page)
+    when /the contact page/
+      contact_path
     when /the home page/
       root_path
     

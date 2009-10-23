@@ -55,4 +55,18 @@ class SitesController < ApplicationController
       }
     end
   end
+  def new_contact_form_email
+  end
+  def create_contact_form_email
+    # would be nice to move these to a non-AR model
+    if params[:sender_name].blank? || params[:email].blank? || params[:message].blank?
+      flash[:error] = "All fields are required"
+      render 'new_contact_form_email'
+    else
+      name, email, message = params[:sender_name], params[:email], params[:message]
+      SiteMailer.deliver_contact_form_email(website, name, email, message)
+      flash[:notice] = "Email sent"
+      redirect_to root_path
+    end
+  end
 end

@@ -20,6 +20,6 @@ Feature: Hide and show certain items
     Then the article Minneapolis should not be found
   
   Scenario: I should not be able to see a list of pages
-    Given I have pages About, Contact
+    Given I have pages About, Resume
     When I go to the list of pages
     Then I should not see "About"

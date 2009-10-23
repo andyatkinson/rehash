@@ -50,6 +50,7 @@
           = link_to t(:projects), projects_path if Project.all.any?
           - for page in Page.released
             = link_to page.name, page_slug_path(page)
+          = link_to t(:contact), contact_path
     #wrapper
       #main
         - flash.each do |name, msg|
