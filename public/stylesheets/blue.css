@@ -72,10 +72,8 @@ label {
   color: #888; }
 
 .pagination {
-  margin: 20px auto;
-  width: 277px;
-  padding-top: 20px;
-  white-space: nowrap; }
+  padding: 20px 0 0 200px;
+  margin: 20px 0; }
   .pagination a, .pagination a:visited, .pagination a:hover {
     color: #10306A; }
   .pagination span.current {
