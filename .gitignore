@@ -11,3 +11,4 @@ config/deployment.yml
 features_rcov/
 tags_db.sqlite3
 public/system
+.cap_tasks~
