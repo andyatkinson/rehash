@@ -23,3 +23,14 @@ Feature: App should send email
     And I fill in "Message" with "I would like to contact you"
     And I press "Send"
     Then I should not see "Message Sent."
+  
+  Scenario: Receive an email for new comments
+    Given I have articles titled Minneapolis, St. Paul
+    When I go to the article titled Minneapolis
+    When I fill in "Name" with "John Doe"
+    And I fill in "Email" with "email@email.com"
+    And I fill in "Body" with "Interesting article!"
+    And I fill in "comment_challenge" with "4"
+    And I press "Save comment"
+    Then I should see "Comment saved"
+    And the site owner should receive an email

@@ -1,16 +1,13 @@
 class ApplicationController < ActionController::Base
+  include SiteHelper
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
   # Scrub sensitive parameters from your log
   filter_parameter_logging :password
   helper_method :admin?, :require_admin
-  helper_method :website
   
   private
-    def website
-      @website ||= Site.first
-    end
     def admin?
       session[:password] == website.hashed_password
     end

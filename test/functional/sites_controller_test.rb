@@ -45,5 +45,19 @@ class SitesControllerTest < ActionController::TestCase
         assert_redirected_to root_path
       end
     end
+    
+    context "using contact form" do
+      should "load contact form for visitors" do
+        Site.any_instance.stubs(:valid?).returns(false)
+        get :new_contact_form_email
+        assert_template 'contact_form_email'
+      end
+      
+      should "allow post to contact form action" do
+        Site.any_instance.stubs(:valid?).returns(false)
+        get :create_contact_form_email
+        assert_response :success
+      end
+    end
   end
 end

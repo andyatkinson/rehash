@@ -63,8 +63,7 @@ class SitesController < ApplicationController
       flash[:error] = "All fields are required"
       render 'new_contact_form_email'
     else
-      name, email, message = params[:sender_name], params[:email], params[:message]
-      SiteMailer.deliver_contact_form_email(website, name, email, message)
+      SiteMailer.deliver_contact_form_email(params[:sender_name], params[:email], params[:message])
       flash[:notice] = "Email sent"
       redirect_to root_path
     end

@@ -1,10 +1,12 @@
 class Comment < ActiveRecord::Base
+  include SiteHelper
   belongs_to :article
   validates_associated :article
   validates_presence_of :name, :body, :email, :article_id
   validates_presence_of :challenge, :on => :create
   validates_format_of :email, :with => Site::EMAIL_REGEX
   validate :article_must_be_published_and_eligible, :correct_challenge_answer
+  after_save :email_site_owner
   
   attr_accessor :challenge
   
@@ -16,5 +18,8 @@ class Comment < ActiveRecord::Base
     def correct_challenge_answer
       return true if !self.new_record? # don't care about update
       errors.add_to_base("Challenge answer incorrect") if challenge.to_i != 4
+    end
+    def email_site_owner
+      SiteMailer.deliver_comment_email(self)
     end
 end

@@ -19,8 +19,11 @@
       %br
       = f.text_field :owner_email
     - if !@site.new_record?
-      %p
-        = "Disable article comments 3 months after posted"
+      %p.quiet
+        = "Disable article commenting after 3 months"
+        = check_box_tag '', '', true, :disabled => true
+      %p.quiet
+        = "Send email to site owner for new comments"
         = check_box_tag '', '', true, :disabled => true
     - unless website.nil?
       %h3= "Choose a theme"
