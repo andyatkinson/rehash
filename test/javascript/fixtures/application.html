@@ -16,5 +16,33 @@
     </form>
   </div>
 
+  <div class='new_comment'>
+    <form action="/articles/first-post/comments" class="form" id="new_comment" method="post"><div style="margin:0;padding:0;display:inline"><input name="authenticity_token" type="hidden" value="+HGj9Ke7+h9ttb/UdrGDP9dLKlE+4MK/GGU+kYsnqjM=" /></div>    
+      <p>
+        <label for="comment_name">Name</label>
+        <br />
+        <input id="comment_name" name="comment[name]" size="30" type="text" />
+      </p>
+      <p>
+        <label for="comment_email">Email (not published)</label>
+        <br />
+        <input id="comment_email" name="comment[email]" size="30" type="text" />
+      </p>
+      <p>
+        <label for="comment_body">Body</label>
+        <br />
+        <textarea cols="40" id="comment_body" name="comment[body]" rows="20"></textarea>
+      </p>
+      <p>
+        <label for="comment_challenge">What is two plus two (as a number)?</label>
+        <br />
+        <input id="comment_challenge" name="comment[challenge]" size="30" type="text" />
+      </p>
+      <p>
+        <input id="comment_submit" name="commit" type="submit" value="Save comment" />
+      </p>
+    </form>
+  </div>
+
 </body>
 </html>

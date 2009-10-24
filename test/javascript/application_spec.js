@@ -1,5 +1,6 @@
 require("spec_helper.js");
 require("../../public/javascripts/search_box.js");
+require("../../public/javascripts/new_comment.js");
 
 Screw.Unit(function(){
   describe("With my search box and default text", function() {
@@ -14,5 +15,10 @@ Screw.Unit(function(){
       expect($('#search #q').val('example text').blur().attr('value')).to(equal, 'example text');
     });
   });
+  
+  describe("Posting a comment", function() {
+    it("should disable button", function() {
+      expect($('#comment_submit').click().attr('disabled')).to(equal, true);
+    });
+  });
 });
-
