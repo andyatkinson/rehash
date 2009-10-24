@@ -6,7 +6,7 @@
     .article
       %h1= link_to h(article.title), article
       .published
-        = h(article.created_at)
+        = h(article.published_on)
         .count= link_to "#{pluralize article.comments.size, 'comment'}", "#{article_path(article)}#comments" if article.comments.any?
       .clear
       .description= h(article.description)

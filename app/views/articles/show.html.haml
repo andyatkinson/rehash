@@ -4,7 +4,7 @@
 
 .article
   %h1= h(@article.title)
-  .published= h(@article.created_at)
+  .published= h(@article.published_on)
   .clear
   .body= @article.body.to_html
 

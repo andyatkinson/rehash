@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   before_filter :find_article, :only => [:show, :edit, :update, :destroy]
   
   def index
-    @articles = Article.ordered.paginate :page => params[:page], :order => 'created_at DESC', :per_page => 5
+    @articles = Article.ordered.paginate :page => params[:page], :per_page => 5
     # BUG published named_scope caused friendly_id problems
     @articles.reject!{|a| !a.published} unless admin?
     respond_to do |format|
@@ -59,14 +59,14 @@ class ArticlesController < ApplicationController
   end
   
   def search
-    @articles = Article.search(params[:q]).paginate :page => params[:page], :order => 'created_at DESC', :per_page => 10
+    @articles = Article.ordered.search(params[:q]).paginate :page => params[:page], :per_page => 10
     @articles.empty? ? flash.now[:error] = "No results" : flash[:notice] = "Found articles for #{params[:q]}"
     render 'index'
   end
   
   def tagged
     # Article.published.find_tagged_with(params[:tag]) does not pass along named scope
-    @articles = Article.find_tagged_with(params[:tag]).paginate :page => params[:page], :order => 'created_at DESC', :per_page => 10
+    @articles = Article.ordered.find_tagged_with(params[:tag]).paginate :page => params[:page], :per_page => 10
     @articles.reject!{|a| !a.published}
     flash.now[:error] = "No results" if @articles.empty?
     flash.now[:notice] = "Articles tagged #{params[:tag]}"
