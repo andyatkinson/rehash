@@ -5,9 +5,9 @@ module ApplicationHelper
   def tag_links_for_article(article)
     links = []
     article.tags.each do |tag|
-      links << link_to(tag.name, tagged_articles_path(:tag => tag.name))
+      links << content_tag(:li, link_to(tag.name, tagged_articles_path(:tag => tag.name)))
     end
-    links
+    "<ul>#{links.join}</ul>"
   end
   
   def article_eligible_for_comments?(article)

@@ -100,27 +100,22 @@ form p {
   font-style: italic;
   color: #555; }
 
-.tags {
-  padding: 20px 0;
-  width: 100%; }
-  .tags li {
-    display: inline;
-    padding: 0 20px 0 0;
-    white-space: nowrap; }
-    .tags li input[type=checkbox] {
-      position: relative;
-      left: -4px;
-      top: 2px; }
-  .tags a, .tags a:visited {
-    font-size: 20px;
-    color: #555;
-    margin: 5px;
-    padding: 4px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    background: #f0f0f0;
-    border: 1px solid #ddd;
-    text-shadow: 0 -1px 0 #fff; }
+.tags li {
+  margin: 20px 0; }
+  .tags li input[type=checkbox] {
+    position: relative;
+    left: -4px;
+    top: 2px; }
+.tags a, .tags a:visited {
+  font-size: 20px;
+  color: #555;
+  margin: 5px;
+  padding: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  text-shadow: 0 -1px 0 #fff; }
 
 .images {
   padding: 0 0 10px 0;
