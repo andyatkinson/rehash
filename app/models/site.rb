@@ -14,7 +14,7 @@ class Site < ActiveRecord::Base
   end
   
   def self.authenticate(pwd)
-    website = Site.first
+    website = Site.first  # TODO replace me with SiteHelper::website method
     website.hashed_password == Site.encrypted_password(pwd) ? true : false
   end
   
