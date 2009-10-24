@@ -23,7 +23,7 @@ label {
   padding-bottom: 15px; }
   .article h1 {
     float: left;
-    font-size: 35px;
+    font-size: 30px;
     margin-right: 10px; }
   .article .published {
     float: right;
@@ -74,7 +74,8 @@ label {
 .pagination {
   margin: 20px auto;
   width: 277px;
-  padding: 10px 0; }
+  padding-top: 20px;
+  white-space: nowrap; }
   .pagination a, .pagination a:visited, .pagination a:hover {
     color: #10306A; }
   .pagination span.current {
