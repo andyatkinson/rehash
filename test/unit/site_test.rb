@@ -10,7 +10,7 @@ class SiteTest < ActiveSupport::TestCase
         %w(foo bar baz).each {|t| Tag.create! :name => t}
       end
       should "have some default tags" do
-        assert_contains %w(foo bar baz).join(','), Site.new.default_tags
+        assert_contains %w(foo bar baz).join(', '), Site.new.default_tags
       end
     end
   end

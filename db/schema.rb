@@ -9,15 +9,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091017220227) do
+ActiveRecord::Schema.define(:version => 20091024063459) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
     t.string   "description"
     t.text     "body"
-    t.boolean  "published",   :default => false
+    t.boolean  "published",    :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "published_on"
   end
 
   create_table "comments", :force => true do |t|
@@ -45,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20091017220227) do
     t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "completed_on"
   end
 
   create_table "sites", :force => true do |t|

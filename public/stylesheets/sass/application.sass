@@ -21,6 +21,8 @@ a.cancel
   :left 2px
   :top 2px
   :font-weight normal
+  &:hover
+    :text-decoration underline
 
 #flash_notice,
 #flash_error,
@@ -327,14 +329,20 @@ form
   :border-top 1px solid #ccc
   :border-bottom 1px solid #ccc
   :background #ddd
-  #page-list, #tag-list, #project-list
+  #page-list, #tag-list, #project-list, #service-list
     h4
       :font-weight normal
+      :padding-bottom 4px
     :float left
     :padding 20px 0
     :width 200px
     a:hover
       :text-decoration underline
+    ul
+      li
+        :margin 2px 0
+  #tag-list, #project-list
+    :width 300px
   #copyright
     :font-size 12px
     :float left
@@ -342,11 +350,11 @@ form
     :font-size 12px
     :float right
     :text-align right
-  #service-list
+  #service-list      
     :float right
     :text-align right
     :padding 20px 0
-    :width 300px
+    :width 150px
     .twitter
       :background url(/images/services/twitter.png) no-repeat top right
     .flickr

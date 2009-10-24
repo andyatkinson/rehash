@@ -22,6 +22,10 @@
     = f.label :duration
     %br
     = f.text_field :duration
+  %p
+    = f.label :completed_on
+    %br
+    = f.date_select :completed_on
   - if !@project.new_record?
     %p= link_to 'Add Upload', new_upload_project_path(@project)
   %p

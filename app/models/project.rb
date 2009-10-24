@@ -5,5 +5,5 @@ class Project < ActiveRecord::Base
   accepts_nested_attributes_for :uploads
   has_friendly_id :name, :use_slug => true
 
-  named_scope :ordered, :order => 'created_at DESC'
+  named_scope :ordered, :order => 'completed_on DESC'
 end

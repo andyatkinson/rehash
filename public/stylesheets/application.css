@@ -26,6 +26,8 @@ a.cancel {
   left: 2px;
   top: 2px;
   font-weight: normal; }
+  a.cancel:hover {
+    text-decoration: underline; }
 
 #flash_notice,
 #flash_error,
@@ -328,14 +330,19 @@ form p {
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   background: #ddd; }
-  #footer #page-list, #footer #tag-list, #footer #project-list {
+  #footer #page-list, #footer #tag-list, #footer #project-list, #footer #service-list {
     float: left;
     padding: 20px 0;
     width: 200px; }
-    #footer #page-list h4, #footer #tag-list h4, #footer #project-list h4 {
-      font-weight: normal; }
-    #footer #page-list a:hover, #footer #tag-list a:hover, #footer #project-list a:hover {
+    #footer #page-list h4, #footer #tag-list h4, #footer #project-list h4, #footer #service-list h4 {
+      font-weight: normal;
+      padding-bottom: 4px; }
+    #footer #page-list a:hover, #footer #tag-list a:hover, #footer #project-list a:hover, #footer #service-list a:hover {
       text-decoration: underline; }
+    #footer #page-list ul li, #footer #tag-list ul li, #footer #project-list ul li, #footer #service-list ul li {
+      margin: 2px 0; }
+  #footer #tag-list, #footer #project-list {
+    width: 300px; }
   #footer #copyright {
     font-size: 12px;
     float: left; }
@@ -347,7 +354,7 @@ form p {
     float: right;
     text-align: right;
     padding: 20px 0;
-    width: 300px; }
+    width: 150px; }
     #footer #service-list .twitter {
       background: url(/images/services/twitter.png) no-repeat top right; }
     #footer #service-list .flickr {

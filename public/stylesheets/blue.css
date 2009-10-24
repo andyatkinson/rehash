@@ -4,7 +4,8 @@ label {
 .form input[type=text], .form input[type=password] {
   font-size: 1.3em;
   width: 250px;
-  border: 1px solid #ccc; }
+  border: 1px solid #ccc;
+  margin: 2px 0; }
   .form input[type=text]:focus, .form input[type=password]:focus {
     border: 1px solid #888; }
 .form textarea {
@@ -70,11 +71,15 @@ label {
 #new_comment label {
   color: #888; }
 
-.pagination a, .pagination a:visited, .pagination a:hover {
-  color: #10306A; }
-.pagination span.current {
-  border: 1px solid #10306A;
-  background: #10306A; }
+.pagination {
+  margin: 20px auto;
+  width: 277px;
+  padding: 10px 0; }
+  .pagination a, .pagination a:visited, .pagination a:hover {
+    color: #10306A; }
+  .pagination span.current {
+    border: 1px solid #10306A;
+    background: #10306A; }
 
 #header {
   background: transparent url(/images/theme/blue_header.png) top left repeat-x;
@@ -90,15 +95,15 @@ label {
 
 #footer {
   background: #ccddea; }
-  #footer #page-list h4, #footer #tag-list h4, #footer #project-list h4 {
+  #footer #page-list h4, #footer #tag-list h4, #footer #project-list h4, #footer #service-list h4 {
     font-weight: bold;
     color: #10306A;
     text-transform: uppercase;
     font-size: 13px; }
-  #footer #page-list a, #footer #tag-list a, #footer #project-list a {
+  #footer #page-list a, #footer #tag-list a, #footer #project-list a, #footer #service-list a {
     color: #3B6AA0;
     text-shadow: 1px 1px 0 #fff; }
-    #footer #page-list a:hover, #footer #tag-list a:hover, #footer #project-list a:hover {
+    #footer #page-list a:hover, #footer #tag-list a:hover, #footer #project-list a:hover, #footer #service-list a:hover {
       text-decoration: none; }
   #footer #copyright {
     color: #3B6AA0;

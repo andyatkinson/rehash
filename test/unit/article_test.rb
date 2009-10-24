@@ -5,4 +5,5 @@ class ArticleTest < ActiveSupport::TestCase
   should_have_many :comments, :tags
   should_allow_values_for :published, false, true
   # TODO test for friendly_id
+  # TODO test for published_on
 end
