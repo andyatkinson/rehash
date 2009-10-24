@@ -19,7 +19,7 @@
       'auto': true,
       'cancelImg': '/images/cancel.png',
       'onComplete': function(event, queueID, fileObj, response, data) {
-        $('form.new_upload').prepend('<p class="success">Upload completed.</p>');
+        $('form.new_upload').prepend('<p class="success">Upload finished!</p>');
       }, 
       'onAllComplete': function(event, data) {
         $('form.new_upload').prepend("<p>Redirecting or <a href='/projects/#{params[:id]}'>click here</a>...</p>");

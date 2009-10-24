@@ -190,6 +190,10 @@ form p {
   padding: 10px 20px; }
   .article .body ul li {
     list-style-type: disc; }
+.article .body ol {
+  padding: 10px 25px; }
+  .article .body ol li {
+    list-style-type: decimal; }
 .article .body h1, .article .body h2 {
   float: none;
   clear: both;
