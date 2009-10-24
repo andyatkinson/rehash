@@ -28,8 +28,10 @@ class SitesController < ApplicationController
   def update
     @site = Site.find(params[:id])
     if @site.update_attributes(params[:site])
-      @site.update_attribute(:hashed_password, Site.encrypted_password(params[:site][:password]))
-      session[:password] = @site.hashed_password
+      if !params[:site][:password].blank?
+        @site.update_attribute(:hashed_password, Site.encrypted_password(params[:site][:password]))
+        session[:password] = @site.hashed_password
+      end
       flash[:notice] = "Site updated!"
       redirect_to root_path
     else

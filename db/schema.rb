@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091024063459) do
+ActiveRecord::Schema.define(:version => 20091024220937) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(:version => 20091024063459) do
     t.string   "theme"
     t.string   "flickr_username"
     t.string   "twitter_username"
+    t.string   "google_analytics_code"
   end
 
   create_table "slugs", :force => true do |t|

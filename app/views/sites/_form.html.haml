@@ -54,6 +54,11 @@
         %span= "Optional"
         %br
         = f.text_field :twitter_username
+      %p
+        = f.label :google_analytics_code, 'Google Analytics'
+        %span= "e.g. UA-14747133-1"
+        %br
+        = f.text_field :google_analytics_code
     #password
       %p
         = f.label :password
