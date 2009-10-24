@@ -106,8 +106,7 @@ form p {
   margin: 20px 0; }
   .tags li input[type=checkbox] {
     position: relative;
-    left: -4px;
-    top: 2px; }
+    left: -4px; }
 .tags a, .tags a:visited {
   font-size: 20px;
   color: #555;
@@ -214,11 +213,19 @@ form p {
   position: relative;
   top: -3px; }
 
+.notice {
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #FFF6BF;
+  border-top: 1px solid #FFD324;
+  border-bottom: 1px solid #FFD324; }
+
 .success {
   padding: 10px;
   margin: 10px 0;
   background-color: #CFC;
-  border: solid 1px #6C6; }
+  border-top: solid 1px #6C6;
+  border-bottom: solid 1px #6C6; }
 
 .admin-links {
   padding: 20px 0; }
@@ -226,10 +233,14 @@ form p {
     padding: 10px;
     background: #000;
     color: #fff;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px; }
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -moz-box-shadow: #555 1px 1px 1px;
+    -webkit-box-shadow: #555 1px 1px 1px;
+    text-shadow: 1px 0px 1px #aaa; }
     .admin-links a:hover {
-      background: #333;
+      background: #222;
+      text-shadow: none;
       text-decoration: none; }
 
 .index .project .images {
@@ -369,3 +380,14 @@ form p {
 .quiet {
   color: #999;
   font-size: 11px; }
+
+.project_form textarea, .pages_form textarea, .articles_form textarea {
+  width: 700px; }
+.project_form a:hover, .pages_form a:hover, .articles_form a:hover {
+  text-decoration: underline; }
+
+.articles_form .tags li {
+  display: inline; }
+
+.contact_form textarea {
+  width: 400px; }

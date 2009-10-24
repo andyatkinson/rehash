@@ -5,6 +5,7 @@
 :javascript
   $(function() {
     $('form.new_upload .buttons').hide();
+    $('form.new_upload').append("<p class='notice'>Tip: Control or command-click multiple files to upload them all at once</p>");
     $("#upload_data").uploadify({
       'uploader': '/flash/uploadify.swf',
       'script': '/projects/#{params[:id]}/create_upload',

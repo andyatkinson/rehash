@@ -1,3 +1,4 @@
+- javascript 'form_submit_button'
 %h2= "Contact #{website.owner_name}"
 %p.required= "All fields are required."
 .contact_form
@@ -15,4 +16,4 @@
       %br
       = text_area_tag :message
     %p
-      = submit_tag "Send"
+      = submit_tag "Send Message", :id => 'form_submit_button'

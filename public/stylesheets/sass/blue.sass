@@ -9,7 +9,6 @@ label
     &:focus
       :border 1px solid #888
   textarea
-    :width 400px
     :height 200px
     :font-size 1.3em
     :border 1px solid #ccc
@@ -76,8 +75,13 @@ label
 .pagination
   :padding 20px 0 0 200px
   :margin 20px 0
-  a,a:visited,a:hover
-    :color #10306A
+  a
+    :border 1px solid #c3deeb
+    :background #fff
+    :color #c3deeb
+    &:hover
+      :border 1px solid #10306A
+      :color #10306A
   span.current
     :border 1px solid #10306A
     :background #10306A

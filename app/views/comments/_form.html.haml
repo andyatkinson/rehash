@@ -1,4 +1,4 @@
-- javascript 'new_comment'
+- javascript 'form_submit_button'
 .new_comment
   - form_for [article, comment], :html => {:class => 'form'} do |f|
     = f.error_messages
@@ -20,4 +20,4 @@
         %br
         = f.text_field :challenge
     %div
-      = f.submit "Save comment"
+      = f.submit "Save comment", :id => 'form_submit_button'

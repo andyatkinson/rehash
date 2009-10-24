@@ -48,7 +48,7 @@ Feature: Manage projects
     When I go to the list of projects
     And I follow "Project One"
     And I edit the project "Project One"
-    When I follow "Add Upload"
+    When I follow "Add Screenshots to project"
     And I attach a file onto "upload_data"
     And I press "Save"
     Then I should see "Upload saved"

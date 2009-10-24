@@ -6,9 +6,9 @@
     %meta{:name => "description", :content => yield(:meta_description) || website.tagline }
     %meta{:name => "keywords", :content => yield(:meta_keywords) || website.default_tags }
     = stylesheet_link_tag 'reset', 'application', 'menu'
-    %link{:href => "/stylesheets/#{h(website.theme || "blue")}.css?#{Time.now.to_i}", :media => 'screen', :rel => 'stylesheet theme', :type => 'text/css'}
     = javascript_include_tag 'jquery-1.3.2.min', 'search_box', 'admin'
     = yield(:head)
+    %link{:href => "/stylesheets/#{h(website.theme || "blue")}.css?#{Time.now.to_i}", :media => 'screen', :rel => 'stylesheet theme', :type => 'text/css'}
   %body
     - if admin?
       #admin-area
@@ -87,7 +87,8 @@
             - for tag in Tag.all
               %li= link_to tag.name, tagged_articles_path(:tag => tag.name)
         #service-list
-          %h4= t(:elsewhere) if website.flickr_username || website.twitter_username
+          - if !website.flickr_username.blank? || !website.twitter_username.blank?
+            %h4= t(:elsewhere)
           %ul
             %li.flickr= link_to website.flickr_username, "http://flickr.com/photos/#{website.flickr_username}" if website.flickr_username
             %li.twitter= link_to website.twitter_username, "http://twitter.com/#{website.twitter_username}" if website.twitter_username
