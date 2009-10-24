@@ -17,8 +17,9 @@ Screw.Unit(function(){
   });
   
   describe("Posting a comment", function() {
-    it("should disable button", function() {
+    it("should disable button and replace text", function() {
       expect($('#comment_submit').click().attr('disabled')).to(equal, true);
+      expect($('#comment_submit').click().val()).to(equal, 'Please wait...');
     });
   });
 });

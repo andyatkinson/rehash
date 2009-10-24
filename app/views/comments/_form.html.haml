@@ -2,22 +2,22 @@
 .new_comment
   - form_for [article, comment], :html => {:class => 'form'} do |f|
     = f.error_messages
-    %p
+    %div
       = f.label :name
       %br
       = f.text_field :name
-    %p
+    %div
       = f.label :email, 'Email (not published)'
       %br
       = f.text_field :email
-    %p
+    %div
       = f.label :body
       %br
       = f.text_area :body
     - if comment.new_record?
-      %p
+      %div
         = f.label :challenge, 'What is two plus two (as a number)?'
         %br
         = f.text_field :challenge
-    %p
+    %div
       = f.submit "Save comment"

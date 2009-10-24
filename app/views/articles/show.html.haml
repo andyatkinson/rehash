@@ -13,9 +13,9 @@
 #comments= render :partial => 'comments/comment', :collection => @article.comments
 - if article_eligible_for_comments?(@article)
   %h3= 'Leave a comment'
-  %p= render 'comments/form', {:article => @article, :comment => @article.comments.build}
+  %div= render 'comments/form', {:article => @article, :comment => @article.comments.build}
 - else
-  %p= "Commenting for this article is closed."
+  %div= "Comments are closed."
 .back= link_to '&larr; Back to Articles', articles_path
   
 - content_for :sidebar do
