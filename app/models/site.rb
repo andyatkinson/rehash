@@ -10,7 +10,7 @@ class Site < ActiveRecord::Base
   attr_accessor :password
 
   def default_tags
-    Tag.all.first(10).join(',')
+    Tag.all.first(10).join(', ')
   end
   
   def self.authenticate(pwd)
