@@ -71,10 +71,11 @@
     #footer
       .wrap
         #page-list
-          %h4= t(:pages) if Page.released.any?
+          %h4= t(:pages)
           %ul
             - for page in Page.released
               %li= link_to page.name, page_slug_path(page)
+            %li= link_to t(:contact), contact_path
         #project-list
           %h4= t(:projects) if Project.all.any?
           %ul
