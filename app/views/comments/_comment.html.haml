@@ -1,8 +1,8 @@
-- div_for comment do
+- div_for comment, :class => "#{'admin' if admin_comment?(comment)}" do
   - if admin?
     %strong= comment.article.title
   %p.author-line
-    = "<span class='name'>#{h(comment.name)}</span> wrote on #{comment.created_at}"
+    = "<span class='name'>#{h(comment.name)}</span> wrote #{time_ago_in_words comment.created_at} ago"
   %p=h comment.body
   - if admin?
     %p.admin-links

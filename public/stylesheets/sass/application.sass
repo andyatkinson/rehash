@@ -38,8 +38,12 @@ a.cancel
 #flash_caution
   :background-color #FFF6BF
   :border solid 1px #FFD324
-.fieldWithErrors
+.fieldWithErrors, .form .fieldWithErrors
   :display inline
+  input[type=text], textarea
+    :border 1px solid #cf0000
+  label
+    :color #cf0000
 #errorExplanation
   :width 400px
   :border 2px solid #CF0000
@@ -98,15 +102,18 @@ form
       :position relative
       :left -4px
   a, a:visited
-    :font-size 20px
+    :font-size 14px
     :color #555
     :margin 5px
     :padding 4px
-    :-webkit-border-radius 4px
-    :-moz-border-radius 4px
+    :-webkit-border-radius 3px
+    :-moz-border-radius 3px
     :background #f0f0f0
-    :border 1px solid #ddd
-    :text-shadow 0 -1px 0 #fff
+    :border 1px solid #bbb
+    :text-shadow 1px 1px 0 #fff
+    :opacity 0.8
+    &:hover
+      :opacity 1
 
 // lists of thumbnails
 .images
@@ -176,6 +183,11 @@ form
       :color #aaa
 .back
   :padding 20px 0
+  :font-family Arial
+  :font-size 13px
+  a
+    &:hover
+      :text-decoration underline
 
 .change_password
   :color #000  
@@ -183,7 +195,7 @@ form
 //styles that exist across all themes
 .article
   p
-    :line-height 16px
+    :line-height 20px
     :margin 15px 0
   .body
     ul
@@ -200,11 +212,6 @@ form
       :padding 10px 0
     h1
       :font-size 25px
-
-#new_comment
-  input#comment_submit
-    :margin 10px 0
-    
 
 .page
   .body
@@ -231,16 +238,15 @@ form
   :padding 20px 0
   a
     :padding 10px
-    :background #000
     :color #fff
     :-webkit-border-radius 4px
     :-moz-border-radius 4px
-    :-moz-box-shadow #555 1px 1px 1px
-    :-webkit-box-shadow #555 1px 1px 1px
-    :text-shadow 1px 0px 1px #aaa
+    :-moz-box-shadow #555 1px 1px 0
+    :-webkit-box-shadow #555 1px 1px 0
+    :opacity 0.8
+    :background #000
     &:hover
-      :background #222
-      :text-shadow none
+      :opacity 1
       :text-decoration none
 .index
   .project
@@ -297,9 +303,6 @@ form
     a
       :padding 3px 4px 6px 6px
       :margin-right 8px
-    a:hover
-      :position relative
-      :top 1px
 .wrap
   :width 960px
   :margin 0 auto
@@ -339,20 +342,19 @@ form
   :border-top 1px solid #ccc
   :border-bottom 1px solid #ccc
   :background #ddd
-  #page-list, #tag-list, #project-list, #service-list
+  #links
+    :width 960px
+    :margin 0 auto
     h4
       :font-weight normal
       :padding-bottom 4px
-    :float left
-    :padding 20px 0
-    :width 200px
-    a:hover
-      :text-decoration underline
-    ul
-      li
-        :margin 2px 0
-  #tag-list, #project-list
-    :width 300px
+    #page-list, #tag-list, #project-list, #service-list
+      :float left
+      :padding 20px 0 20px 40px
+      :width 200px
+      ul
+        li
+          :margin 2px 0
   #copyright
     :font-size 12px
     :float left
@@ -360,20 +362,24 @@ form
     :font-size 12px
     :float right
     :text-align right
-  #service-list      
-    :float right
-    :text-align right
+    a
+      :opacity 0.8
+      &:hover
+        :opacity 1
+  #service-list
+    h4
+    :float left
     :padding 20px 0
-    :width 150px
     .twitter
-      :background url(/images/services/twitter.png) no-repeat top right
+      :background url(/images/services/twitter.png) no-repeat top left
     .flickr
-      :background url(/images/services/flickr.png) no-repeat top right
+      :background url(/images/services/flickr.png) no-repeat top left
     a
       :position relative
-      :right 20px
+      :left 20px
 .required
-  :color #aaa
+  :color #555
+  :padding 3px 0
 .quiet
   :color #999
   :font-size 11px
@@ -388,5 +394,22 @@ form
     li
       :display inline
 .contact_form
+  label
+    :line-height 20px
+    :font-size 14px
   textarea
     :width 400px
+
+.comment
+  .author-line
+    :margin 5px 0
+.comment.admin
+  :background #ffc
+  :border-bottom 1px solid #ff0
+
+.new_comment
+  label
+    :line-height 20px
+    :font-size 14px
+  div
+    :margin 5px 0

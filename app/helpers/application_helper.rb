@@ -13,4 +13,8 @@ module ApplicationHelper
   def article_eligible_for_comments?(article)
     article.published? && (Time.now < (article.created_at + 3.months))
   end
+  
+  def admin_comment?(comment)
+    return true if comment.email == website.owner_email
+  end
 end

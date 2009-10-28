@@ -69,7 +69,7 @@
         = yield(:sidebar)
     .clear
     #footer
-      .wrap
+      #links
         #page-list
           %h4= t(:pages)
           %ul
@@ -92,7 +92,8 @@
           %ul
             %li.flickr= link_to website.flickr_username, "http://flickr.com/photos/#{website.flickr_username}" if website.flickr_username
             %li.twitter= link_to website.twitter_username, "http://twitter.com/#{website.twitter_username}" if website.twitter_username
-        .clear
+      .clear
+      .wrap
         #copyright= "#{website.name} &copy; #{Time.now.year} #{website.owner_name}"
         #powered-by= "<em>#{t(:powered_by)}</em> #{link_to 'rehash', 'http://github.com/webandy/rehash'}"
 - if !website.google_analytics_code.blank?

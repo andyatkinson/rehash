@@ -13,7 +13,7 @@ Feature: App should send email
     And I fill in "Email" with "Visitor email"
     And I fill in "Message" with "I would like to contact you"
     And I press "Send"
-    Then I should see "Email sent"
+    Then I should not see "Error"
     And I should not see "All fields are required"
     
   Scenario: Contact form should prevent incomplete postings
