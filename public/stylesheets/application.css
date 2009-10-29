@@ -395,6 +395,8 @@ form p {
 .articles_form .tags li {
   display: inline; }
 
+.contact_form p {
+  margin: 7px 0; }
 .contact_form label {
   line-height: 20px;
   font-size: 14px; }
