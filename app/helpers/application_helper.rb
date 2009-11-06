@@ -17,4 +17,10 @@ module ApplicationHelper
   def admin_comment?(comment)
     return true if comment.email == website.owner_email
   end
+  
+  def open_id_meta_tags
+    return "" if website.open_id_server.blank? || website.open_id_delegate.blank?
+    "<link rel='openid.server' href='http://#{website.open_id_server}' />\n" +
+      "<link rel='openid.delegate' href='http://#{website.open_id_delegate}' />"
+  end
 end

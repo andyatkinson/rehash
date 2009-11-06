@@ -58,7 +58,17 @@
         = f.label :google_analytics_code, 'Google Analytics'
         %span= "e.g. UA-14747133-1"
         %br
-        = f.text_field :google_analytics_code
+        = f.text_field :open_id_server
+      %p
+        = f.label :open_id_server, 'Open ID server address'
+        %span= "e.g. www.myopenid.com/server"
+        %br
+        = f.text_field :open_id_server
+      %p
+        = f.label :open_id_delegate, 'Open ID delegate address'
+        %span= "e.g. myaccount.myopenid.com/"
+        %br
+        = f.text_field :open_id_delegate
     #password
       %p
         = f.label :password
