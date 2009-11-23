@@ -5,11 +5,9 @@
   - @articles.each do |article|
     .article
       %h1= link_to h(article.title), article
-      .published
-        = h(article.published_on)
-        .count= link_to "#{pluralize article.comments.size, 'comment'}", "#{article_path(article)}#comments" if article.comments.any?
-      .clear
+      .meta= article_metadata(article)
       .description= h(article.description)
-      .clear
+      .read_more= link_to "Read more &rarr;", article
 
-= will_paginate @articles, :class => 'pagination'
+- content_for :pagination_controls do
+  = will_paginate @articles, :class => 'pagination'

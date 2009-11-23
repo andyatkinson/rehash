@@ -4,7 +4,6 @@
     :color #666
   input[type=text],input[type=password]
     :font-size 16px
-    :width 250px
     :border 1px solid #ccc
     :margin 2px 0
     :-moz-border-radius 2px
@@ -13,7 +12,6 @@
       :border 1px solid #888
       :background #ffe
   textarea
-    :height 150px
     :font-size 16px
     :border 1px solid #ccc
     :-moz-border-radius 2px
@@ -24,15 +22,15 @@
 
 .article,.page
   .body
-    :padding 20px 0
 .article
-  :padding-bottom 15px
   h1
-    :float left
     :font-size 30px
     :margin-right 10px
+  .meta
+    :color #888
+    :font-family "georgia"
+    :font-size 13px
   .published
-    :float right
     :color #aaa
     :font-style italic
     :text-align right
@@ -49,16 +47,16 @@
   a
     :color #10306a
   .description
-    :float left
-    :color #888
+    :color #222
+  .read_more
+    a
+      :color #aaa
   h3.author
     :color #aaa
     :margin -20px 0 10px 0
 .index
   .article
     :margin-bottom 20px
-    :border-bottom 1px solid #ddd
-    :padding 15px 0
 
 .comment
   :background #f0f0f0
@@ -70,26 +68,24 @@
     :color #666
     .name
       :color #444
-.new_comment
-  :padding-left 18px
 h3.leave_comment
   :padding 20px 0 7px
   :color #444
 
 .pagination
-  :padding 20px 0 0 200px
-  :margin 20px 0
+  :width 350px
+  :margin 0 auto
   a
-    :border 1px solid #c3deeb
+    :border 1px solid #ddd
     :background #fff
-    :color #c3deeb
+    :color #ddd
     &:hover
-      :border 1px solid #10306A
-      :color #10306A
+      :border 1px solid #aaa
+      :color #aaa
   span.current
-    :text-shadow -1px -1px 0 #777
-    :border 1px solid #C3DEEB
-    :background #C3DEEB
+    :text-shadow -1px -1px 0 #999
+    :border 1px solid #aaa
+    :background #ccc
 
 #header
   :background transparent url(/images/theme/blue_header.png) top left repeat-x
@@ -97,37 +93,68 @@ h3.leave_comment
   a
     :color #fff
   h1
-    :text-shadow 0 -1px 6px #000
+    :text-shadow -2px -1px 0 #000
   h2
-    :text-shadow -1px -1px 1px #000
+    :text-shadow -1px -1px 0 #000033
   #navigation
     a
-      :opacity 0.8
-      :text-shadow 0 -1px 2px #000
+      :font-size 14px
+      :text-transform uppercase
+      :color #ddd
+      :text-shadow -2px -1px 0 #003
     a:hover
-      :opacity 1
+      :text-shadow none
+      :text-decoration underline
+#search_button
+  :display none
+#sidebar
+  h3
+    :text-transform uppercase
+    :font-size 14px
+  .article_meta
+    :font-size 12px
+    .about
+    .author
+      :padding 5px 0
+      :color #555
+      a
+        :color #333
+        :font-weight bold
+        &:hover
+          :text-decoration underline
+    .published
+      :padding 5px 0
+      :color #555
+    .comments
+      a
+        :color #333
+        :font-weight bold
+        &:hover
+          :text-decoration underline
 #footer
-  :background #ccddea
+  :border-top 2px solid #ccc
+  :background #eee
   #page-list, #tag-list, #project-list, #service-list
     h4
       :font-weight bold
-      :color #10306A
+      :color #222
       :text-transform uppercase
       :font-size 13px
+      :text-shadow 1px 1px 0 #fff
   a
-    :color #3B6AA0
+    :font-family Arial
+    :font-size 12px
+    :color #444
     :text-shadow 1px 1px 0 #fff
-    :opacity 0.8
     &:hover
-      :text-decoration none
-      :opacity 1
+      :text-shadow none
+      :text-decoration underline
   #copyright
-    :color #3B6AA0
+    :color #777
     :text-shadow 1px 1px 0 #fff
   #powered-by
-    :color #3B6AA0
+    :color #777
     :text-shadow 1px 1px 0 #fff
     a
-      :font-family Arial
-      :font-weight bold
+      :color 222
       :font-size 13px

@@ -123,7 +123,8 @@ form p {
   text-shadow: 1px 1px 0 #fff;
   opacity: 0.8; }
   .tags a:hover, .tags a:visited:hover {
-    opacity: 1; }
+    opacity: 1;
+    border: 1px solid #999; }
 
 .images {
   padding: 0 0 10px 0;
@@ -306,17 +307,17 @@ form p {
       margin-right: 8px; }
 
 .wrap {
-  width: 960px;
+  width: 860px;
   margin: 0 auto; }
 
 #wrapper {
   padding-top: 15px;
-  width: 960px;
+  width: 860px;
   margin: 0 auto; }
   #wrapper #main {
     background: #fff;
     float: left;
-    width: 720px; }
+    width: 620px; }
     #wrapper #main .create {
       padding: 10px 0; }
       #wrapper #main .create a:hover {
@@ -327,17 +328,32 @@ form p {
     float: left;
     width: 200px; }
     #wrapper #sidebar #feed {
-      padding: 30px 0; }
+      padding: 15px 0; }
+      #wrapper #sidebar #feed p {
+        text-transform: uppercase;
+        font-size: 11px; }
+      #wrapper #sidebar #feed img {
+        width: 30px; }
     #wrapper #sidebar #search {
+      padding: 15px 0;
       white-space: nowrap; }
       #wrapper #sidebar #search #q {
+        background: #efefef;
         width: 140px;
-        font-size: 16px;
-        letter-spacing: -1px; }
+        font-size: 14px;
+        letter-spacing: -0.1px;
+        font-family: Arial;
+        border: 1px solid #ccc;
+        padding: 2px;
+        text-shadow: 1px 1px 0 #fff; }
       #wrapper #sidebar #search input[type="submit"] {
         position: relative;
-        left: 2px;
+        left: 1px;
         top: -2px; }
+
+#pagination_controls {
+  width: 860px;
+  margin: 0 auto; }
 
 #footer {
   margin-top: 20px;
@@ -346,7 +362,7 @@ form p {
   border-bottom: 1px solid #ccc;
   background: #ddd; }
   #footer #links {
-    width: 960px;
+    width: 860px;
     margin: 0 auto; }
     #footer #links h4 {
       font-weight: normal;
@@ -354,7 +370,7 @@ form p {
     #footer #links #page-list, #footer #links #tag-list, #footer #links #project-list, #footer #links #service-list {
       float: left;
       padding: 20px 0 20px 40px;
-      width: 200px; }
+      width: 175px; }
       #footer #links #page-list ul li, #footer #links #tag-list ul li, #footer #links #project-list ul li, #footer #links #service-list ul li {
         margin: 2px 0; }
   #footer #copyright {
@@ -364,10 +380,6 @@ form p {
     font-size: 12px;
     float: right;
     text-align: right; }
-    #footer #powered-by a {
-      opacity: 0.8; }
-      #footer #powered-by a:hover {
-        opacity: 1; }
   #footer #service-list {
     float: left;
     padding: 20px 0; }
@@ -388,7 +400,8 @@ form p {
   font-size: 11px; }
 
 .project_form textarea, .pages_form textarea, .articles_form textarea {
-  width: 700px; }
+  width: 600px;
+  height: 200px; }
 .project_form a:hover, .pages_form a:hover, .articles_form a:hover {
   text-decoration: underline; }
 
@@ -415,3 +428,10 @@ form p {
   font-size: 14px; }
 .new_comment div {
   margin: 5px 0; }
+.new_comment input[type=text] {
+  width: 200px; }
+.new_comment #comment_body {
+  width: 300px;
+  height: 100px; }
+.new_comment #comment_challenge {
+  width: 50px; }

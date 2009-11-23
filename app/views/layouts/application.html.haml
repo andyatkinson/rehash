@@ -23,7 +23,7 @@
                 = link_to t(:nav_new), '#', :class => 'heading'
                 %ul
                   %li
-                    = link_to t(:nav_article), new_article_path, :class => 'first'
+                    = link_to t(:nav_article), new_article_path, :class => 'first', :id => 'new_article'
                     = link_to t(:nav_page), new_page_path
                     = link_to t(:nav_project), new_project_path
                     = link_to t(:nav_tag), new_tag_path, :class => 'last'
@@ -61,14 +61,18 @@
         
         = yield
       #sidebar
+        = yield(:sidebar)
         #search
           - form_tag search_path, :method => 'get' do
             = text_field_tag :q, t(:search_box_text)
-            = submit_tag t(:search_button), :name => nil
+            = submit_tag t(:search_button), :name => nil, :id => 'search_button'
           .clear
-        #feed= link_to image_tag('feed.png', :title => 'Subscribe to this site'), feed_path
-        = yield(:sidebar)
+        #feed
+          %p= "Subscribe"
+          %br/
+          = link_to image_tag('feed.png', :title => 'Subscribe to the articles'), feed_path
     .clear
+    #pagination_controls= yield(:pagination_controls)
     #footer
       #links
         #page-list

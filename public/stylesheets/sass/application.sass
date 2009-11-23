@@ -114,6 +114,7 @@ form
     :opacity 0.8
     &:hover
       :opacity 1
+      :border 1px solid #999
 
 // lists of thumbnails
 .images
@@ -304,16 +305,16 @@ form
       :padding 3px 4px 6px 6px
       :margin-right 8px
 .wrap
-  :width 960px
+  :width 860px
   :margin 0 auto
 #wrapper
   :padding-top 15px
-  :width 960px
+  :width 860px
   :margin 0 auto
   #main
     :background #fff
     :float left
-    :width 720px
+    :width 620px
     .create
       :padding 10px 0
       a:hover
@@ -325,17 +326,31 @@ form
     :float left
     :width 200px
     #feed
-      :padding 30px 0
+      :padding 15px 0
+      p
+        :text-transform uppercase
+        :font-size 11px
+      img
+        :width 30px
     #search
+      :padding 15px 0
       :white-space nowrap
       #q
+        :background #efefef
         :width 140px
-        :font-size 16px
-        :letter-spacing -1px
+        :font-size 14px
+        :letter-spacing -0.1px
+        :font-family Arial
+        :border 1px solid #ccc
+        :padding 2px
+        :text-shadow 1px 1px 0 #fff
       input[type="submit"]
         :position relative
-        :left 2px
+        :left 1px
         :top -2px
+#pagination_controls
+  :width 860px
+  :margin 0 auto
 #footer
   :margin-top 20px
   :padding 0px 0px 30px 0
@@ -343,7 +358,7 @@ form
   :border-bottom 1px solid #ccc
   :background #ddd
   #links
-    :width 960px
+    :width 860px
     :margin 0 auto
     h4
       :font-weight normal
@@ -351,7 +366,7 @@ form
     #page-list, #tag-list, #project-list, #service-list
       :float left
       :padding 20px 0 20px 40px
-      :width 200px
+      :width 175px
       ul
         li
           :margin 2px 0
@@ -363,9 +378,7 @@ form
     :float right
     :text-align right
     a
-      :opacity 0.8
       &:hover
-        :opacity 1
   #service-list
     h4
     :float left
@@ -385,7 +398,8 @@ form
   :font-size 11px
 .project_form, .pages_form, .articles_form
   textarea
-    :width 700px
+    :width 600px
+    :height 200px
   a
     &:hover
       :text-decoration underline
@@ -415,3 +429,10 @@ form
     :font-size 14px
   div
     :margin 5px 0
+  input[type=text]
+    :width 200px
+  #comment_body
+    :width 300px
+    :height 100px
+  #comment_challenge
+    :width 50px

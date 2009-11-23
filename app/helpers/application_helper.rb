@@ -23,4 +23,12 @@ module ApplicationHelper
     "<link rel='openid.server' href='http://#{website.open_id_server}' />\n" +
       "<link rel='openid.delegate' href='http://#{website.open_id_delegate}' />"
   end
+  
+  def article_metadata(article)
+    html = ""
+    html << "Written by #{link_to website.owner_name, contact_path}"
+    html << " on #{article.published_on}" if article.published?
+    html << ' ' << link_to(pluralize(article.comments.size, 'comment'), "#{article_path(article)}#comments") if article.comments.any?
+    html
+  end
 end

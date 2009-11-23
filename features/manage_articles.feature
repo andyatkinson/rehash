@@ -21,7 +21,7 @@ Feature: Manage Articles
   Scenario: Create Valid Article
     Given I have no articles
     Given I am on the list of articles
-    When I follow "Article"
+    When I follow "new_article"
     And I fill in "Title" with "Minneapolis"
     And I fill in "Body" with "Minneapolis is a great city!"
     And I check "Published"

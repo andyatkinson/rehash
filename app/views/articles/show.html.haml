@@ -4,7 +4,6 @@
 
 .article
   %h1= h(@article.title)
-  .published= h(@article.published_on)
   .clear
   .body= @article.body.to_html
 
@@ -16,12 +15,19 @@
   %div= render 'comments/form', {:article => @article, :comment => @article.comments.build}
 - else
   %div= "Comments are closed."
-.back= link_to '&larr; Back to Articles', articles_path
   
 - content_for :sidebar do
-  - if @article.tags.any?
-    %h3= "Tags for #{@article.title}"
-    .tags= tag_links_for_article(@article)
+  .article_meta
+    %h3= "About this article"
+    .author
+      = "Author"
+      %br/
+      = link_to website.owner_name, contact_path
+    .published= "Published #{@article.published_on}"
+    .comments= link_to pluralize(@article.comments.size, 'comment'), '#comments'
+    - if @article.tags.any?
+      %h3.tags= "Tags for #{@article.title}"
+      .tags= tag_links_for_article(@article)
   - if admin?
     %p.admin-links
       = link_to 'Edit', edit_article_path(@article), :id => "edit_article_#{@article.id}"
