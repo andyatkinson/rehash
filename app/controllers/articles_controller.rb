@@ -60,7 +60,7 @@ class ArticlesController < ApplicationController
   
   def search
     @articles = Article.ordered.search(params[:q]).paginate :page => params[:page], :per_page => 10
-    @articles.empty? ? flash.now[:error] = "No results" : flash[:notice] = "Found articles for #{params[:q]}"
+    @articles.empty? ? flash.now[:error] = "No results" : flash.now[:notice] = "Found articles for #{params[:q]}"
     render 'index'
   end
   

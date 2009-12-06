@@ -31,4 +31,10 @@ module ApplicationHelper
     html << ' ' << link_to(pluralize(article.comments.size, 'comment'), "#{article_path(article)}#comments") if article.comments.any?
     html
   end
+  
+  def truncated_project_description(project)
+    html = truncate(project.description.gsub(/<\/?[^>]*>/,  ""), 200)
+    html += link_to " more...", project
+    html
+  end
 end

@@ -7,7 +7,7 @@
       %h1= link_to h(article.title), article
       .meta= article_metadata(article)
       .description= h(article.description)
-      .read_more= link_to "Read more &rarr;", article
+      .read_more= link_to "Read article &rarr;", article
 
 - content_for :pagination_controls do
   = will_paginate @articles, :class => 'pagination'

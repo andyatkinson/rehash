@@ -26,7 +26,7 @@
     .published= "Published #{@article.published_on}"
     .comments= link_to pluralize(@article.comments.size, 'comment'), '#comments'
     - if @article.tags.any?
-      %h3.tags= "Tags for #{@article.title}"
+      %h3.tagged= "Tagged"
       .tags= tag_links_for_article(@article)
   - if admin?
     %p.admin-links

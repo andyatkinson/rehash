@@ -20,13 +20,14 @@
       border: 1px solid #666;
       background: #ffe; }
 
+.article .body, .page .body {
+  font-family: "georgia"; }
 
 .article h1 {
   font-size: 30px;
   margin-right: 10px; }
 .article .meta {
   color: #888;
-  font-family: "georgia";
   font-size: 13px; }
 .article .published {
   color: #aaa;
@@ -44,8 +45,11 @@
 .article a {
   color: #10306a; }
 .article .description {
-  color: #222; }
+  font-family: "georgia";
+  color: #555;
+  padding: 4px 0; }
 .article .read_more a {
+  font-size: 13px;
   color: #aaa; }
 .article h3.author {
   color: #aaa;
@@ -96,7 +100,7 @@ h3.leave_comment {
   #header #navigation a {
     font-size: 14px;
     text-transform: uppercase;
-    color: #ddd;
+    color: #fff;
     text-shadow: -2px -1px 0 #003; }
   #header #navigation a:hover {
     text-shadow: none;
@@ -126,6 +130,8 @@ h3.leave_comment {
     font-weight: bold; }
     #sidebar .article_meta .comments a:hover {
       text-decoration: underline; }
+  #sidebar .article_meta .tagged {
+    padding-top: 20px; }
 
 #footer {
   border-top: 2px solid #ccc;

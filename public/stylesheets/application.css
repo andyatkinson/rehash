@@ -91,9 +91,6 @@ pre {
   pre code {
     border: none; }
 
-h3 {
-  margin: 10px 0; }
-
 form span {
   color: #aaa; }
 form p {
@@ -239,21 +236,21 @@ form p {
 .admin-links {
   padding: 20px 0; }
   .admin-links a {
-    padding: 10px;
+    font-size: 14px;
+    padding: 7px;
     color: #fff;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
-    -moz-box-shadow: #555 1px 1px 0;
-    -webkit-box-shadow: #555 1px 1px 0;
-    opacity: 0.8;
-    background: #000; }
+    background: #444;
+    text-shadow: -1px -1px 0 #000; }
     .admin-links a:hover {
-      opacity: 1;
-      text-decoration: none; }
+      background: #000;
+      text-decoration: none;
+      text-shadow: none; }
 
 .index .project .images {
   float: left;
-  width: 300px; }
+  width: 600px; }
 .index .project h1 {
   font-size: 30px;
   padding: 20px 0; }
@@ -268,15 +265,19 @@ form p {
 
 .form .left {
   float: left;
-  width: 400px; }
+  width: 350px; }
+  .form .left input[type=text] {
+    width: 250px; }
 .form .right {
   padding: 10px;
   float: right;
-  width: 270px;
+  width: 240px;
   background: #f0f0f0;
   border: 1px solid #ddd; }
   .form .right a {
     color: #bbb; }
+  .form .right input[type=text] {
+    width: 200px; }
 
 #header {
   height: 116px;

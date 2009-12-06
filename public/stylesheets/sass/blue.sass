@@ -22,13 +22,13 @@
 
 .article,.page
   .body
+    :font-family "georgia"
 .article
   h1
     :font-size 30px
     :margin-right 10px
   .meta
     :color #888
-    :font-family "georgia"
     :font-size 13px
   .published
     :color #aaa
@@ -47,9 +47,12 @@
   a
     :color #10306a
   .description
-    :color #222
+    :font-family "georgia"
+    :color #555
+    :padding 4px 0
   .read_more
     a
+      :font-size 13px
       :color #aaa
   h3.author
     :color #aaa
@@ -100,7 +103,7 @@ h3.leave_comment
     a
       :font-size 14px
       :text-transform uppercase
-      :color #ddd
+      :color #fff
       :text-shadow -2px -1px 0 #003
     a:hover
       :text-shadow none
@@ -131,6 +134,8 @@ h3.leave_comment
         :font-weight bold
         &:hover
           :text-decoration underline
+    .tagged
+      :padding-top 20px
 #footer
   :border-top 2px solid #ccc
   :background #eee
