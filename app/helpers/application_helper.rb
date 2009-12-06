@@ -28,7 +28,7 @@ module ApplicationHelper
     html = ""
     html << "Written by #{link_to website.owner_name, contact_path}"
     html << " on #{article.published_on}" if article.published?
-    html << ' ' << link_to(pluralize(article.comments.size, 'comment'), "#{article_path(article)}#comments") if article.comments.any?
+    html << ' ' << link_to(pluralize(article.comments.count, 'comment'), "#{article_path(article)}#comments") if article.comments.any?
     html << "<br/>Tagged #{article.tag_list}" unless article.tag_list.blank?
     html
   end

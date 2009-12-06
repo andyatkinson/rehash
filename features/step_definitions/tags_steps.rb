@@ -13,7 +13,7 @@ end
 
 Then /^article (.+) should have (\d) tags?$/ do |title, count|
   a = Article.find_by_title(title)
-  assert count, a.tag_list.size
+  assert count, a.tag_list.count
 end
 
 Then /^I check tag (.+)$/ do |name|
