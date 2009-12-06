@@ -5,7 +5,7 @@ module ApplicationHelper
   def tag_links_for_article(article)
     links = []
     article.tags.each do |tag|
-      links << content_tag(:li, link_to(tag.name, tagged_articles_path(:tag => tag.name)))
+      links << content_tag(:li, link_to(tag.name, tagged_articles_path(:tag => tag.name), :title => "Search articles tagged #{tag}"))
     end
     "<ul>#{links.join}</ul>"
   end
@@ -29,12 +29,13 @@ module ApplicationHelper
     html << "Written by #{link_to website.owner_name, contact_path}"
     html << " on #{article.published_on}" if article.published?
     html << ' ' << link_to(pluralize(article.comments.size, 'comment'), "#{article_path(article)}#comments") if article.comments.any?
+    html << "<br/>Tagged #{article.tag_list}" unless article.tag_list.blank?
     html
   end
   
   def truncated_project_description(project)
     html = truncate(project.description.gsub(/<\/?[^>]*>/,  ""), 200)
-    html += link_to " more...", project
+    html += link_to " Read full project description &rarr;", project
     html
   end
 end
