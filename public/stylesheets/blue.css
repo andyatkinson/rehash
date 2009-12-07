@@ -76,6 +76,7 @@
       text-transform: uppercase;
       color: #222; }
   .comment .details .body {
+    overflow: hidden;
     width: 500px;
     font-family: georgia;
     line-height: 18px; }
