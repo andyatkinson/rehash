@@ -72,6 +72,8 @@ a.cancel
 code
   :background #EEEEFF
   :border 1px solid #DDDDDD
+  :font-weight bold
+  :text-shadow 1px 1px 0 #fff
 pre
   :padding 10px
   :overflow auto
@@ -259,7 +261,6 @@ form
       :float left
       :font-style italic
       :color #aaa
-      :width 350px
     p
       :padding 6px 0
       :line-height 16px
@@ -338,12 +339,12 @@ form
       :padding 15px 0
       :white-space nowrap
       #q
-        :background #efefef
+        :background #F0F0F0
         :width 140px
         :font-size 14px
         :letter-spacing -0.1px
         :font-family Arial
-        :border 1px solid #ccc
+        :border 1px solid #bbb
         :padding 2px
         :text-shadow 1px 1px 0 #fff
       input[type="submit"]
@@ -353,6 +354,20 @@ form
 #pagination_controls
   :width 860px
   :margin 0 auto
+  .pagination
+    :width 350px
+    :margin 0 auto
+    a
+      :border 1px solid #ddd
+      :background #fff
+      :color #ddd
+      &:hover
+        :border 1px solid #aaa
+        :color #aaa
+    span.current
+      :text-shadow -1px -1px 0 #999
+      :border 1px solid #aaa
+      :background #ccc
 #footer
   :margin-top 20px
   :padding 0px 0px 30px 0

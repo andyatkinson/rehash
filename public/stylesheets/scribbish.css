@@ -32,6 +32,9 @@ body {
         background: #000;
         color: #fff; }
 
+.pagination {
+  font-family: "lucida grande",verdana,arial,helvetica,sans-serif; }
+
 .article {
   padding: 10px 0; }
   .article .body {
@@ -44,8 +47,10 @@ body {
     line-height: 99%;
     letter-spacing: -1.5px;
     font-size: 30px; }
-    .article h1:hover {
-      text-decoration: underline; }
+    .article h1 a {
+      color: #993300; }
+      .article h1 a:hover {
+        text-decoration: underline; }
   .article .description {
     background: #eee;
     border: 1px solid #DDDDDD;
@@ -57,14 +62,22 @@ body {
     color: #A9A9A9;
     line-height: 14px;
     letter-spacing: -1px; }
-  .article .meta h3 {
-    border-bottom: 1px dotted #AAAAAA;
+  .article .meta {
+    color: #bbb;
     letter-spacing: -1px;
-    font-family: georgia,times;
-    font-size: 20px;
-    margin: 1.2em 0 0.3em;
-    font-weight: normal;
-    background: #ffd; }
+    line-height: 14px;
+    margin: 0 0 1em;
+    font-family: "lucidamac bold","lucida grande",arial,verdana,sans-serif; }
+    .article .meta h3 {
+      border-bottom: 1px dotted #AAAAAA;
+      letter-spacing: -1px;
+      font-family: georgia,times;
+      font-size: 20px;
+      margin: 1.2em 0 0.3em;
+      font-weight: normal;
+      background: #ffd; }
+  .article .read_more {
+    display: none; }
 
 .new_comment form {
   width: 662px;
@@ -124,6 +137,8 @@ body {
     #wrapper #sidebar .search p input {
       font-size: 11px;
       width: 92%; }
+  #wrapper #sidebar #search #q {
+    background: #fff; }
 
 #footer {
   font-size: 11px;
@@ -137,3 +152,7 @@ body {
     #footer a:hover {
       background: #000;
       color: #fff; }
+  #footer #copyright, #footer #powered-by {
+    padding-top: 10px; }
+  #footer #service-list ul li {
+    padding: 2px 0; }

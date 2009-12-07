@@ -12,35 +12,36 @@
     %link{:href => "/stylesheets/#{h(website.theme || "blue")}.css?#{Time.now.to_i}", :media => 'screen', :rel => 'stylesheet theme', :type => 'text/css'}
   %body
     - if admin?
-      #admin-area
-        .wrap
-          %span.logout= link_to 'Logout', logout_path
-          .menu
-            %ul
-              %li
-                = link_to t(:nav_home), root_path, :class => 'heading last'
-              %li
-                = link_to t(:nav_new), '#', :class => 'heading'
-                %ul
-                  %li
-                    = link_to t(:nav_article), new_article_path, :class => 'first', :id => 'new_article'
-                    = link_to t(:nav_page), new_page_path
-                    = link_to t(:nav_project), new_project_path
-                    = link_to t(:nav_tag), new_tag_path, :class => 'last'
-              %li
-                = link_to t(:nav_edit), '#', :class => 'heading'
-                %ul
-                  %li
-                    = link_to t(:nav_site), edit_site_path(website), :id => 'edit_site', :class => 'first last'
-              %li
-                = link_to t(:nav_view), '#', :class => 'heading'
-                %ul
-                  %li
-                    = link_to t(:nav_articles), articles_path, :class => 'first'
-                    = link_to t(:nav_comments), comments_path
-                    = link_to t(:nav_pages), pages_path
-                    = link_to t(:nav_projects), projects_path
-                    = link_to t(:nav_tags), tags_path, :class => 'last'
+      #top-bar
+        #admin-area
+          .wrap
+            .right_side= "rehash admin menu &#8212; #{link_to 'Logout', logout_path}"
+            .menu
+              %ul
+                %li
+                  = link_to t(:nav_home), root_path, :class => 'heading last'
+                %li
+                  = link_to t(:nav_new), '#', :class => 'heading'
+                  %ul
+                    %li
+                      = link_to t(:nav_article), new_article_path, :class => 'first', :id => 'new_article'
+                      = link_to t(:nav_page), new_page_path
+                      = link_to t(:nav_project), new_project_path
+                      = link_to t(:nav_tag), new_tag_path, :class => 'last'
+                %li
+                  = link_to t(:nav_edit), '#', :class => 'heading'
+                  %ul
+                    %li
+                      = link_to t(:nav_site), edit_site_path(website), :id => 'edit_site', :class => 'first last'
+                %li
+                  = link_to t(:nav_view), '#', :class => 'heading'
+                  %ul
+                    %li
+                      = link_to t(:nav_articles), articles_path, :class => 'first'
+                      = link_to t(:nav_comments), comments_path
+                      = link_to t(:nav_pages), pages_path
+                      = link_to t(:nav_projects), projects_path
+                      = link_to t(:nav_tags), tags_path, :class => 'last'
     #header
       .wrap
         #name

@@ -7,7 +7,7 @@ Given /^I have a site "([^\"]*)"$/ do |name|
 end
 
 When /^I choose a new theme$/ do
-  visit change_theme_site_path(:theme_name => 'basic')
+  visit change_theme_site_path(:theme_name => 'scribbish')
 end
 
 When /^I log out$/ do

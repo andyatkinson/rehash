@@ -34,6 +34,8 @@ body
         :background #000
         :color #fff
 
+.pagination
+  :font-family "lucida grande",verdana,arial,helvetica,sans-serif
 .article
   :padding 10px 0
   .body
@@ -47,8 +49,9 @@ body
     :letter-spacing -1.5px
     :font-size 30px
     a
-    &:hover
-      :text-decoration underline
+      :color #993300
+      &:hover
+        :text-decoration underline
   .description
     :background #eee
     :border 1px solid #DDDDDD
@@ -61,6 +64,11 @@ body
     :line-height 14px
     :letter-spacing -1px
   .meta
+    :color #bbb
+    :letter-spacing -1px
+    :line-height 14px
+    :margin 0 0 1em
+    :font-family "lucidamac bold","lucida grande",arial,verdana,sans-serif
     h3
       :border-bottom 1px dotted #AAAAAA
       :letter-spacing -1px
@@ -69,6 +77,8 @@ body
       :margin 1.2em 0 0.3em
       :font-weight normal
       :background #ffd
+  .read_more
+    :display none
 
 .new_comment
   form
@@ -131,15 +141,24 @@ body
       input
         font-size: 11px
         width: 92%
+    #search
+      #q
+        :background #fff
 #footer
   :font-size 11px
   :border-top none
-  .wrap
-    :border-top 1px solid #CCCCCC
   :border-bottom none
   :background #fff
+  .wrap
+    :border-top 1px solid #CCCCCC
   a
     :text-decoration underline
     &:hover
       :background #000
       :color #fff
+  #copyright, #powered-by
+    :padding-top 10px
+  #service-list
+    ul
+      li
+        :padding 2px 0

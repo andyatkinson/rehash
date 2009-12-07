@@ -1,110 +1,119 @@
 /*admin area links*/
-#admin-area
+#top-bar
   :height 46px
-  :background url(/images/admin_navigation_background.png) repeat-x top left
-  :border-bottom 1px solid #aaa
-  .logout
-    :float right
-    :position relative
-    :top 15px
-    a
-      :color #333
-      :text-shadow 1px 1px 0 #fff
-    a:hover
-      :color #111
-      :text-shadow none
-  .menu
-    :z-index 1
-    .heading
-      :-moz-border-radius 4px
-      :-webkit-border-radius 4px
-    .last
-      :-moz-border-radius-bottomleft 4px
-      :-moz-border-radius-bottomright 4px
-      :-webkit-border-bottom-left-radius 4px
-      :-webkit-border-bottom-right-radius 4px
-    :position relative
-    :top 12px
-    ul
-      padding: 0
-      margin: 0
-      list-style: none
-      :-moz-box-shadow #333 2px 2px 4px
-      :-webkit-box-shadow #333 2px 2px 4px
-      li
-        :margin-right 5px
-        float: left
-        position: relative
-        a
-          display: block
-          width: 95px
-          height: 23px
-          text-align: center
-          background: #efefef
-          text-shadow: 1px 1px 0 #fff
-          border:1px solid #eee
-          line-height: 22px
-          font-size: 14px
-          overflow: hidden
-          &:visited
-            display: block
-            text-decoration: none
-            color: #000
-            width: 93px
-            height: 20px
-            text-align: center
-            border: 1px solid #fff
-            line-height: 20px
-        ul
-          display: none
-        &:hover
+  #admin-area
+    :z-index 9999
+    :position fixed
+    :top 0px
+    :left 0px
+    :width 100%
+    :height 46px
+    :background url(/images/admin_navigation_background.png) repeat-x top left
+    :border-bottom 1px solid #aaa
+    .right_side
+      :float right
+      :position relative
+      :top 15px
+      :font-size 14px
+      :font-family Arial
+      :color #000
+      a
+        :color #333
+        :text-shadow 1px 1px 0 #fff
+      a:hover
+        :color #111
+        :text-shadow none
+    .menu
+      .heading
+        :-moz-border-radius 4px
+        :-webkit-border-radius 4px
+      .last
+        :-moz-border-radius-bottomleft 4px
+        :-moz-border-radius-bottomright 4px
+        :-webkit-border-bottom-left-radius 4px
+        :-webkit-border-bottom-right-radius 4px
+      :position relative
+      :top 12px
+      ul
+        padding: 0
+        margin: 0
+        list-style: none
+        :-moz-box-shadow #333 2px 2px 4px
+        :-webkit-box-shadow #333 2px 2px 4px
+        li
+          :margin-right 5px
+          float: left
+          position: relative
           a
-            :text-shadow -1px -1px 0 #fff
-            color: #fff
-            background: #000
-          a.heading
-            :text-shadow 1px 1px 0 #555
-          a.heading.last
-            :border 1px solid #000
-          ul
             display: block
-            position: absolute
-            top: 21px
-            left: 0
-            width: 93px
-            li
-              a.hide
-                background: #aaa
-                color: #fff
-              &:hover a.hide
-                background: #ccc
-                color: #000
-              ul
-                display: none
-              a
-                :border-bottom 1px solid #ddd
-                display: block
-                background: #eee
-                color: #888
-                :text-shadow 2px 2px 0 #fff
-                &:hover
-                  :text-shadow 1px 1px 0 #000
-                  background: #555
+            width: 95px
+            height: 23px
+            text-align: center
+            background: #efefef
+            text-shadow: 1px 1px 0 #fff
+            border:1px solid #eee
+            line-height: 22px
+            font-size: 14px
+            overflow: hidden
+            &:visited
+              display: block
+              text-decoration: none
+              color: #000
+              width: 93px
+              height: 20px
+              text-align: center
+              border: 1px solid #fff
+              line-height: 20px
+          ul
+            display: none
+          &:hover
+            a
+              :text-shadow -1px -1px 0 #fff
+              color: #fff
+              background: #000
+            a.heading
+              :text-shadow 1px 1px 0 #555
+            a.heading.last
+              :border 1px solid #000
+            ul
+              display: block
+              position: absolute
+              top: 21px
+              left: 0
+              width: 93px
+              li
+                a.hide
+                  background: #aaa
                   color: #fff
-              a.last
-                :width 95px
-                :border-left #555
-                :border-right #555
-                :border-bottom #555
-              a.first
-                :width 95px
-                :border-left #555
-                :border-right #555
-                :border-top #555
-              &:hover ul
-                display: block
-                position: absolute
-                left: 93px
-                top: 0
-                &.left
-                  left: -105px
+                &:hover a.hide
+                  background: #ccc
+                  color: #000
+                ul
+                  display: none
+                a
+                  :border-bottom 1px solid #ddd
+                  display: block
+                  background: #eee
+                  color: #888
+                  :text-shadow 2px 2px 0 #fff
+                  &:hover
+                    :text-shadow 1px 1px 0 #000
+                    background: #555
+                    color: #fff
+                a.last
+                  :width 95px
+                  :border-left #555
+                  :border-right #555
+                  :border-bottom #555
+                a.first
+                  :width 95px
+                  :border-left #555
+                  :border-right #555
+                  :border-top #555
+                &:hover ul
+                  display: block
+                  position: absolute
+                  left: 93px
+                  top: 0
+                  &.left
+                    left: -105px
