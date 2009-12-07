@@ -54,6 +54,8 @@
 .article .read_more a {
   font-size: 13px;
   color: #aaa; }
+  .article .read_more a:hover {
+    text-decoration: underline; }
 .article h3.author {
   color: #aaa;
   margin: -20px 0 10px 0; }
@@ -68,9 +70,17 @@
   padding: 20px; }
   .comment .author-line {
     font-size: 14px;
-    color: #666; }
+    color: #444; }
     .comment .author-line .name {
-      color: #444; }
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #222; }
+  .comment .details .body {
+    width: 500px;
+    font-family: georgia;
+    line-height: 18px; }
+    .comment .details .body a {
+      font-weight: bold; }
 
 h3.leave_comment {
   padding: 20px 0 7px;
@@ -108,7 +118,8 @@ h3.leave_comment {
     padding: 2px 2px 0 2px;
     border: 1px solid #ccc;
     -webkit-border-radius: 2px;
-    -moz-border-radius: 2px; }
+    -moz-border-radius: 2px;
+    background: #fff; }
   #sidebar .article_meta .author .text {
     padding: 5px 0 0 7px;
     float: left;

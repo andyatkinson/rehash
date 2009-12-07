@@ -437,7 +437,8 @@ form p {
   float: left;
   border: 1px solid #ccc;
   -moz-border-radius: 2px;
-  -webkit-border-radius: 2px; }
+  -webkit-border-radius: 2px;
+  background: #fff; }
   .comment .gravatar img {
     margin: 2px 2px 0 2px; }
 .comment .details {
