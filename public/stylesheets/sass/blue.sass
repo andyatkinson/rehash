@@ -102,17 +102,26 @@ h3.leave_comment
   h3
     :text-transform uppercase
     :font-size 14px
+    :padding-bottom 10px
   .article_meta
     :font-size 12px
     .about
     .author
-      :padding 10px 0
-      :color #555
-      a
-        :color #333
-        :font-weight bold
-        &:hover
-          :text-decoration underline
+      .image
+        :float left
+        :padding 2px 2px 0 2px
+        :border 1px solid #ccc
+        :-webkit-border-radius 2px
+        :-moz-border-radius 2px
+      .text
+        :padding 5px 0 0 7px
+        :float left
+        :color #555
+        a
+          :color #333
+          :font-weight bold
+          &:hover
+            :text-decoration underline
     .published
       :padding 5px 0
       :color #555
@@ -123,7 +132,7 @@ h3.leave_comment
         &:hover
           :text-decoration underline
     .tagged
-      :padding-top 20px
+      :padding-top 15px
 #footer
   :border-top 2px solid #ccc
   :background #eee

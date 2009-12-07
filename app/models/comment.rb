@@ -7,6 +7,7 @@ class Comment < ActiveRecord::Base
   validates_format_of :email, :with => Site::EMAIL_REGEX
   validate :article_must_be_published_and_eligible, :correct_challenge_answer
   after_save :email_site_owner
+  is_gravtastic :email, :size => 50
   
   attr_accessor :challenge
   

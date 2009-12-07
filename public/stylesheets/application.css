@@ -83,7 +83,8 @@ code {
   background: #EEEEFF;
   border: 1px solid #DDDDDD;
   font-weight: bold;
-  text-shadow: 1px 1px 0 #fff; }
+  text-shadow: 1px 1px 0 #fff;
+  font-size: 15px; }
 
 pre {
   padding: 10px;
@@ -432,8 +433,18 @@ form p {
 .contact_form textarea {
   width: 400px; }
 
-.comment .author-line {
-  margin: 5px 0; }
+.comment .gravatar {
+  float: left;
+  border: 1px solid #ccc;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px; }
+  .comment .gravatar img {
+    margin: 2px 2px 0 2px; }
+.comment .details {
+  float: left;
+  padding-left: 18px; }
+  .comment .details .author-line {
+    margin: 5px 0; }
 
 .comment.admin {
   background: #ffc;

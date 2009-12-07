@@ -20,9 +20,12 @@
   .article_meta
     %h3= "About this article"
     .author
-      = "Author"
-      %br/
-      = link_to website.owner_name, contact_path
+      .image= image_tag website.gravatar_url
+      .text
+        = "Author"
+        %br/
+        = link_to website.owner_name, contact_path
+    .clear
     .published= "Published #{@article.published_on}"
     .comments= link_to pluralize(@article.comments.count, 'comment'), '#comments'
     - if @article.tags.any?

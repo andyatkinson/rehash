@@ -1,10 +1,11 @@
 - div_for comment, :class => "#{'admin' if admin_comment?(comment)}" do
+  .gravatar= image_tag comment.gravatar_url
+  .details
+    .author-line= "<span class='name'>#{h(comment.name)}</span> wrote #{time_ago_in_words comment.created_at} ago"
+    %div= h(comment.body)
+  .clear
   - if admin?
-    %strong= comment.article.title
-  %p.author-line
-    = "<span class='name'>#{h(comment.name)}</span> wrote #{time_ago_in_words comment.created_at} ago"
-  %p=h comment.body
-  - if admin?
-    %p.admin-links
+    .admin-links
+      = comment.article.title
       = link_to 'Edit', edit_article_comment_path(comment.article, comment), :id => "edit_comment_#{comment.id}"
       = link_to 'Destroy', article_comment_path(comment.article, comment), :confirm => 'Are you sure?', :method => :delete, :id => "delete_comment_#{comment.id}"

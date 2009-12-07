@@ -7,6 +7,7 @@ class Site < ActiveRecord::Base
   EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
   validates_format_of :owner_email, :with => EMAIL_REGEX, :if => :owner_email?
   before_create :hash_password
+  is_gravtastic :owner_email, :size => 30
   
   attr_accessor :password
 
