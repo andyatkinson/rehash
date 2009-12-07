@@ -41,6 +41,8 @@ Rehash uses git submodules to track plugins. Submodules are listed in the `.gitm
 
 `will_paginate` [Website](http://github.com/mislav/will_paginate) Contact person: [Mislav](mailto:mislav.marohnic@gmail.com)
 
+`gravtastic` [Website](http://github.com/chrislloyd/gravtastic) Author: [Chris Lloyd](mailto:christopher.lloyd@gmail.com)
+
 ### Credits
 
 Much credit goes to [Ryan Bates](http://www.workingwithrails.com/person/6491-ryan-bates) and his [Railscasts.com](http://railscasts.com/) screencasts.
