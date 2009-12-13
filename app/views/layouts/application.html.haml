@@ -53,7 +53,7 @@
           - for page in Page.released
             = link_to page.name, page_slug_path(page)
           = link_to t(:contact), contact_path
-    #wrapper
+    #wrapper{:class => yield(:css_class)}
       #main
         - flash.each do |name, msg|
           = content_tag :div, msg, :id => "flash_#{name}"

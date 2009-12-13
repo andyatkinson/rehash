@@ -129,10 +129,11 @@ form
       a
         :display block
         img
-          :border 3px solid #ddd
+          :-moz-border-radius 3px
+          :border 1px solid #ddd
       a:hover
         img
-          :border 3px solid #002b40
+          :border 1px solid #002b40
         
 .themes
   :padding 0 0 10px 0
@@ -167,6 +168,8 @@ form
 //projects
 .project
   .description
+    :font-size 20px
+    :font-family Georgia
     ul
       :padding 20px
       li
@@ -252,19 +255,35 @@ form
       :text-shadow none
 .index
   .project
-    .images
-      :float left
-      :width 600px
-    h1
-      :font-size 30px
-      :padding 20px 0
+    :padding 7px 7px 20px 7px
+    :border 1px solid #ddd
+    :-moz-border-radius 3px
+    :-webkit-border-radius 3px
+    :-moz-box-shadow 0 0 5px rgba(0, 0, 0, 0.3)
+    :-webkit-box-shadow 0 0 5px rgba(0, 0, 0, 0.3)
+    :float left
+    :height 200px
+    :width 200px
+    :margin-right 20px
+    .title
+      :font-weight bold
+      :text-transform uppercase
+      :font-size 13px
+      :line-height 15px
+      :padding-bottom 2px
+      :border-bottom 1px solid #ddd
+      :letter-spacing -0.5px
     .description
-      :float left
-      :font-style italic
-      :color #aaa
-    p
-      :padding 6px 0
-      :line-height 16px
+      :padding 5px 0 20px 0
+      :font-size 11px
+      :font-family "Lucida Grande"
+      a
+        :color #555
+    .image
+      :margin 0 auto
+      :width 100px
+      :height 100px
+      
 .form
   .left
     :float left
@@ -311,6 +330,13 @@ form
 .wrap
   :width 860px
   :margin 0 auto
+#wrapper.projects
+  #main
+    :width 860px
+    h1
+      :margin-bottom 20px
+  #sidebar
+    :display none
 #wrapper
   :padding-top 15px
   :width 860px
@@ -323,7 +349,6 @@ form
       :padding 10px 0
       a:hover
         :text-decoration underline
-      
   #sidebar
     :padding-left 40px
     :height 100%

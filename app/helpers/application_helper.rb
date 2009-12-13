@@ -34,8 +34,13 @@ module ApplicationHelper
   end
   
   def truncated_project_description(project)
-    html = truncate(project.description.gsub(/<\/?[^>]*>/,  ""), 200)
+    html = truncate(project.description.gsub(/<\/?[^>]*>/,  ""), 100)
     html += link_to " Read full project description &rarr;", project
     html
+  end
+  
+  def project_image_url(project)
+    return "" if project.uploads.blank?
+    project.uploads.first.data.url(:square)
   end
 end

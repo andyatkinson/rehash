@@ -1,13 +1,10 @@
 - title t(:projects)
+- css_class('projects')
 
 .index
   - @projects.each do |project|
     .project
-      %h1= "#{link_to project.name, project}"
-      .images
-        %ul
-          - project.uploads.each do |upload|
-            %li= link_to image_tag(upload.data.url(:square)), project
-      .description
-        = truncated_project_description(project)
+      .title= link_to project.name, project
+      .description= truncated_project_description(project)
+      .image= link_to image_tag(project_image_url(project)), project
       .clear

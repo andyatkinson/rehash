@@ -136,9 +136,10 @@ form p {
     .images ul li a {
       display: block; }
       .images ul li a img {
-        border: 3px solid #ddd; }
+        -moz-border-radius: 3px;
+        border: 1px solid #ddd; }
     .images ul li a:hover img {
-      border: 3px solid #002b40; }
+      border: 1px solid #002b40; }
 
 .themes {
   padding: 0 0 10px 0;
@@ -169,10 +170,13 @@ form p {
         top: 50px;
         left: 54px; }
 
-.project .description ul {
-  padding: 20px; }
-  .project .description ul li {
-    list-style-type: disc; }
+.project .description {
+  font-size: 20px;
+  font-family: Georgia; }
+  .project .description ul {
+    padding: 20px; }
+    .project .description ul li {
+      list-style-type: disc; }
 .project .images {
   padding: 10px 0; }
 .project p {
@@ -251,19 +255,35 @@ form p {
       text-decoration: none;
       text-shadow: none; }
 
-.index .project .images {
+.index .project {
+  padding: 7px 7px 20px 7px;
+  border: 1px solid #ddd;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   float: left;
-  width: 600px; }
-.index .project h1 {
-  font-size: 30px;
-  padding: 20px 0; }
-.index .project .description {
-  float: left;
-  font-style: italic;
-  color: #aaa; }
-.index .project p {
-  padding: 6px 0;
-  line-height: 16px; }
+  height: 200px;
+  width: 200px;
+  margin-right: 20px; }
+  .index .project .title {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 13px;
+    line-height: 15px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #ddd;
+    letter-spacing: -0.5px; }
+  .index .project .description {
+    padding: 5px 0 20px 0;
+    font-size: 11px;
+    font-family: "Lucida Grande"; }
+    .index .project .description a {
+      color: #555; }
+  .index .project .image {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px; }
 
 .form .left {
   float: left;
@@ -312,6 +332,13 @@ form p {
 .wrap {
   width: 860px;
   margin: 0 auto; }
+
+#wrapper.projects #main {
+  width: 860px; }
+  #wrapper.projects #main h1 {
+    margin-bottom: 20px; }
+#wrapper.projects #sidebar {
+  display: none; }
 
 #wrapper {
   padding-top: 15px;
