@@ -12,8 +12,7 @@
   .role= "#{t(:project_role)}: <strong>#{@project.role}</strong>"
   .duration= "#{t(:project_duration)}: <strong>#{@project.duration}</strong>"
 
+- if admin?
+  %p.admin-links
+    = link_to 'Edit', edit_project_path(@project), :id => "edit_project_#{@project.id}"
 .back= link_to "&larr; #{t(:back_to_projects)}", projects_path
-- content_for :sidebar do
-  - if admin?
-    %p.admin-links
-      = link_to 'Edit', edit_project_path(@project), :id => "edit_project_#{@project.id}"

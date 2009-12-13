@@ -171,8 +171,11 @@ form p {
         left: 54px; }
 
 .project .description {
-  font-size: 20px;
+  color: #333;
+  font-size: 18px;
   font-family: Georgia; }
+  .project .description h2, .project .description h3 {
+    color: #000; }
   .project .description ul {
     padding: 20px; }
     .project .description ul li {
@@ -265,7 +268,7 @@ form p {
   float: left;
   height: 200px;
   width: 200px;
-  margin-right: 20px; }
+  margin: 0 20px 20px 0; }
   .index .project .title {
     font-weight: bold;
     text-transform: uppercase;
@@ -277,13 +280,22 @@ form p {
   .index .project .description {
     padding: 5px 0 20px 0;
     font-size: 11px;
-    font-family: "Lucida Grande"; }
+    font-family: "Lucida Grande";
+    color: #555; }
     .index .project .description a {
-      color: #555; }
+      color: #000;
+      font-style: italic; }
+      .index .project .description a:hover {
+        text-decoration: underline; }
   .index .project .image {
     margin: 0 auto;
-    width: 100px;
-    height: 100px; }
+    width: 104px;
+    height: 100px;
+    border: 1px solid #ddd;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px; }
+    .index .project .image img {
+      margin: 2px 2px 0 2px; }
 
 .form .left {
   float: left;

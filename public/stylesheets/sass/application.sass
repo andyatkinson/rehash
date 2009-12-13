@@ -168,7 +168,10 @@ form
 //projects
 .project
   .description
-    :font-size 20px
+    h2, h3
+      :color #000
+    :color #333
+    :font-size 18px
     :font-family Georgia
     ul
       :padding 20px
@@ -264,7 +267,7 @@ form
     :float left
     :height 200px
     :width 200px
-    :margin-right 20px
+    :margin 0 20px 20px 0
     .title
       :font-weight bold
       :text-transform uppercase
@@ -277,12 +280,21 @@ form
       :padding 5px 0 20px 0
       :font-size 11px
       :font-family "Lucida Grande"
+      :color #555
       a
-        :color #555
+        :color #000
+        :font-style italic
+        &:hover
+          :text-decoration underline
     .image
       :margin 0 auto
-      :width 100px
+      :width 104px
       :height 100px
+      :border 1px solid #ddd
+      :-moz-border-radius 2px
+      :-webkit-border-radius 2px
+      img
+        :margin 2px 2px 0 2px
       
 .form
   .left
