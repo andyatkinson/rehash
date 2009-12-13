@@ -132,14 +132,14 @@ form p {
   left: -5px; }
   .images ul li {
     float: left;
-    margin: 0 3px; }
+    margin: 7px; }
     .images ul li a {
       display: block; }
       .images ul li a img {
         -moz-border-radius: 3px;
         border: 1px solid #ddd; }
     .images ul li a:hover img {
-      border: 1px solid #002b40; }
+      border: 1px solid #aaa; }
 
 .themes {
   padding: 0 0 10px 0;
@@ -173,7 +173,8 @@ form p {
 .project .description {
   color: #333;
   font-size: 18px;
-  font-family: Georgia; }
+  font-family: Georgia;
+  padding: 10px 0; }
   .project .description h2, .project .description h3 {
     color: #000; }
   .project .description ul {
@@ -189,9 +190,16 @@ form p {
   font-size: 30px; }
   .project .title span {
     position: relative;
-    top: -4px;
-    font-size: 12px;
-    color: #aaa; }
+    text-shadow: 1px 1px 0 #ededed;
+    top: -2px;
+    left: 20px;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #777;
+    font-style: italic;
+    letter-spacing: -0.8px; }
+    .project .title span:hover {
+      text-decoration: underline; }
 
 .back {
   padding: 20px 0;
@@ -266,8 +274,8 @@ form p {
   -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   float: left;
-  height: 200px;
-  width: 200px;
+  height: 190px;
+  width: 184px;
   margin: 0 20px 20px 0; }
   .index .project .title {
     font-weight: bold;
@@ -291,9 +299,11 @@ form p {
     margin: 0 auto;
     width: 104px;
     height: 100px;
-    border: 1px solid #ddd;
+    border: 1px solid #ededed;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px; }
+    .index .project .image:hover {
+      border: 1px solid #ccc; }
     .index .project .image img {
       margin: 2px 2px 0 2px; }
 
@@ -346,7 +356,7 @@ form p {
   margin: 0 auto; }
 
 #wrapper.projects #main {
-  width: 860px; }
+  width: 880px; }
   #wrapper.projects #main h1 {
     margin-bottom: 20px; }
 #wrapper.projects #sidebar {

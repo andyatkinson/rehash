@@ -125,7 +125,7 @@ form
   ul
     li
       :float left
-      :margin 0 3px
+      :margin 7px
       a
         :display block
         img
@@ -133,7 +133,7 @@ form
           :border 1px solid #ddd
       a:hover
         img
-          :border 1px solid #002b40
+          :border 1px solid #aaa
         
 .themes
   :padding 0 0 10px 0
@@ -173,6 +173,7 @@ form
     :color #333
     :font-size 18px
     :font-family Georgia
+    :padding 10px 0
     ul
       :padding 20px
       li
@@ -186,9 +187,16 @@ form
     :font-size 30px
     span
       :position relative
-      :top -4px
-      :font-size 12px
-      :color #aaa
+      :text-shadow 1px 1px 0 #ededed
+      :top -2px
+      :left 20px
+      :font-size 16px
+      :text-transform uppercase
+      :color #777
+      :font-style italic
+      :letter-spacing -0.8px
+      &:hover
+        :text-decoration underline
 .back
   :padding 20px 0
   :font-family Arial
@@ -265,8 +273,8 @@ form
     :-moz-box-shadow 0 0 5px rgba(0, 0, 0, 0.3)
     :-webkit-box-shadow 0 0 5px rgba(0, 0, 0, 0.3)
     :float left
-    :height 200px
-    :width 200px
+    :height 190px
+    :width 184px
     :margin 0 20px 20px 0
     .title
       :font-weight bold
@@ -290,9 +298,11 @@ form
       :margin 0 auto
       :width 104px
       :height 100px
-      :border 1px solid #ddd
+      :border 1px solid #ededed
       :-moz-border-radius 2px
       :-webkit-border-radius 2px
+      &:hover
+        :border 1px solid #ccc
       img
         :margin 2px 2px 0 2px
       
@@ -344,7 +354,7 @@ form
   :margin 0 auto
 #wrapper.projects
   #main
-    :width 860px
+    :width 880px
     h1
       :margin-bottom 20px
   #sidebar

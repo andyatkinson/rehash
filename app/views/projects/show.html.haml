@@ -4,7 +4,7 @@
 - title h(@project.name), false
 
 .project
-  %h1.title= @project.url.blank? ? @project.name : "#{@project.name} #{link_to "<span>(#{t(:view_site)})</span>", @project.url}"
+  %h1.title= @project.url.blank? ? @project.name : "#{@project.name} #{link_to "<span>#{t(:view_site)}</span>", @project.url}"
   .images
     = render :partial => 'images'
 
