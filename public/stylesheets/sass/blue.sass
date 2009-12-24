@@ -22,13 +22,18 @@
 
 .article,.page
   .body
-    :font-family "georgia"
+    :font-family Helvetica, Arial
+    :width 550px
     h1, h2, h3, h4, h5, h6
-      :font-family "Helvetica"
+      :font-family "Georgia"
+    .terminal
+      :font-family monospace
+      :font-size 11px
 .article
   h1
     :font-size 30px
     :padding 5px 0
+    :font-family Georgia
   .meta
     :color #aaa
     :font-size 13px
@@ -50,13 +55,13 @@
     :color #10306a
   .description
     :font-size 18px
-    :font-family "georgia"
     :color #555
     :padding 5px 0
   .read_more
     a
       :font-size 13px
       :color #aaa
+      :font-style italic
       &:hover
         :text-decoration underline
   h3.author
@@ -82,7 +87,7 @@
     .body
       :overflow hidden
       :width 500px
-      :font-family georgia
+      :font-family Helvetica, Arial
       :line-height 18px
       a
         :font-weight bold
@@ -93,21 +98,28 @@ h3.leave_comment
 #header
   :background transparent url(/images/theme/blue_header.png) top left repeat-x
   :color #fff
+  #name
+    h2
+      :letter-spacing -1px
+      :font-family Georgia
+      :color #ededed
   a
     :color #fff
   h1
-    :text-shadow -2px -1px 0 #000
+    :text-shadow -1px -1px 0 #000
   h2
     :text-shadow -1px -1px 0 #000033
   #navigation
     a
-      :font-size 14px
+      :font-size 15px
       :text-transform uppercase
-      :color #fff
-      :text-shadow -2px -1px 0 #003
+      :color #ededed
+      :text-shadow -1px -1px 0 #003
+      :font-family Georgia
     a:hover
       :text-shadow none
       :text-decoration underline
+      :color #fff
 #search_button
   :display none
 #sidebar
@@ -117,8 +129,11 @@ h3.leave_comment
     :padding-bottom 10px
   .article_meta
     :font-size 12px
+    h3
+      :font-family Georgia
     .about
     .author
+      :padding 5px 0 10px 0
       .image
         :float left
         :padding 2px 2px 0 2px
@@ -136,7 +151,8 @@ h3.leave_comment
           &:hover
             :text-decoration underline
     .published
-      :padding 5px 0
+      :font-style italic
+      :padding 15px 0 5px 0
       :color #555
     .comments
       a
@@ -146,6 +162,7 @@ h3.leave_comment
           :text-decoration underline
     .tagged
       :padding-top 15px
+      :font-family "Georgia"
 #footer
   :border-top 2px solid #ccc
   :background #eee
@@ -154,8 +171,13 @@ h3.leave_comment
       :font-weight bold
       :color #222
       :text-transform uppercase
-      :font-size 13px
+      :font-size 15px
       :text-shadow 1px 1px 0 #fff
+      :font-family Georgia
+      :border-bottom 1px solid #ccc
+      :margin-bottom 8px
+      :padding-bottom 3px
+      :width 111px
   a
     :font-family Arial
     :font-size 12px

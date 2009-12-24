@@ -65,7 +65,7 @@
         = yield(:sidebar)
         #search
           - form_tag search_path, :method => 'get' do
-            = text_field_tag :q, t(:search_box_text)
+            = "<input type='search' id='q' value='#{t(:search_box_text)}' />"
             = submit_tag t(:search_button), :name => nil, :id => 'search_button'
           .clear
         #feed

@@ -380,6 +380,7 @@ form p {
     float: left;
     width: 200px; }
     #wrapper #sidebar #feed {
+      font-family: monospace;
       padding: 15px 0; }
       #wrapper #sidebar #feed p {
         text-transform: uppercase;
@@ -408,7 +409,9 @@ form p {
   margin: 0 auto; }
   #pagination_controls .pagination {
     width: 350px;
-    margin: 0 auto; }
+    margin: 0 auto;
+    font-size: 13px;
+    font-family: Arial; }
     #pagination_controls .pagination a {
       border: 1px solid #ddd;
       background: #fff;
@@ -418,7 +421,7 @@ form p {
         color: #aaa; }
     #pagination_controls .pagination span.current {
       text-shadow: -1px -1px 0 #999;
-      border: 1px solid #aaa;
+      border: 1px solid #ccc;
       background: #ccc; }
 
 #footer {

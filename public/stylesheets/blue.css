@@ -21,13 +21,18 @@
       background: #ffe; }
 
 .article .body, .page .body {
-  font-family: "georgia"; }
+  font-family: Helvetica, Arial;
+  width: 550px; }
   .article .body h1, .article .body h2, .article .body h3, .article .body h4, .article .body h5, .article .body h6, .page .body h1, .page .body h2, .page .body h3, .page .body h4, .page .body h5, .page .body h6 {
-    font-family: "Helvetica"; }
+    font-family: "Georgia"; }
+  .article .body .terminal, .page .body .terminal {
+    font-family: monospace;
+    font-size: 11px; }
 
 .article h1 {
   font-size: 30px;
-  padding: 5px 0; }
+  padding: 5px 0;
+  font-family: Georgia; }
 .article .meta {
   color: #aaa;
   font-size: 13px; }
@@ -48,12 +53,12 @@
   color: #10306a; }
 .article .description {
   font-size: 18px;
-  font-family: "georgia";
   color: #555;
   padding: 5px 0; }
 .article .read_more a {
   font-size: 13px;
-  color: #aaa; }
+  color: #aaa;
+  font-style: italic; }
   .article .read_more a:hover {
     text-decoration: underline; }
 .article h3.author {
@@ -78,7 +83,7 @@
   .comment .details .body {
     overflow: hidden;
     width: 500px;
-    font-family: georgia;
+    font-family: Helvetica, Arial;
     line-height: 18px; }
     .comment .details .body a {
       font-weight: bold; }
@@ -90,20 +95,26 @@ h3.leave_comment {
 #header {
   background: transparent url(/images/theme/blue_header.png) top left repeat-x;
   color: #fff; }
+  #header #name h2 {
+    letter-spacing: -1px;
+    font-family: Georgia;
+    color: #ededed; }
   #header a {
     color: #fff; }
   #header h1 {
-    text-shadow: -2px -1px 0 #000; }
+    text-shadow: -1px -1px 0 #000; }
   #header h2 {
     text-shadow: -1px -1px 0 #000033; }
   #header #navigation a {
-    font-size: 14px;
+    font-size: 15px;
     text-transform: uppercase;
-    color: #fff;
-    text-shadow: -2px -1px 0 #003; }
+    color: #ededed;
+    text-shadow: -1px -1px 0 #003;
+    font-family: Georgia; }
   #header #navigation a:hover {
     text-shadow: none;
-    text-decoration: underline; }
+    text-decoration: underline;
+    color: #fff; }
 
 #search_button {
   display: none; }
@@ -114,24 +125,29 @@ h3.leave_comment {
   padding-bottom: 10px; }
 #sidebar .article_meta {
   font-size: 12px; }
-  #sidebar .article_meta .author .image {
-    float: left;
-    padding: 2px 2px 0 2px;
-    border: 1px solid #ccc;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    background: #fff; }
-  #sidebar .article_meta .author .text {
-    padding: 5px 0 0 7px;
-    float: left;
-    color: #555; }
-    #sidebar .article_meta .author .text a {
-      color: #333;
-      font-weight: bold; }
-      #sidebar .article_meta .author .text a:hover {
-        text-decoration: underline; }
+  #sidebar .article_meta h3 {
+    font-family: Georgia; }
+  #sidebar .article_meta .author {
+    padding: 5px 0 10px 0; }
+    #sidebar .article_meta .author .image {
+      float: left;
+      padding: 2px 2px 0 2px;
+      border: 1px solid #ccc;
+      -webkit-border-radius: 2px;
+      -moz-border-radius: 2px;
+      background: #fff; }
+    #sidebar .article_meta .author .text {
+      padding: 5px 0 0 7px;
+      float: left;
+      color: #555; }
+      #sidebar .article_meta .author .text a {
+        color: #333;
+        font-weight: bold; }
+        #sidebar .article_meta .author .text a:hover {
+          text-decoration: underline; }
   #sidebar .article_meta .published {
-    padding: 5px 0;
+    font-style: italic;
+    padding: 15px 0 5px 0;
     color: #555; }
   #sidebar .article_meta .comments a {
     color: #333;
@@ -139,7 +155,8 @@ h3.leave_comment {
     #sidebar .article_meta .comments a:hover {
       text-decoration: underline; }
   #sidebar .article_meta .tagged {
-    padding-top: 15px; }
+    padding-top: 15px;
+    font-family: "Georgia"; }
 
 #footer {
   border-top: 2px solid #ccc;
@@ -148,8 +165,13 @@ h3.leave_comment {
     font-weight: bold;
     color: #222;
     text-transform: uppercase;
-    font-size: 13px;
-    text-shadow: 1px 1px 0 #fff; }
+    font-size: 15px;
+    text-shadow: 1px 1px 0 #fff;
+    font-family: Georgia;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 8px;
+    padding-bottom: 3px;
+    width: 111px; }
   #footer a {
     font-family: Arial;
     font-size: 12px;
