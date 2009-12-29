@@ -2,6 +2,8 @@ class ArticlesController < ApplicationController
   before_filter :ensure_site_exists
   before_filter :require_admin, :except => [:index, :show, :search, :tagged]
   before_filter :find_article, :only => [:show, :edit, :update, :destroy]
+  before_filter :load_recent_articles, :only => [:show]
+  before_filter :load_recent_comments, :only => [:index, :show]
   
   def index
     @articles = Article.ordered.paginate :page => params[:page], :per_page => 5

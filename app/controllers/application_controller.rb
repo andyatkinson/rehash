@@ -20,6 +20,12 @@ class ApplicationController < ActionController::Base
         false
       end
     end
+    def load_recent_articles
+      @recent_articles ||= Article.released.ordered.recent
+    end
+    def load_recent_comments
+      @recent_comments ||= Comment.ordered.recent
+    end
 end
 
 # TODO introduce locale detection

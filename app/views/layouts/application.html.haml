@@ -65,13 +65,21 @@
         = yield(:sidebar)
         #search
           - form_tag search_path, :method => 'get' do
-            = "<input type='search' id='q' value='#{t(:search_box_text)}' />"
+            = "<input type='search' id='q' name ='q' value='#{t(:search_box_text)}' />"
             = submit_tag t(:search_button), :name => nil, :id => 'search_button'
           .clear
         #feed
-          %p= "Subscribe"
-          %br/
+          %h3= "Subscribe"
           = link_to image_tag('feed.png', :title => 'Subscribe to the articles'), feed_path
+        = yield(:recent_articles)
+        #recent_comments
+          - unless @recent_comments.blank?
+            %h3= "Comments"
+            %ul
+              - @recent_comments.each do |comment|
+                %li
+                  = link_to truncate(comment.body, 100), "#{url_for(comment.article)}#comments"
+                  %span.created_at= comment.created_at
     .clear
     #pagination_controls= yield(:pagination_controls)
     #footer

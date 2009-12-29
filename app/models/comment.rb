@@ -8,6 +8,8 @@ class Comment < ActiveRecord::Base
   validate :article_must_be_published_and_eligible, :correct_challenge_answer
   after_save :email_site_owner
   is_gravtastic :email, :size => 50
+  named_scope :recent, :limit => 5
+  named_scope :ordered, :order => 'created_at DESC'
   
   attr_accessor :challenge
   

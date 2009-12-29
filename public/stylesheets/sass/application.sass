@@ -376,9 +376,11 @@ form
     :height 100%
     :float left
     :width 200px
+    h3
+      :font-size 12px
+      :color #333
     #feed
-      :font-family monospace
-      :padding 15px 0
+      :padding 10px 0
       p
         :text-transform uppercase
         :font-size 11px
@@ -400,6 +402,23 @@ form
         :position relative
         :left 1px
         :top -2px
+    #recent_articles, #recent_comments
+      :padding 10px 0
+      ul
+        li
+          .created_at
+            :font-size 11px
+            :font-family Arial
+            :color #777
+            :letter-spacing -0.4px
+            :font-style italic
+          a
+            :font-size 12px
+            :color #333
+            :text-decoration none
+            :font-family Helvetica, Arial
+            &:hover
+              :text-decoration underline
 #pagination_controls
   :width 860px
   :margin 0 auto
