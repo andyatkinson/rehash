@@ -348,8 +348,7 @@ form p {
     top: 32px;
     right: -15px; }
     #header #navigation a {
-      padding: 3px 4px 6px 6px;
-      margin-right: 8px; }
+      padding: 3px 4px 6px 6px; }
 
 .wrap {
   width: 860px;
@@ -374,52 +373,52 @@ form p {
       padding: 10px 0; }
       #wrapper #main .create a:hover {
         text-decoration: underline; }
-  #wrapper #sidebar {
-    padding-left: 40px;
-    height: 100%;
-    float: left;
-    width: 200px; }
-    #wrapper #sidebar h3 {
+
+#sidebar {
+  padding-left: 40px;
+  height: 100%;
+  float: left;
+  width: 200px; }
+  #sidebar h3 {
+    font-size: 12px;
+    color: #333; }
+  #sidebar #feed {
+    padding: 20px 0 10px 0; }
+    #sidebar #feed p {
+      text-transform: uppercase;
+      font-size: 11px; }
+    #sidebar #feed img {
+      width: 30px; }
+  #sidebar #search {
+    white-space: nowrap; }
+    #sidebar #search #q {
+      width: 120px;
+      background: #fff;
+      font-size: 13px;
+      letter-spacing: -0.2px;
+      font-family: Arial;
+      border: none;
+      padding: 2px;
+      text-shadow: 1px 1px 0 #fff; }
+    #sidebar #search input[type="submit"] {
+      position: relative;
+      left: 1px;
+      top: -2px; }
+  #sidebar #recent_articles, #sidebar #recent_comments {
+    padding: 10px 0; }
+    #sidebar #recent_articles ul li .date, #sidebar #recent_comments ul li .date {
+      font-size: 11px;
+      font-family: Arial;
+      color: #777;
+      letter-spacing: -0.4px;
+      font-style: italic; }
+    #sidebar #recent_articles ul li a, #sidebar #recent_comments ul li a {
       font-size: 12px;
-      color: #333; }
-    #wrapper #sidebar #feed {
-      padding: 10px 0; }
-      #wrapper #sidebar #feed p {
-        text-transform: uppercase;
-        font-size: 11px; }
-      #wrapper #sidebar #feed img {
-        width: 30px; }
-    #wrapper #sidebar #search {
-      padding: 15px 0;
-      white-space: nowrap; }
-      #wrapper #sidebar #search #q {
-        background: #F0F0F0;
-        width: 140px;
-        font-size: 14px;
-        letter-spacing: -0.1px;
-        font-family: Arial;
-        border: 1px solid #bbb;
-        padding: 2px;
-        text-shadow: 1px 1px 0 #fff; }
-      #wrapper #sidebar #search input[type="submit"] {
-        position: relative;
-        left: 1px;
-        top: -2px; }
-    #wrapper #sidebar #recent_articles, #wrapper #sidebar #recent_comments {
-      padding: 10px 0; }
-      #wrapper #sidebar #recent_articles ul li .created_at, #wrapper #sidebar #recent_comments ul li .created_at {
-        font-size: 11px;
-        font-family: Arial;
-        color: #777;
-        letter-spacing: -0.4px;
-        font-style: italic; }
-      #wrapper #sidebar #recent_articles ul li a, #wrapper #sidebar #recent_comments ul li a {
-        font-size: 12px;
-        color: #333;
-        text-decoration: none;
-        font-family: Helvetica, Arial; }
-        #wrapper #sidebar #recent_articles ul li a:hover, #wrapper #sidebar #recent_comments ul li a:hover {
-          text-decoration: underline; }
+      color: #333;
+      text-decoration: none;
+      font-family: Helvetica, Arial; }
+      #sidebar #recent_articles ul li a:hover, #sidebar #recent_comments ul li a:hover {
+        text-decoration: underline; }
 
 #pagination_controls {
   width: 860px;

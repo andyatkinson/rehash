@@ -7,7 +7,9 @@
     %h3= "Recent Articles"
     %ul
       - @recent_articles.each do |article|
-        %li= link_to article.title, article
+        %li
+          = link_to article.title, article
+          %span.date= article.created_at
 
 .article
   %h1= h(@article.title)
