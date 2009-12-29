@@ -78,8 +78,14 @@
             %ul
               - @recent_comments.each do |comment|
                 %li
-                  = link_to truncate(comment.body, 60), "#{url_for(comment.article)}#comments"
+                  = link_to truncate(comment.body, 40), "#{url_for(comment.article)}#comments"
                   %span.date= comment.created_at
+        #recent_projects
+          - unless @recent_projects.blank?
+            %h3= "Recent Projects"
+            %ul
+              - @recent_projects.each do |project|
+                %li= link_to image_tag(project_image_url(project), :title => project.name), project
     .clear
     #pagination_controls= yield(:pagination_controls)
     #footer

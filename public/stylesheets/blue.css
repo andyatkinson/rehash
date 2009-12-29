@@ -79,7 +79,8 @@
     .comment .author-line .name {
       font-weight: bold;
       text-transform: uppercase;
-      color: #222; }
+      color: #222;
+      text-shadow: 1px 1px 0 #fff; }
   .comment .details .body {
     overflow: hidden;
     width: 500px;
@@ -133,7 +134,8 @@ h3.leave_comment {
   font-size: 14px;
   padding-bottom: 10px; }
 #sidebar .article_meta {
-  font-size: 12px; }
+  font-size: 12px;
+  padding-bottom: 20px; }
   #sidebar .article_meta .author {
     padding: 5px 0 10px 0; }
     #sidebar .article_meta .author .image {

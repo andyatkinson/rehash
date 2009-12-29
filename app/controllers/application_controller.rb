@@ -26,6 +26,9 @@ class ApplicationController < ActionController::Base
     def load_recent_comments
       @recent_comments ||= Comment.ordered.recent
     end
+    def load_recent_projects
+      @recent_projects ||= Project.ordered.recent
+    end
 end
 
 # TODO introduce locale detection

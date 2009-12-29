@@ -419,6 +419,10 @@ form p {
       font-family: Helvetica, Arial; }
       #sidebar #recent_articles ul li a:hover, #sidebar #recent_comments ul li a:hover {
         text-decoration: underline; }
+  #sidebar #recent_projects ul li {
+    display: inline; }
+    #sidebar #recent_projects ul li img {
+      width: 30px; }
 
 #pagination_controls {
   width: 860px;

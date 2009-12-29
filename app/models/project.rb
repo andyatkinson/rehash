@@ -6,5 +6,5 @@ class Project < ActiveRecord::Base
   has_friendly_id :name, :use_slug => true
 
   named_scope :ordered, :order => 'completed_on DESC'
-  named_scope :latest, :limit => 5
+  named_scope :recent, :limit => 5
 end
