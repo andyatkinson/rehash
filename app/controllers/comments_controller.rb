@@ -6,11 +6,14 @@ class CommentsController < ApplicationController
     actions :index, :new, :create, :edit, :update, :destroy
     
     response_for :create do
+      expire_page :controller => :articles, :action => :index
+      expire_page :controller => :articles, :action => :show, :id => @article
       flash[:notice] = 'Comment saved'
       redirect_to @comment.article
     end
-    # as the admin should be coming from and want to go to index action
     response_for :update do
+      expire_page :controller => :articles, :action => :index
+      expire_page :controller => :articles, :action => :show, :id => @article
       flash[:notice] = 'Comment saved'
       redirect_to comments_path
     end

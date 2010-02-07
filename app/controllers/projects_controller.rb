@@ -1,8 +1,21 @@
 class ProjectsController < ApplicationController
   before_filter :require_admin, :except => [:index, :show]
+  caches_page :show, :index
   
   make_resourceful do
-    actions :new, :create, :edit, :update, :show
+    actions :new, :create, :edit, :show
+  end
+  
+  def update
+    @project = Project.find(params[:id])
+    if @project.update_attributes(params[:project])
+      expire_page :action => :index
+      expire_page :action => :show, :id => @project
+      flash[:notice] = "Project updated"
+      redirect_to @project
+    else
+      render :edit
+    end
   end
   
   def index
