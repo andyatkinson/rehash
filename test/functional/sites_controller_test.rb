@@ -14,13 +14,12 @@ class SitesControllerTest < ActionController::TestCase
       post :create
       assert_template 'new'
     end
-
     should "redirect when model is valid" do
       post :create, :site => {:name => "MySite", :tagline => "Site tagline", :owner_name => "Owner", :password => "1234"}
       assert_redirected_to edit_site_path(assigns(:site))
     end
   end
-  
+
   context "With a valid site" do
     setup do
       @site = create_site
@@ -53,10 +52,29 @@ class SitesControllerTest < ActionController::TestCase
         assert_template 'contact_form_email'
       end
       
-      should "allow post to contact form action" do
-        Site.any_instance.stubs(:valid?).returns(false)
-        get :create_contact_form_email
-        assert_response :success
+      context "posting to contact form new email action" do
+        context "with valid data" do
+          setup do
+            post :create_contact_form_email, :message => "hi", :sender_name => "Sender", :email => "some@email.com", :challenge => "4"
+          end
+          should_set_the_flash_to /Email sent/i
+          # TODO doesn't work should_redirect_to root_path
+        end
+        context "with invalid challenge question answer" do
+          setup do
+            post :create_contact_form_email, :message => "hi", :sender_name => "Sender", :email => "some@email.com", :challenge => "3"
+          end
+          should_set_the_flash_to /Wrong answer to challenge question/i
+          should_render_template 'new_contact_form_email'
+        end
+        context "with invalid data" do
+          setup do
+            post :create_contact_form_email, :message => "hi", :sender_name => "", :email => "some@email.com", :challenge => "4"
+          end
+          should_set_the_flash_to /All fields are required/i
+          should_render_template 'new_contact_form_email'
+        end
+
       end
     end
   end

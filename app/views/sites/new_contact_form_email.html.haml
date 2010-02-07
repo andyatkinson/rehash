@@ -1,6 +1,7 @@
 - javascript 'form_submit_button'
+
 %h2= "Contact #{website.owner_name}"
-%p.required= "All fields are required."
+.required= "All fields are required."
 .contact_form
   - form_tag create_contact_form_email_path, :class => 'form' do
     %p
@@ -15,5 +16,9 @@
       = label_tag :message
       %br
       = text_area_tag :message
+    %p
+      = label_tag :challenge, 'What is two plus two (as a number)?'
+      %br
+      = text_field_tag :challenge
     %p
       = submit_tag "Send Message", :id => 'form_submit_button'
