@@ -9,9 +9,10 @@ Feature: App should send email
      
   Scenario: Contact form should send email
     When I go to the contact page
-    And I fill in "sender_name" with "Visitor name"
+    And I fill in "Your Name" with "Visitor name"
     And I fill in "Email" with "Visitor email"
     And I fill in "Message" with "I would like to contact you"
+    And I fill in "challenge" with "4"
     And I press "Send"
     Then I should not see "Error"
     And I should not see "All fields are required"

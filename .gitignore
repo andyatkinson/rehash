@@ -8,8 +8,11 @@ coverage/*
 *.swp
 config/database.yml
 config/deployment.yml
+config/cucumber.yml
 features_rcov/
 tags_db.sqlite3
 public/system
 .cap_tasks~
 public/cache
+rerun.txt
+script/cucumber

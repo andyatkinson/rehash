@@ -9,5 +9,5 @@ require 'rake/rdoctask'
 
 require 'tasks/rails'
 
-task :default => "features"
+task :default => "cucumber:all"
 task :default => "test:javascripts"

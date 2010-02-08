@@ -37,7 +37,7 @@ Feature: Manage projects
     And I edit the project "Project One"
     When I fill in "Name" with "Changed project name"
     And I press "Save"
-    Then I should see "Save successful!"
+    Then I should see "Project updated"
     And I should see "Changed project name"
     And I should not see "Project One"
     And I should have 2 projects
