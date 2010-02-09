@@ -4,20 +4,16 @@
   float: left;
   margin-right: 1px; }
 .pagination span.disabled {
-  color: #999;
-  border: 1px solid #DDD; }
+  color: #999; }
 .pagination span.current {
   font-weight: bold;
   background: #10306A;
-  color: white;
-  border: 1px solid #ddd; }
+  color: white; }
 .pagination a {
   text-decoration: none;
-  color: #3B6AA0;
-  border: 1px solid #3B6AA0; }
+  color: #3B6AA0; }
   .pagination a:hover, .pagination a:focus {
-    color: #003;
-    border-color: #003; }
+    color: #003; }
 .pagination .page_info {
   background: #2E6AB1;
   color: white;

@@ -3,10 +3,13 @@
 
 .index
   - @articles.each do |article|
-    .article
+    %div{:class => "article #{'first' if @articles.first == article}"}
       %h1= link_to h(article.title), article
       .meta= article_metadata(article)
-      .description= h(article.description)
+      - if @articles.first == article
+        .body= truncate(article.body.to_html, :length => 500)
+      - else
+        .description= h(article.description)
       .read_more= link_to "Read article &rarr;", article
 
 - content_for :pagination_controls do

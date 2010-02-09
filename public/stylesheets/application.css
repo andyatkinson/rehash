@@ -173,7 +173,7 @@ form p {
 .project .description {
   color: #333;
   font-size: 18px;
-  font-family: Georgia;
+  font-family: Georgia, serif;
   padding: 10px 0; }
   .project .description h2, .project .description h3 {
     color: #000; }
@@ -211,6 +211,13 @@ form p {
 .change_password {
   color: #000; }
 
+.article.first {
+  background-color: #f0f0f0;
+  padding: 15px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px; }
+  .article.first h1 a, .article.first .meta, .article.first .read_more {
+    text-shadow: 0 1px 0 #fff; }
 .article p {
   line-height: 20px;
   margin: 15px 0; }
@@ -288,8 +295,7 @@ form p {
   .index .project .description {
     padding: 5px 0 20px 0;
     font-size: 11px;
-    font-family: "Lucida Grande";
-    color: #555; }
+    color: #666; }
     .index .project .description a {
       color: #000;
       font-style: italic; }
@@ -435,16 +441,13 @@ form p {
     font-size: 13px;
     font-family: Arial; }
     #pagination_controls .pagination a {
-      border: 1px solid #ddd;
       background: #fff;
-      color: #ddd; }
+      color: #aaa; }
       #pagination_controls .pagination a:hover {
-        border: 1px solid #aaa;
-        color: #aaa; }
+        color: #555; }
     #pagination_controls .pagination span.current {
-      text-shadow: -1px -1px 0 #999;
-      border: 1px solid #ccc;
-      background: #ccc; }
+      color: #555;
+      background: #fff; }
 
 #footer {
   margin-top: 20px;

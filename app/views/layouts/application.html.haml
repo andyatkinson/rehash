@@ -69,7 +69,7 @@
             = submit_tag t(:search_button), :name => nil, :id => 'search_button'
           .clear
         #feed
-          %h3= "Subscribe"
+          %h3= "Articles Feed"
           = link_to image_tag('feed.png', :title => 'Subscribe to the articles'), feed_path
         = yield(:recent_articles)
         #recent_comments

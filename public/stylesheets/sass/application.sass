@@ -172,7 +172,7 @@ form
       :color #000
     :color #333
     :font-size 18px
-    :font-family Georgia
+    :font-family Georgia, serif
     :padding 10px 0
     ul
       :padding 20px
@@ -210,6 +210,13 @@ form
   
 //styles that exist across all themes
 .article
+  &.first
+    :background-color #f0f0f0
+    :padding 15px
+    :-moz-border-radius 4px
+    :-webkit-border-radius 4px
+    h1 a, .meta, .read_more
+      :text-shadow 0 1px 0 #fff
   p
     :line-height 20px
     :margin 15px 0
@@ -287,8 +294,7 @@ form
     .description
       :padding 5px 0 20px 0
       :font-size 11px
-      :font-family "Lucida Grande"
-      :color #555
+      :color #666
       a
         :color #000
         :font-style italic
@@ -434,16 +440,13 @@ form
     :font-size 13px
     :font-family Arial
     a
-      :border 1px solid #ddd
       :background #fff
-      :color #ddd
+      :color #aaa
       &:hover
-        :border 1px solid #aaa
-        :color #aaa
+        :color #555
     span.current
-      :text-shadow -1px -1px 0 #999
-      :border 1px solid #ccc
-      :background #ccc
+      :color #555
+      :background #fff
 #footer
   :margin-top 20px
   :padding 0px 0px 30px 0
