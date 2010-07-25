@@ -1,8 +1,16 @@
 development:
   access_key_id: YOURSECRETACCESSID
   secret_access_key: YOUR-secRE/TACCe\ssKEy
-  bucket: some-unique-bucket
+  bucket: my-bucket-development
 production:
   access_key_id: YOURSECRETACCESSID
   secret_access_key: YOUR-secRE/TACCe\ssKEy
-  bucket: some-unique-bucket
+  bucket: my-bucket-production
+test:
+  access_key_id: YOURSECRETACCESSID
+  secret_access_key: YOUR-secRE/TACCe\ssKEy
+  bucket: my-bucket-test
+cucumber:
+  access_key_id: YOURSECRETACCESSID
+  secret_access_key: YOUR-secRE/TACCe\ssKEy
+  bucket: my-bucket-test
