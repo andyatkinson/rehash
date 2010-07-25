@@ -45,7 +45,7 @@ Rehash is covered by [Cucumber](http://cukes.info/) features throughout the app.
 `aws-s3`
 
 ### Uploads
-Rehash uses S3 for uploads. `config/s3.yml` needs to be created. Fill in your S3 credentials and bucket name. This file is private (ignored by git), see the `config/s3.sample.yml` which is public.
+More details soon on S3 and Heroku.
 
 ### Credits
 

@@ -1,9 +1,14 @@
 class Upload < ActiveRecord::Base
   belongs_to :attachable, :polymorphic => true
+  # if the config var S3_BUCKET (Heroku) is present, use S3 else use filesystem
   has_attached_file :data, 
-                    :storage => :s3,
-                    :s3_credentials => "#{Rails.root}/config/s3.yml",
+                    :storage => ENV['S3_BUCKET'] ? :s3 : :filesystem,
+                    :s3_credentials => {
+                        :access_key_id => ENV['S3_KEY'],
+                        :secret_access_key => ENV['S3_SECRET']
+                    },
                     :path => ":attachment/:id/:style/:basename.:extension",
+                    :bucket => ENV['S3_BUCKET'],
                     :styles => { :large => "800x800>",
                                  :small => '200x200#',
                                  :square => "100x100#" }

@@ -2,6 +2,7 @@
 log/*.log
 tmp/
 tmp/**/*
+datas/**/*
 db/*.sqlite3
 *.tmproj
 coverage/*
