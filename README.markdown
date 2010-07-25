@@ -38,6 +38,10 @@ Rehash is covered by [Cucumber](http://cukes.info/) features throughout the app.
 
 `gravtastic` [Website](http://github.com/chrislloyd/gravtastic) Author: [Chris Lloyd](mailto:christopher.lloyd@gmail.com)
 
+`paperclip` from [Thoughtbot](http://thoughtbot.com)
+
+`sass_on_heroku` from [Heroku](http://heroku.com)
+
 ### Credits
 
 Much credit goes to [Ryan Bates](http://www.workingwithrails.com/person/6491-ryan-bates) and his [Railscasts.com](http://railscasts.com/) screencasts.
