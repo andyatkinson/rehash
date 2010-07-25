@@ -42,6 +42,11 @@ Rehash is covered by [Cucumber](http://cukes.info/) features throughout the app.
 
 `sass_on_heroku` from [Heroku](http://heroku.com)
 
+`aws-s3`
+
+### Uploads
+Rehash uses S3 for uploads. `config/s3.yml` needs to be created. Fill in your S3 credentials and bucket name. This file is private (ignored by git), see the `config/s3.sample.yml` which is public.
+
 ### Credits
 
 Much credit goes to [Ryan Bates](http://www.workingwithrails.com/person/6491-ryan-bates) and his [Railscasts.com](http://railscasts.com/) screencasts.

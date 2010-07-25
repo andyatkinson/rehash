@@ -5,3 +5,4 @@ friendly_id -v 2.1.3
 paperclip -v 2.3.1.1
 will_paginate -v 2.3.14
 gravtastic -v 2.1.3
+aws-s3 -v '0.6.2'
