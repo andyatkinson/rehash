@@ -26,7 +26,7 @@ Rails::Initializer.run do |config|
   config.gem 'haml', :version => '>= 2.2.2'
   config.gem 'acts_as_markup'
   config.gem 'friendly_id'
-  config.gem 'thoughtbot-paperclip', :lib => 'paperclip'
+  config.gem 'paperclip'
   config.gem 'mislav-will_paginate', :lib => 'will_paginate'
   config.gem 'gravtastic'
 
