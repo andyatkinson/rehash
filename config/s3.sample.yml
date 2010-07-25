@@ -1,0 +1,8 @@
+development:
+  access_key_id: YOURSECRETACCESSID
+  secret_access_key: YOUR-secRE/TACCe\ssKEy
+  bucket: some-unique-bucket
+production:
+  access_key_id: YOURSECRETACCESSID
+  secret_access_key: YOUR-secRE/TACCe\ssKEy
+  bucket: some-unique-bucket
