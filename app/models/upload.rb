@@ -7,7 +7,7 @@ class Upload < ActiveRecord::Base
                         :access_key_id => ENV['S3_KEY'],
                         :secret_access_key => ENV['S3_SECRET']
                     },
-                    :path => ":attachment/:id/:style/:basename.:extension",
+                    :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
                     :bucket => ENV['S3_BUCKET'],
                     :styles => { :large => "800x800>",
                                  :small => '200x200#',
