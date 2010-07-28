@@ -4,8 +4,6 @@ Installing as a user on OS X
  rake gems:install
  rake db:migrate
  cp config/database.sample.yml config/database.yml
- git submodule init
- git submodule update
 
 # ImageMagick is used with Paperclip for project file uploads.
 sudo port install imagemagick   # MacPorts
@@ -21,6 +19,8 @@ Additional instructions installing as a developer on OS X
  
 Deployment
 ---
+
+== Traditional Deployment ==
  
 After running Rehash locally, deployment is possible with the included deploy file, which is set up to deploy from a github repo to a Passenger gem server. You must have access to the github repo, which probably means you forked the original Rehash repo to one on your own github account.
 
@@ -28,3 +28,7 @@ The first step is to copy from the sample to a deployment file you can customize
  cp config/deployment.sample.yml config/deployment.yml
  
  More instructions coming soon.
+
+== Heroku ==
+
+Rehash can be deployed on Heroku. More details coming soon.
