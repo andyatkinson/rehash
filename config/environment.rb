@@ -1,7 +1,7 @@
 # Be sure to restart your server when you modify this file
 
 # Specifies gem version of Rails to use when vendor/rails is not present
-RAILS_GEM_VERSION = '2.3.3' unless defined? RAILS_GEM_VERSION
+RAILS_GEM_VERSION = '2.3.9' unless defined? RAILS_GEM_VERSION
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
@@ -13,7 +13,7 @@ Rails::Initializer.run do |config|
 
   # Add additional load paths for your own custom dirs
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
-  config.load_paths += %W( #{RAILS_ROOT}/app/middleware )
+  config.autoload_paths += %W( #{RAILS_ROOT}/app/middleware )
   
   # change page_cache folder location
   config.action_controller.page_cache_directory = RAILS_ROOT + "/public/cache"
@@ -27,7 +27,7 @@ Rails::Initializer.run do |config|
   config.gem 'acts_as_markup'
   config.gem 'friendly_id'
   config.gem 'thoughtbot-paperclip', :lib => 'paperclip'
-  config.gem 'mislav-will_paginate', :lib => 'will_paginate'
+  config.gem 'will_paginate', :version => '>= 2.3.15'
   config.gem 'gravtastic'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
