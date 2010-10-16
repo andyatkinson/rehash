@@ -7,7 +7,7 @@ class SitesController < ApplicationController
     else
       @site = Site.new
       @site.theme = "blue"
-      flash.now[:error] = "Please create your site"
+      flash[:error] = "Please create your site"
       render 'new', :layout => 'create_site'
     end
   end
@@ -44,7 +44,7 @@ class SitesController < ApplicationController
         @site = Site.find(params[:id])
         if params[:theme_name]
           @site.update_attribute(:theme, params[:theme_name])
-          flash.now[:notice] = 'Theme changed'
+          flash[:notice] = 'Theme changed'
         end
         render 'edit'
       }
@@ -60,12 +60,12 @@ class SitesController < ApplicationController
   def new_contact_form_email
   end
   def create_contact_form_email
-    if params[:sender_name].blank? || params[:email].blank? || params[:message].blank? || params[:challenge].blank? # would be nice to move these to a non-AR model
-      flash.now[:error] = "All fields are required"
+    if params[:sender_name].blank? || params[:email].blank? || params[:message].blank? || params[:challenge].blank?
+      flash[:error] = "All fields are required"
       render 'new_contact_form_email'
     elsif params[:challenge].to_i != 4
-        flash[:error] = "Wrong answer to challenge question"
-        render 'new_contact_form_email'
+      flash[:error] = "Wrong answer to challenge question"
+      render 'new_contact_form_email'
     else
       SiteMailer.deliver_contact_form_email(params[:sender_name], params[:email], params[:message])
       flash[:notice] = "Email sent"

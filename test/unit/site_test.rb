@@ -1,9 +1,13 @@
 require 'test_helper'
 
 class SiteTest < ActiveSupport::TestCase
-  should_validate_presence_of :name, :tagline, :owner_name, :password
-  should_not_allow_values_for :owner_email, "foo", "foo@com"
-  should_allow_values_for :owner_email, "foo@company.com"
+  should validate_presence_of(:name)
+  should validate_presence_of(:tagline)
+  should validate_presence_of(:owner_name)
+  should validate_presence_of(:password)
+  should_not allow_value("foo").for(:owner_email)
+  should_not allow_value("foo@com").for(:owner_email)
+  should allow_value("foo@company.com").for(:owner_email)
   context "A valid site" do    
     context "with some tags created" do
       setup do

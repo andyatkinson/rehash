@@ -57,22 +57,22 @@ class SitesControllerTest < ActionController::TestCase
           setup do
             post :create_contact_form_email, :message => "hi", :sender_name => "Sender", :email => "some@email.com", :challenge => "4"
           end
-          should_set_the_flash_to /Email sent/i
-          # TODO doesn't work should_redirect_to root_path
+          should set_the_flash.to(/Email sent/i)
+          should redirect_to("root path") { root_path }
         end
         context "with invalid challenge question answer" do
           setup do
             post :create_contact_form_email, :message => "hi", :sender_name => "Sender", :email => "some@email.com", :challenge => "3"
           end
-          should_set_the_flash_to /Wrong answer to challenge question/i
-          should_render_template 'new_contact_form_email'
+          should set_the_flash.to(/Wrong answer to challenge question/i)
+          should render_template('new_contact_form_email')
         end
         context "with invalid data" do
           setup do
             post :create_contact_form_email, :message => "hi", :sender_name => "", :email => "some@email.com", :challenge => "4"
           end
-          should_set_the_flash_to /All fields are required/i
-          should_render_template 'new_contact_form_email'
+          should set_the_flash.to(/All fields are required/i)
+          should render_template('new_contact_form_email')
         end
 
       end

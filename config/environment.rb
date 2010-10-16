@@ -16,20 +16,6 @@ Rails::Initializer.run do |config|
   config.load_paths += %W( #{RAILS_ROOT}/app/middleware )
   
   # change page_cache folder location
-  config.action_controller.page_cache_directory = RAILS_ROOT + "/public/cache"
-
-  # Specify gems that this application depends on and have them installed with rake gems:install
-  # config.gem "bj"
-  # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
-  # config.gem "sqlite3-ruby", :lib => "sqlite3"
-  # config.gem "aws-s3", :lib => "aws/s3"
-  config.gem 'haml', :version => '>= 2.2.2'
-  config.gem 'acts_as_markup', :version => '1.3.3'
-  config.gem 'friendly_id', :version => '2.1.3'
-  config.gem 'paperclip', :version => '2.3.1.1'
-  config.gem 'will_paginate', :version => '2.3.14'
-  config.gem 'gravtastic', :version => '2.1.3'
-  config.gem 'aws-s3', :lib => 'aws/s3', :version => '0.6.2'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
