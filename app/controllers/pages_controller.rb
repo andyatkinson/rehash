@@ -1,6 +1,5 @@
 class PagesController < ApplicationController
   before_filter :require_admin, :except => [:show]
-  caches_page :show
   
   make_resourceful do
     actions :all

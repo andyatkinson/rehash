@@ -22,11 +22,6 @@ Rehash is covered by [Cucumber](http://cukes.info/) features throughout the app.
 [2] [More on Cucumber](http://railscasts.com/episodes/159-more-on-cucumber)
 
 
-### Git
-
-Rehash uses git submodules to track plugins. Submodules are listed in the `.gitmodules` file.
-
-
 ### Plugins and gems
 
 `acts_as_taggable_on_steroids` [Github](http://github.com/jviney/acts_as_taggable_on_steroids/tree/master) Contact person: [Jonathan Viney](mailto:jonathan.viney@gmail.com)
@@ -42,6 +37,15 @@ Rehash uses git submodules to track plugins. Submodules are listed in the `.gitm
 `will_paginate` [Website](http://github.com/mislav/will_paginate) Contact person: [Mislav](mailto:mislav.marohnic@gmail.com)
 
 `gravtastic` [Website](http://github.com/chrislloyd/gravtastic) Author: [Chris Lloyd](mailto:christopher.lloyd@gmail.com)
+
+`paperclip` from [Thoughtbot](http://thoughtbot.com)
+
+`sass_on_heroku` from [Heroku](http://heroku.com)
+
+`aws-s3`
+
+### Uploads
+More details soon on S3 and Heroku.
 
 ### Credits
 

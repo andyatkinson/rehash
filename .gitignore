@@ -2,11 +2,13 @@
 log/*.log
 tmp/
 tmp/**/*
+datas/**/*
 db/*.sqlite3
 *.tmproj
 coverage/*
 *.swp
 config/database.yml
+config/s3.yml
 config/deployment.yml
 config/cucumber.yml
 features_rcov/

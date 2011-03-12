@@ -5,7 +5,6 @@ class ArticlesController < ApplicationController
   before_filter :load_recent_articles, :only => [:show]
   before_filter :load_recent_comments, :only => [:index, :show]
   before_filter :load_recent_projects, :only => [:index, :show]
-  caches_page :show, :index
   
   def index
     @articles = Article.ordered.paginate :page => params[:page], :per_page => 5

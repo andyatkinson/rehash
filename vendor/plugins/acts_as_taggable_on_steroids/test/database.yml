@@ -1,0 +1,3 @@
+sqlite3:
+  :adapter: sqlite3
+  :database: tags_db.sqlite3

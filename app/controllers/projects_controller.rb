@@ -1,6 +1,5 @@
 class ProjectsController < ApplicationController
   before_filter :require_admin, :except => [:index, :show]
-  caches_page :show, :index
   
   make_resourceful do
     actions :new, :create, :edit, :show
