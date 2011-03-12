@@ -83,19 +83,22 @@ a.cancel {
 code {
   background: #eeeeff;
   border: 1px solid #dddddd;
-  font-family: AndaleMono, monospace;
+  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
   font-weight: bold;
   text-shadow: 1px 1px 0 white;
-  font-size: 13px;
-  line-height: 13px; }
+  font-size: 1em;
+  line-height: 1em; }
 
 pre {
   padding: 10px;
   overflow: auto;
   background: #eeeeff;
-  border: 1px solid #dddddd; }
+  border: 1px solid #dddddd;
+  font-size: 11px;
+  line-height: 11px; }
   pre code {
-    border: none; }
+    border: none;
+    font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace; }
 
 form span {
   color: #aaaaaa; }
