@@ -8,7 +8,7 @@ class Upload < ActiveRecord::Base
                         :access_key_id => ENV['S3_KEY'],
                         :secret_access_key => ENV['S3_SECRET']
                     },
-                    :path => ":attachment/:id/:style/:filename.:extension",
+                    :path => ":attachment/:id/:style/:filename",
                     :styles => { :large => "800x800>",
                                  :small => '200x200#',
                                  :square => "100x100#" }
