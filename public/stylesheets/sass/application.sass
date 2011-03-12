@@ -135,8 +135,12 @@ form
       a
         :display block
         img
+          :width 130px
           :-moz-border-radius 3px
+          :-webkit-border-radius 3px
+          :border-radius 3px
           :border 1px solid #ddd
+          :padding 0px 3px 0px 3px
       a:hover
         img
           :border 1px solid #aaa
@@ -178,7 +182,6 @@ form
       :color #000
     :color #333
     :font-size 1.4em
-    :line-height 1.4em
     :font-family "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif
     :padding 10px 0
     ul
@@ -192,6 +195,7 @@ form
     :padding 5px 0
   .title
     :font-size 30px
+    :white-space nowrap
     span
       :position relative
       :text-shadow 1px 1px 0 #ededed
@@ -224,16 +228,16 @@ form
       &:hover
         :text-decoration underline
   &.first
+    :margin-left -15px
     :background-color #f0f0f0
     :padding 15px
     :-moz-border-radius 4px
     :-webkit-border-radius 4px
+    :border-radius 4px
     h1 a, .meta, .read_more
       :text-shadow 0 1px 0 #fff
   p
     :margin 15px 0
-    &:first-letter
-      :margin-left 10px
   .body
     ul
       :padding 10px 20px
@@ -279,6 +283,7 @@ form
     :color #fff
     :-webkit-border-radius 4px
     :-moz-border-radius 4px
+    :border-radius 4px
     :background #444
     :text-shadow -1px -1px 0 #000
     &:hover
@@ -309,6 +314,8 @@ form
       :padding 5px 0 20px 0
       :font-size 11px
       :color #666
+      :height 40px
+      :overflow hidden
       a
         :color #000
         :font-style italic
@@ -445,7 +452,8 @@ form
       li
         :display inline
         img
-          :width 30px
+          :width 90px
+          :margin 2px
             
 #pagination_controls
   :width 860px

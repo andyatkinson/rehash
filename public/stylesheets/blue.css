@@ -26,9 +26,10 @@
   line-height: 2em;
   width: 550px; }
   .article .body h1, .article .body h2, .article .body h3, .article .body h4, .article .body h5, .article .body h6, .page .body h1, .page .body h2, .page .body h3, .page .body h4, .page .body h5, .page .body h6 {
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 2em;
-    line-height: 2em; }
+    font-family: Helvetica, Arial, sans-serif; }
+  .article .body h1, .page .body h1 {
+    font-size: 1.8em;
+    line-height: 1.8em; }
   .article .body p, .page .body p {
     line-height: 1.4em; }
   .article .body .terminal, .page .body .terminal {
@@ -36,7 +37,8 @@
     font-size: 11px; }
 
 .article h1 {
-  font-size: 30px;
+  font-size: 1.8em;
+  line-height: 1.8em;
   padding: 5px 0;
   font-family: Helvetica, Arial, sans-serif; }
 .article .meta {
@@ -62,7 +64,8 @@
 .article a {
   color: #10306a; }
 .article .description {
-  font-size: 16px;
+  font-size: 1.5em;
+  line-height: 1.5em;
   color: #444444;
   padding: 5px 0;
   font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif; }

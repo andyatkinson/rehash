@@ -142,8 +142,12 @@ form p {
     .images ul li a {
       display: block; }
       .images ul li a img {
+        width: 130px;
         -moz-border-radius: 3px;
-        border: 1px solid #dddddd; }
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+        border: 1px solid #dddddd;
+        padding: 0px 3px 0px 3px; }
     .images ul li a:hover img {
       border: 1px solid #aaaaaa; }
 
@@ -179,7 +183,6 @@ form p {
 .project .description {
   color: #333333;
   font-size: 1.4em;
-  line-height: 1.4em;
   font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
   padding: 10px 0; }
   .project .description h2, .project .description h3 {
@@ -194,7 +197,8 @@ form p {
   line-height: 16px;
   padding: 5px 0; }
 .project .title {
-  font-size: 30px; }
+  font-size: 30px;
+  white-space: nowrap; }
   .project .title span {
     position: relative;
     text-shadow: 1px 1px 0 #ededed;
@@ -224,16 +228,16 @@ form p {
   .article .body a:hover {
     text-decoration: underline; }
 .article.first {
+  margin-left: -15px;
   background-color: #f0f0f0;
   padding: 15px;
   -moz-border-radius: 4px;
-  -webkit-border-radius: 4px; }
+  -webkit-border-radius: 4px;
+  border-radius: 4px; }
   .article.first h1 a, .article.first .meta, .article.first .read_more {
     text-shadow: 0 1px 0 white; }
 .article p {
   margin: 15px 0; }
-  .article p:first-letter {
-    margin-left: 10px; }
 .article .body ul {
   padding: 10px 20px; }
   .article .body ul li {
@@ -279,6 +283,7 @@ form p {
     color: white;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
+    border-radius: 4px;
     background: #444444;
     text-shadow: -1px -1px 0 black; }
     .admin-links a:hover {
@@ -308,7 +313,9 @@ form p {
   .index .project .description {
     padding: 5px 0 20px 0;
     font-size: 11px;
-    color: #666666; }
+    color: #666666;
+    height: 40px;
+    overflow: hidden; }
     .index .project .description a {
       color: black;
       font-style: italic; }
@@ -446,7 +453,8 @@ form p {
     #sidebar #recent_projects ul li {
       display: inline; }
       #sidebar #recent_projects ul li img {
-        width: 30px; }
+        width: 90px;
+        margin: 2px; }
 
 #pagination_controls {
   width: 860px;
