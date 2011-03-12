@@ -1,30 +1,36 @@
 .form {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; }
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
   .form label {
-    color: #666; }
+    color: #666666; }
   .form input[type=text], .form input[type=password] {
     font-size: 16px;
-    border: 1px solid #ccc;
+    border: 1px solid #cccccc;
     margin: 2px 0;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px; }
     .form input[type=text]:focus, .form input[type=password]:focus {
-      border: 1px solid #888;
-      background: #ffe; }
+      border: 1px solid #888888;
+      background: #ffffee; }
   .form textarea {
     font-size: 16px;
-    border: 1px solid #ccc;
+    border: 1px solid #cccccc;
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px; }
     .form textarea:focus {
-      border: 1px solid #666;
-      background: #ffe; }
+      border: 1px solid #666666;
+      background: #ffffee; }
 
 .article .body, .page .body {
-  font-family: Georgia, serif;
+  font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
+  font-size: 1.6em;
+  line-height: 2em;
   width: 550px; }
   .article .body h1, .article .body h2, .article .body h3, .article .body h4, .article .body h5, .article .body h6, .page .body h1, .page .body h2, .page .body h3, .page .body h4, .page .body h5, .page .body h6 {
-    font-family: Helvetica, Arial, sans-serif; }
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 2em;
+    line-height: 2em; }
+  .article .body p, .page .body p {
+    line-height: 1.4em; }
   .article .body .terminal, .page .body .terminal {
     font-family: monospace;
     font-size: 11px; }
@@ -34,10 +40,14 @@
   padding: 5px 0;
   font-family: Helvetica, Arial, sans-serif; }
 .article .meta {
-  color: #aaa;
-  font-size: 13px; }
+  color: #aaaaaa;
+  font-size: 1.3em;
+  line-height: 1.3em; }
+  .article .meta span {
+    color: #cccccc;
+    font-style: italic; }
 .article .published {
-  color: #aaa;
+  color: #aaaaaa;
   font-style: italic;
   text-align: right;
   position: relative;
@@ -46,24 +56,24 @@
   position: relative;
   top: 10px;
   float: left;
-  color: #555;
+  color: #555555;
   font-style: normal;
   font-weight: bold; }
 .article a {
   color: #10306a; }
 .article .description {
   font-size: 16px;
-  color: #444;
+  color: #444444;
   padding: 5px 0;
-  font-family: Georgia; }
+  font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif; }
 .article .read_more a {
   font-size: 13px;
-  color: #aaa;
+  color: #aaaaaa;
   font-style: italic; }
   .article .read_more a:hover {
     text-decoration: underline; }
 .article h3.author {
-  color: #aaa;
+  color: #aaaaaa;
   margin: -20px 0 10px 0; }
 
 .index .article {
@@ -71,17 +81,17 @@
 
 .comment {
   background: #f0f0f0;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #dddddd;
   margin: 12px 0;
   padding: 20px; }
   .comment .author-line {
     font-size: 14px;
-    color: #444; }
+    color: #444444; }
     .comment .author-line .name {
       font-weight: bold;
       text-transform: uppercase;
-      color: #222;
-      text-shadow: 1px 1px 0 #fff; }
+      color: #222222;
+      text-shadow: 1px 1px 0 white; }
   .comment .details .body {
     overflow: hidden;
     width: 500px;
@@ -92,32 +102,32 @@
 
 h3.leave_comment {
   padding: 20px 0 7px;
-  color: #444; }
+  color: #444444; }
 
 #header {
   background: transparent url(/images/theme/blue_header.png) top left repeat-x;
-  color: #fff; }
+  color: white; }
   #header #name h2 {
     letter-spacing: -1px;
-    font-family: Georgia;
+    font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
     color: #ededed; }
   #header a {
-    color: #fff; }
+    color: white; }
   #header h1 {
-    text-shadow: -1px -1px 0 #000; }
+    text-shadow: -1px -1px 0 black; }
   #header h2 {
     text-shadow: -1px -1px 0 #000033; }
   #header #navigation a {
     font-size: 15px;
     text-transform: uppercase;
     color: #ededed;
-    text-shadow: -1px -1px 0 #003;
+    text-shadow: -1px -1px 0 #000033;
     font-family: Helvetica, Arial;
     letter-spacing: -0.8px; }
   #header #navigation a:hover {
     text-shadow: none;
     text-decoration: underline;
-    color: #fff; }
+    color: white; }
 
 #sidebar #search {
   border: 1px solid rgba(55, 55, 55, 0.2);
@@ -125,7 +135,7 @@ h3.leave_comment {
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   width: 150px;
   padding: 2px;
-  background: #fff url(/images/search-bg.png) no-repeat scroll 93% 6px;
+  background: white url(/images/search-bg.png) no-repeat scroll 93% 6px;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px; }
   #sidebar #search #search_button {
@@ -142,25 +152,25 @@ h3.leave_comment {
     #sidebar .article_meta .author .image {
       float: left;
       padding: 2px 2px 0 2px;
-      border: 1px solid #ccc;
+      border: 1px solid #cccccc;
       -webkit-border-radius: 2px;
       -moz-border-radius: 2px;
-      background: #fff; }
+      background: white; }
     #sidebar .article_meta .author .text {
       padding: 5px 0 0 7px;
       float: left;
-      color: #555; }
+      color: #555555; }
       #sidebar .article_meta .author .text a {
-        color: #333;
+        color: #333333;
         font-weight: bold; }
         #sidebar .article_meta .author .text a:hover {
           text-decoration: underline; }
   #sidebar .article_meta .published {
     font-style: italic;
     padding: 15px 0 5px 0;
-    color: #555; }
+    color: #555555; }
   #sidebar .article_meta .comments a {
-    color: #333;
+    color: #333333;
     font-weight: bold; }
     #sidebar .article_meta .comments a:hover {
       text-decoration: underline; }
@@ -168,33 +178,33 @@ h3.leave_comment {
     padding-top: 15px; }
 
 #footer {
-  border-top: 2px solid #ccc;
-  background: #eee; }
+  border-top: 2px solid #cccccc;
+  background: #eeeeee; }
   #footer #page-list h4, #footer #tag-list h4, #footer #project-list h4, #footer #service-list h4 {
     font-weight: bold;
-    color: #222;
+    color: #222222;
     text-transform: uppercase;
     font-size: 15px;
-    text-shadow: 1px 1px 0 #fff;
+    text-shadow: 1px 1px 0 white;
     font-family: Helvetica, Arial;
-    margin-bottom: 8px;
     padding-bottom: 3px;
     width: 111px;
     letter-spacing: -1px; }
   #footer a {
     font-family: Arial;
-    font-size: 12px;
-    color: #444;
-    text-shadow: 1px 1px 0 #fff; }
+    font-size: 1.2em;
+    line-height: 1.2em;
+    color: #444444;
+    text-shadow: 1px 1px 0 white; }
     #footer a:hover {
       text-shadow: none;
       text-decoration: underline; }
   #footer #copyright {
-    color: #777;
-    text-shadow: 1px 1px 0 #fff; }
+    color: #777777;
+    text-shadow: 1px 1px 0 white; }
   #footer #powered-by {
-    color: #777;
-    text-shadow: 1px 1px 0 #fff; }
+    color: #777777;
+    text-shadow: 1px 1px 0 white; }
     #footer #powered-by a {
       color: 222;
       font-size: 13px; }

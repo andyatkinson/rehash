@@ -1,6 +1,7 @@
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  height: 100%; }
+  height: 100%;
+  font-size: 62.5%; }
 
 li {
   list-style-type: none; }
@@ -10,7 +11,7 @@ textarea.big {
 
 a, a:visited {
   text-decoration: none;
-  color: #000; }
+  color: black; }
   a:hover, a:visited:hover {
     text-decoration: none; }
 
@@ -20,8 +21,8 @@ a, a:visited {
   overflow: hidden; }
 
 a.cancel {
-  font-size: .9em;
-  color: #aaa;
+  font-size: 0.9em;
+  color: #aaaaaa;
   position: relative;
   left: 2px;
   top: 2px;
@@ -36,16 +37,16 @@ a.cancel {
   margin: 10px 0; }
 
 #flash_notice {
-  background-color: #CFC;
-  border: solid 1px #6C6; }
+  background-color: #ccffcc;
+  border: solid 1px #66cc66; }
 
 #flash_error {
-  background-color: #FCC;
-  border: solid 1px #C66; }
+  background-color: #ffcccc;
+  border: solid 1px #cc6666; }
 
 #flash_caution {
-  background-color: #FFF6BF;
-  border: solid 1px #FFD324; }
+  background-color: #fff6bf;
+  border: solid 1px #ffd324; }
 
 .fieldWithErrors, .form .fieldWithErrors {
   display: inline; }
@@ -56,7 +57,7 @@ a.cancel {
 
 #errorExplanation {
   width: 400px;
-  border: 2px solid #CF0000;
+  border: 2px solid #cf0000;
   padding: 0;
   padding-bottom: 12px;
   margin-bottom: 20px;
@@ -67,10 +68,10 @@ a.cancel {
     margin: 0;
     font-weight: bold;
     font-size: 12px;
-    background-color: #c00;
-    color: #fff; }
+    background-color: #cc0000;
+    color: white; }
   #errorExplanation p {
-    color: #333;
+    color: #333333;
     margin-bottom: 0;
     padding: 8px; }
   #errorExplanation ul {
@@ -80,31 +81,33 @@ a.cancel {
       list-style: disc; }
 
 code {
-  background: #EEEEFF;
-  border: 1px solid #DDDDDD;
+  background: #eeeeff;
+  border: 1px solid #dddddd;
+  font-family: AndaleMono, monospace;
   font-weight: bold;
-  text-shadow: 1px 1px 0 #fff;
-  font-size: 15px; }
+  text-shadow: 1px 1px 0 white;
+  font-size: 13px;
+  line-height: 13px; }
 
 pre {
   padding: 10px;
   overflow: auto;
-  background: #EEEEFF;
-  border: 1px solid #DDDDDD; }
+  background: #eeeeff;
+  border: 1px solid #dddddd; }
   pre code {
     border: none; }
 
 form span {
-  color: #aaa; }
+  color: #aaaaaa; }
 form p {
   margin: 15px 0; }
 
 .tag-list a:hover {
   text-decoration: underline; }
 .tag-list li {
-  font-size: .9em;
+  font-size: 0.9em;
   font-style: italic;
-  color: #555; }
+  color: #555555; }
 
 .tags li {
   margin: 20px 0; }
@@ -113,18 +116,18 @@ form p {
     left: -4px; }
 .tags a, .tags a:visited {
   font-size: 14px;
-  color: #555;
+  color: #555555;
   margin: 5px;
   padding: 4px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   background: #f0f0f0;
-  border: 1px solid #bbb;
-  text-shadow: 1px 1px 0 #fff;
+  border: 1px solid #bbbbbb;
+  text-shadow: 1px 1px 0 white;
   opacity: 0.8; }
   .tags a:hover, .tags a:visited:hover {
     opacity: 1;
-    border: 1px solid #999; }
+    border: 1px solid #999999; }
 
 .images {
   padding: 0 0 10px 0;
@@ -137,9 +140,9 @@ form p {
       display: block; }
       .images ul li a img {
         -moz-border-radius: 3px;
-        border: 1px solid #ddd; }
+        border: 1px solid #dddddd; }
     .images ul li a:hover img {
-      border: 1px solid #aaa; }
+      border: 1px solid #aaaaaa; }
 
 .themes {
   padding: 0 0 10px 0;
@@ -152,18 +155,18 @@ form p {
     .themes ul li a {
       display: block; }
       .themes ul li a img {
-        border: 3px solid #ddd; }
+        border: 3px solid #dddddd; }
     .themes ul li a:hover img {
       border: 3px solid #002b40; }
     .themes ul li .overlay {
-      background: #000;
-      opacity: .5;
+      background: black;
+      opacity: 0.5;
       height: 156px;
       width: 155px;
       position: relative;
       top: -155px; }
       .themes ul li .overlay .progress {
-        background: #000 url(/images/loading.gif) no-repeat top left;
+        background: black url(/images/loading.gif) no-repeat top left;
         height: 20px;
         width: 100px;
         position: relative;
@@ -171,12 +174,13 @@ form p {
         left: 54px; }
 
 .project .description {
-  color: #333;
-  font-size: 18px;
-  font-family: Georgia, serif;
+  color: #333333;
+  font-size: 1.4em;
+  line-height: 1.4em;
+  font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
   padding: 10px 0; }
   .project .description h2, .project .description h3 {
-    color: #000; }
+    color: black; }
   .project .description ul {
     padding: 20px; }
     .project .description ul li {
@@ -195,7 +199,7 @@ form p {
     left: 20px;
     font-size: 16px;
     text-transform: uppercase;
-    color: #777;
+    color: #777777;
     font-style: italic;
     letter-spacing: -0.8px; }
     .project .title span:hover {
@@ -209,30 +213,36 @@ form p {
     text-decoration: underline; }
 
 .change_password {
-  color: #000; }
+  color: black; }
 
+.article .body a {
+  background-color: #f0f8ff;
+  padding: 2px; }
+  .article .body a:hover {
+    text-decoration: underline; }
 .article.first {
   background-color: #f0f0f0;
   padding: 15px;
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px; }
   .article.first h1 a, .article.first .meta, .article.first .read_more {
-    text-shadow: 0 1px 0 #fff; }
+    text-shadow: 0 1px 0 white; }
 .article p {
-  line-height: 20px;
   margin: 15px 0; }
+  .article p:first-letter {
+    margin-left: 10px; }
 .article .body ul {
   padding: 10px 20px; }
   .article .body ul li {
-    list-style-type: disc; }
+    list-style-type: square;
+    line-height: 1.4em; }
 .article .body ol {
   padding: 10px 25px; }
   .article .body ol li {
     list-style-type: decimal; }
 .article .body h1, .article .body h2 {
   float: none;
-  clear: both;
-  padding: 10px 0; }
+  clear: both; }
 .article .body h1 {
   font-size: 25px; }
 
@@ -247,35 +257,35 @@ form p {
 .notice {
   padding: 10px;
   margin: 10px 0;
-  background-color: #FFF6BF;
-  border-top: 1px solid #FFD324;
-  border-bottom: 1px solid #FFD324; }
+  background-color: #fff6bf;
+  border-top: 1px solid #ffd324;
+  border-bottom: 1px solid #ffd324; }
 
 .success {
   padding: 10px;
   margin: 10px 0;
-  background-color: #CFC;
-  border-top: solid 1px #6C6;
-  border-bottom: solid 1px #6C6; }
+  background-color: #ccffcc;
+  border-top: solid 1px #66cc66;
+  border-bottom: solid 1px #66cc66; }
 
 .admin-links {
   padding: 20px 0; }
   .admin-links a {
     font-size: 14px;
     padding: 7px;
-    color: #fff;
+    color: white;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
-    background: #444;
-    text-shadow: -1px -1px 0 #000; }
+    background: #444444;
+    text-shadow: -1px -1px 0 black; }
     .admin-links a:hover {
-      background: #000;
+      background: black;
       text-decoration: none;
       text-shadow: none; }
 
 .index .project {
   padding: 7px 7px 20px 7px;
-  border: 1px solid #ddd;
+  border: 1px solid #dddddd;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
@@ -290,14 +300,14 @@ form p {
     font-size: 13px;
     line-height: 15px;
     padding-bottom: 2px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #dddddd;
     letter-spacing: -0.5px; }
   .index .project .description {
     padding: 5px 0 20px 0;
     font-size: 11px;
-    color: #666; }
+    color: #666666; }
     .index .project .description a {
-      color: #000;
+      color: black;
       font-style: italic; }
       .index .project .description a:hover {
         text-decoration: underline; }
@@ -309,7 +319,7 @@ form p {
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px; }
     .index .project .image:hover {
-      border: 1px solid #ccc; }
+      border: 1px solid #cccccc; }
     .index .project .image img {
       margin: 2px 2px 0 2px; }
 
@@ -323,17 +333,17 @@ form p {
   float: right;
   width: 240px;
   background: #f0f0f0;
-  border: 1px solid #ddd; }
+  border: 1px solid #dddddd; }
   .form .right a {
-    color: #bbb; }
+    color: #bbbbbb; }
   .form .right input[type=text] {
     width: 200px; }
 
 #header {
   height: 116px;
-  color: #000; }
+  color: black; }
   #header a {
-    color: #000; }
+    color: black; }
   #header #name {
     position: relative;
     top: 16px;
@@ -372,7 +382,7 @@ form p {
   width: 860px;
   margin: 0 auto; }
   #wrapper #main {
-    background: #fff;
+    background: white;
     float: left;
     width: 620px; }
     #wrapper #main .create {
@@ -387,7 +397,7 @@ form p {
   width: 200px; }
   #sidebar h3 {
     font-size: 12px;
-    color: #333; }
+    color: #333333; }
   #sidebar #feed {
     padding: 20px 0 10px 0; }
     #sidebar #feed p {
@@ -399,32 +409,35 @@ form p {
     white-space: nowrap; }
     #sidebar #search #q {
       width: 120px;
-      background: #fff;
+      background: white;
       font-size: 13px;
       letter-spacing: -0.2px;
       font-family: Arial;
       border: none;
       padding: 2px;
-      text-shadow: 1px 1px 0 #fff; }
+      text-shadow: 1px 1px 0 white; }
     #sidebar #search input[type="submit"] {
       position: relative;
       left: 1px;
       top: -2px; }
   #sidebar #recent_articles, #sidebar #recent_comments {
     padding: 10px 0; }
-    #sidebar #recent_articles ul li .date, #sidebar #recent_comments ul li .date {
-      font-size: 11px;
-      font-family: Arial;
-      color: #777;
-      letter-spacing: -0.4px;
-      font-style: italic; }
-    #sidebar #recent_articles ul li a, #sidebar #recent_comments ul li a {
-      font-size: 12px;
-      color: #333;
-      text-decoration: none;
-      font-family: Helvetica, Arial; }
-      #sidebar #recent_articles ul li a:hover, #sidebar #recent_comments ul li a:hover {
-        text-decoration: underline; }
+    #sidebar #recent_articles ul li, #sidebar #recent_comments ul li {
+      margin: 5px 0; }
+      #sidebar #recent_articles ul li .date, #sidebar #recent_comments ul li .date {
+        font-size: 11px;
+        font-family: Arial;
+        color: #777777;
+        letter-spacing: -0.4px;
+        font-style: italic; }
+      #sidebar #recent_articles ul li a, #sidebar #recent_comments ul li a {
+        font-size: 1.2em;
+        line-height: 1.2em;
+        color: #333333;
+        text-decoration: none;
+        font-family: Helvetica, Arial; }
+        #sidebar #recent_articles ul li a:hover, #sidebar #recent_comments ul li a:hover {
+          text-decoration: underline; }
   #sidebar #recent_projects {
     padding: 10px 0; }
     #sidebar #recent_projects ul li {
@@ -441,20 +454,20 @@ form p {
     font-size: 13px;
     font-family: Arial; }
     #pagination_controls .pagination a {
-      background: #fff;
-      color: #aaa; }
+      background: white;
+      color: #aaaaaa; }
       #pagination_controls .pagination a:hover {
-        color: #555; }
+        color: #555555; }
     #pagination_controls .pagination span.current {
-      color: #555;
-      background: #fff; }
+      color: #555555;
+      background: white; }
 
 #footer {
   margin-top: 20px;
   padding: 0px 0px 30px 0;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  background: #ddd; }
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  background: #dddddd; }
   #footer #links {
     width: 860px;
     margin: 0 auto; }
@@ -474,6 +487,9 @@ form p {
     font-size: 12px;
     float: right;
     text-align: right; }
+    #footer #powered-by a {
+      font-size: 1em;
+      line-height: 1em; }
   #footer #service-list {
     float: left;
     padding: 20px 0; }
@@ -486,11 +502,11 @@ form p {
       left: 20px; }
 
 .required {
-  color: #555;
+  color: #555555;
   padding: 3px 0; }
 
 .quiet {
-  color: #999;
+  color: #999999;
   font-size: 11px; }
 
 .project_form textarea, .pages_form textarea, .articles_form textarea {
@@ -512,10 +528,10 @@ form p {
 
 .comment .gravatar {
   float: left;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
-  background: #fff; }
+  background: white; }
   .comment .gravatar img {
     margin: 2px 2px 0 2px; }
 .comment .details {
@@ -523,10 +539,13 @@ form p {
   padding-left: 18px; }
   .comment .details .author-line {
     margin: 5px 0; }
+  .comment .details .body {
+    font-size: 1.2em;
+    line-height: 1.2em; }
 
 .comment.admin {
-  background: #ffc;
-  border-bottom: 1px solid #ff0; }
+  background: #ffffcc;
+  border-bottom: 1px solid yellow; }
 
 .new_comment label {
   line-height: 20px;

@@ -1,6 +1,7 @@
 body
   :font-family "Helvetica Neue", Helvetica, Arial, sans-serif
   :height 100%
+  :font-size 62.5%
 li
   :list-style-type none
 textarea.big
@@ -72,9 +73,11 @@ a.cancel
 code
   :background #EEEEFF
   :border 1px solid #DDDDDD
+  :font-family AndaleMono, monospace
   :font-weight bold
   :text-shadow 1px 1px 0 #fff
-  :font-size 15px
+  :font-size 13px
+  :line-height 13px
 pre
   :padding 10px
   :overflow auto
@@ -171,8 +174,9 @@ form
     h2, h3
       :color #000
     :color #333
-    :font-size 18px
-    :font-family Georgia, serif
+    :font-size 1.4em
+    :line-height 1.4em
+    :font-family "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif
     :padding 10px 0
     ul
       :padding 20px
@@ -210,6 +214,12 @@ form
   
 //styles that exist across all themes
 .article
+  .body
+    a
+      :background-color #F0F8FF
+      :padding 2px
+      &:hover
+        :text-decoration underline
   &.first
     :background-color #f0f0f0
     :padding 15px
@@ -218,13 +228,15 @@ form
     h1 a, .meta, .read_more
       :text-shadow 0 1px 0 #fff
   p
-    :line-height 20px
     :margin 15px 0
+    &:first-letter
+      :margin-left 10px
   .body
     ul
       :padding 10px 20px
       li
-        :list-style-type disc
+        :list-style-type square
+        :line-height 1.4em
     ol
       :padding 10px 25px
       li
@@ -232,7 +244,6 @@ form
     h1,h2
       :float none
       :clear both
-      :padding 10px 0
     h1
       :font-size 25px
 
@@ -410,6 +421,7 @@ form
     :padding 10px 0
     ul
       li
+        :margin 5px 0
         .date
           :font-size 11px
           :font-family Arial
@@ -417,7 +429,8 @@ form
           :letter-spacing -0.4px
           :font-style italic
         a
-          :font-size 12px
+          :font-size 1.2em
+          :line-height 1.2em
           :color #333
           :text-decoration none
           :font-family Helvetica, Arial
@@ -474,6 +487,8 @@ form
     :float right
     :text-align right
     a
+      :font-size 1em
+      :line-height 1em
       &:hover
   #service-list
     h4
@@ -526,6 +541,9 @@ form
     :padding-left 18px
     .author-line
       :margin 5px 0
+    .body
+      :font-size 1.2em
+      :line-height 1.2em
 .comment.admin
   :background #ffc
   :border-bottom 1px solid #ff0
