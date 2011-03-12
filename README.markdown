@@ -16,7 +16,7 @@ Rehash is a minimal publishing application focused on providing a very well-test
 
 ### Testing
 
-Rehash is covered by [Cucumber](http://cukes.info/) features throughout the app. The Cucumber screencasts [1] [2] from Ryan Bates are excellent resources when getting started. [Shoulda](http://www.thoughtbot.com/projects/shoulda/) is used for controller and model tests. [Blue-ridge](http://github.com/relevance/blue-ridge) will be used for JavaScript testing. Run JavaScript tests with the `rake test:javascripts` command.
+Rehash is covered by [Cucumber](http://cukes.info/) features throughout the app. The Cucumber screencasts [1] [2] from Ryan Bates are excellent resources when getting started. [Shoulda](http://www.thoughtbot.com/projects/shoulda/) is used for controller and model tests.
 
 [1] [Beginning with Cucumber](http://railscasts.com/episodes/155-beginning-with-cucumber)
 [2] [More on Cucumber](http://railscasts.com/episodes/159-more-on-cucumber)
