@@ -198,7 +198,10 @@ form p {
   padding: 5px 0; }
 .project .title {
   font-size: 30px;
-  white-space: nowrap; }
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis; }
   .project .title span {
     position: relative;
     text-shadow: 1px 1px 0 #ededed;
@@ -570,3 +573,24 @@ form p {
   height: 100px; }
 .new_comment #comment_challenge {
   width: 50px; }
+
+#recent_tweets {
+  padding: 10px 0; }
+  #recent_tweets #tweets ul li {
+    font-size: 1.2em;
+    line-height: 1.2em;
+    color: #333333;
+    margin: 5px 0; }
+    #recent_tweets #tweets ul li a:hover {
+      text-decoration: underline; }
+    #recent_tweets #tweets ul li .created_at {
+      font-size: 1.2em;
+      line-height: 1.2em;
+      color: #333333; }
+      #recent_tweets #tweets ul li .created_at a {
+        font-size: 11px;
+        font-style: italic;
+        margin-left: 5px;
+        color: #777777; }
+        #recent_tweets #tweets ul li .created_at a:hover {
+          text-decoration: underline; }

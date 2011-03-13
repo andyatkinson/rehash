@@ -196,6 +196,9 @@ form
   .title
     :font-size 30px
     :white-space nowrap
+    :width 100%
+    :overflow hidden
+    :text-overflow ellipsis
     span
       :position relative
       :text-shadow 1px 1px 0 #ededed
@@ -572,3 +575,26 @@ form
     :height 100px
   #comment_challenge
     :width 50px
+#recent_tweets
+  :padding 10px 0
+  #tweets
+    ul
+      li
+        :font-size 1.2em
+        :line-height 1.2em
+        :color #333
+        :margin 5px 0
+        a
+          &:hover
+            :text-decoration underline
+        .created_at
+          :font-size 1.2em
+          :line-height 1.2em
+          :color #333
+          a
+            :font-size 11px
+            :font-style italic
+            :margin-left 5px
+            :color #777
+            &:hover
+              :text-decoration underline
