@@ -41,14 +41,14 @@ GEM
       term-ansicolor (~> 1.0.5)
     gravtastic (3.0.0)
     haml (3.0.25)
-    hpricot (0.8.2)
+    hpricot (0.8.4)
     json (1.4.6)
     mime-types (1.16)
     mocha (0.9.12)
     mysql (2.8.1)
     nokogiri (1.4.4)
     paperclip (2.3.1.1)
-    rack (1.1.1)
+    rack (1.1.2)
     rack-test (0.5.7)
       rack (>= 1.0)
     rails (2.3.9)
@@ -89,7 +89,6 @@ DEPENDENCIES
   hpricot
   mocha
   mysql
-  nokogiri
   paperclip (= 2.3.1.1)
   rails (= 2.3.9)
   shoulda
