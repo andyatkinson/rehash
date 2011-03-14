@@ -9,6 +9,8 @@ gem 'will_paginate', '2.3.14'
 gem 'gravtastic', '3.0.0'
 gem 'aws-s3', '0.6.2', :require => 'aws/s3'
 gem 'mysql'
+gem 'syntax'
+gem 'hpricot'
 
 group :development do
   gem 'sqlite3-ruby'

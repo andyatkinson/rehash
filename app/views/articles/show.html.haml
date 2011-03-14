@@ -14,7 +14,7 @@
 .article
   %h1= h(@article.title)
   .clear
-  .body= @article.body.to_html
+  .body= highlight(@article.body.to_html)
 
   .meta
     %h3= pluralize @article.comments.count, 'comment'
