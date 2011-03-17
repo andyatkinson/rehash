@@ -92,8 +92,8 @@ pre {
   padding: 10px;
   overflow: auto;
   background: #eeeeff;
-  border: 1px solid #dddddd;
-  font-size: 11px; }
+  font-size: 1em;
+  line-height: 1.2em; }
   pre code {
     border: none;
     font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace; }

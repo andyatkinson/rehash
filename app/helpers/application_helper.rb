@@ -49,7 +49,7 @@ module ApplicationHelper
     h = Hpricot(text)
     c = Syntax::Convertors::HTML.for_syntax "ruby"
     h.search('//pre') do |e|
-      e.set_attribute 'class', 'ruby'
+      e.set_attribute 'class', 'code'
       e.inner_html = c.convert(e.inner_text, false)
     end
     h.to_s

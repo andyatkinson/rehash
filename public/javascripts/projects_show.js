@@ -1,10 +1,10 @@
 $(function() {
   $(".project .images .image a.group").fancybox({
-    'padding': 0,
-    'hideOnContentClick': false,
-		'zoomSpeedIn'			: 300,
-		'zoomSpeedOut'			: 200,
-		'easingIn'				: 'easeOutBack',
-		'easingOut'				: 'easeInBack'
+    transitionIn: 'none',
+    transitionOut: 'none',
+    titlePosition: 'over',
+    titleFormat: function(title, currentArray, currentIndex, currentOpts) {
+      return '<span id="fancybox-title-over">Image ' +  (currentIndex + 1) + ' / ' + currentArray.length + ' ' + title + '</span>';
+    }
   });
 });

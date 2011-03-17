@@ -1,19 +1,19 @@
 pre { background: #111122; padding: 10px; color: #228822; }
-.ruby .normal { color: #fff; }
-.ruby .comment { color: #005; font-style: italic; }
-.ruby .keyword { color: #A44; font-weight: bold; }
-.ruby .method { color: #44f; }
-.ruby .class { color: #0c4; }
-.ruby .module { color: #050; }
-.ruby .punct { color: #668; font-weight: bold; }
-.ruby .symbol { color: #ff0; }
-.ruby .string { color: #4f4; }
-.ruby .char { color: #F07; }
-.ruby .ident { color: #fff; }
-.ruby .constant { color: #0c4; }
-.ruby .regex { color: #B66; background: #FEF; }
-.ruby .number { color: #F99; }
-.ruby .attribute { color: #fc4; }
-.ruby .global { color: #7FB; }
-.ruby .expr { color: #227; }
-.ruby .escape { color: #277; }
+.code .normal { color: #fff; }
+.code .comment { color: #005; font-style: italic; }
+.code .keyword { color: #A44; font-weight: bold; }
+.code .method { color: #44f; }
+.code .class { color: #0c4; }
+.code .module { color: #050; }
+.code .punct { color: #668; font-weight: bold; }
+.code .symbol { color: #ff0; }
+.code .string { color: #4f4; }
+.code .char { color: #F07; }
+.code .ident { color: #fff; }
+.code .constant { color: #0c4; }
+.code .regex { color: #B66; background: #444; }
+.code .number { color: #F99; }
+.code .attribute { color: #fc4; }
+.code .global { color: #7FB; }
+.code .expr { color: #227; }
+.code .escape { color: #277; }

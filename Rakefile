@@ -8,6 +8,3 @@ require 'rake/testtask'
 require 'rake/rdoctask'
 
 require 'tasks/rails'
-
-task :default => "cucumber"
-task :default => "test:javascripts"

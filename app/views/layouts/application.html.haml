@@ -7,7 +7,7 @@
     %meta{:name => "keywords", :content => yield(:meta_keywords) || website.default_tags }
     = open_id_meta_tags
     = stylesheet_link_tag 'reset', 'application', 'menu', 'syntax_highlight'
-    = javascript_include_tag 'jquery-1.3.2.min', 'search_box', 'jquery.tweets.min', 'application'
+    = javascript_include_tag 'jquery-1.5.1.min', 'search_box', 'jquery.tweets.min', 'application'
     = yield(:head)
     %link{:href => "/stylesheets/#{h(website.theme || "blue")}.css?#{Time.now.to_i}", :media => 'screen', :rel => 'stylesheet theme', :type => 'text/css'}
   %body

@@ -18,6 +18,7 @@ end
 
 group :test do
   gem 'sqlite3-ruby'
+  gem 'rspec-rails'
   gem 'shoulda'
   gem 'mocha'
   gem 'database_cleaner'
