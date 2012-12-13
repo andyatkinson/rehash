@@ -85,10 +85,7 @@
             %h3= "Recent Projects"
             %ul
               - @recent_projects.each do |project|
-                %li= link_to image_tag(project_image_url(project), :title => project.name), project
-        #recent_tweets
-          %h3 Recent Tweets
-          #tweets
+                %li= link_to image_tag(project_image_url(project), :title => project.name), projectq
     .clear
     #pagination_controls= yield(:pagination_controls)
     #footer
@@ -109,12 +106,6 @@
           %ul
             - for tag in Tag.all
               %li= link_to tag.name, tagged_articles_path(:tag => tag.name)
-        #service-list
-          - if !website.flickr_username.blank? || !website.twitter_username.blank?
-            %h4= t(:elsewhere)
-          %ul
-            %li.flickr= link_to website.flickr_username, "http://flickr.com/photos/#{website.flickr_username}" if website.flickr_username
-            %li.twitter= link_to website.twitter_username, "http://twitter.com/#{website.twitter_username}" if website.twitter_username
       .clear
       .wrap
         #copyright= "#{website.name} &copy; #{Time.now.year} #{website.owner_name}"

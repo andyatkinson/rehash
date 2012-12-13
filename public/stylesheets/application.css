@@ -488,11 +488,11 @@ form p {
     #footer #links h4 {
       font-weight: normal;
       padding-bottom: 4px; }
-    #footer #links #page-list, #footer #links #tag-list, #footer #links #project-list, #footer #links #service-list {
+    #footer #links #page-list, #footer #links #tag-list, #footer #links #project-list {
       float: left;
       padding: 20px 0 20px 40px;
       width: 175px; }
-      #footer #links #page-list ul li, #footer #links #tag-list ul li, #footer #links #project-list ul li, #footer #links #service-list ul li {
+      #footer #links #page-list ul li, #footer #links #tag-list ul li, #footer #links #project-list ul li {
         margin: 2px 0; }
   #footer #copyright {
     font-size: 12px;
@@ -504,16 +504,6 @@ form p {
     #footer #powered-by a {
       font-size: 1em;
       line-height: 1em; }
-  #footer #service-list {
-    float: left;
-    padding: 20px 0; }
-    #footer #service-list .twitter {
-      background: url(/images/services/twitter.png) no-repeat top left; }
-    #footer #service-list .flickr {
-      background: url(/images/services/flickr.png) no-repeat top left; }
-    #footer #service-list a {
-      position: relative;
-      left: 20px; }
 
 .required {
   color: #555555;
@@ -573,24 +563,3 @@ form p {
   height: 100px; }
 .new_comment #comment_challenge {
   width: 50px; }
-
-#recent_tweets {
-  padding: 10px 0; }
-  #recent_tweets #tweets ul li {
-    font-size: 1.2em;
-    line-height: 1.2em;
-    color: #333333;
-    margin: 5px 0; }
-    #recent_tweets #tweets ul li a:hover {
-      text-decoration: underline; }
-    #recent_tweets #tweets ul li .created_at {
-      font-size: 1.2em;
-      line-height: 1.2em;
-      color: #333333; }
-      #recent_tweets #tweets ul li .created_at a {
-        font-size: 11px;
-        font-style: italic;
-        margin-left: 5px;
-        color: #777777; }
-        #recent_tweets #tweets ul li .created_at a:hover {
-          text-decoration: underline; }

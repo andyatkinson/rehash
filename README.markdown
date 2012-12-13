@@ -1,17 +1,18 @@
 rehash
 ===
-*Rehash is a personal publishing application with an emphasis on simplicity and well-tested code.*
+Open-source blog and portfolio app written in Ruby on Rails.
 
 Rehash was created by [Andy Atkinson](http://webandy.com).
 
-### Install and Documentation
+### Installation
 
-Please see the INSTALL file for set up instructions. Please see the [Rehash Github wiki](http://wiki.github.com/webandy/rehash) for documentation.
-
-
-### Philosophy
-
-Rehash is a minimal publishing application focused on providing a very well-tested Ruby application others can understand and use with confidence. Rehash can serve as a base app suitable for forking, or works great as is for personal blogging and portfolio display. Third party code in rehash was selected for solving a specific problem well, and being tested and updated regularly. Functionality is designed to degrade gracefully, e.g. file uploads and theme switching work without JavaScript. Ajax is added to certain features where full page loads are not ideal.
+  brew install imagemagick
+  gem install bundler
+  bundle install
+  cp config/database.sample.yml config/database.yml
+  bundle exec rake db:create
+  bundle exec rake db:migrate
+  bundle exec rake
 
 
 ### Testing
