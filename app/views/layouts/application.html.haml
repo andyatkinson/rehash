@@ -85,7 +85,7 @@
             %h3= "Recent Projects"
             %ul
               - @recent_projects.each do |project|
-                %li= link_to image_tag(project_image_url(project), :title => project.name), projectq
+                %li= link_to image_tag(project_image_url(project), :title => project.name), project
     .clear
     #pagination_controls= yield(:pagination_controls)
     #footer
