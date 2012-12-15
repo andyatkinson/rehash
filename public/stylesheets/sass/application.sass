@@ -233,7 +233,7 @@ form
         :text-decoration underline
   &.first
     :margin-left -15px
-    :background-color #f0f0f0
+    :background-color #f8f8f8
     :padding 15px
     :-moz-border-radius 4px
     :-webkit-border-radius 4px
@@ -354,33 +354,65 @@ form
     input[type=text]
       :width 200px
 #header
-  :height 116px
+  :background #f8f8f8
+  :height 50px
   :color #000
   a
     :color #000
   #name
     :position relative
-    :top 16px
-    :width 400px
+    :top 10px
+    :width 200px
+    :overflow hidden
+    :white-space nowrap
     :float left
     h1
-      :font-size 30px
+      :font-size 25px
+      :line-height 30px
       :margin 0
-    h2
-      :font-size 13px
-      :font-style italic
-      :margin 0 0 -5px 10px
-      :text-transform uppercase
-      :font-weight normal
   #navigation
     :float right
-    :position relative
-    :top 32px
-    :right -15px
-    a
-      :padding 3px 4px 6px 6px
+    :width 550px
+    :clear both
+    #nav-wrapper
+      :float right
+      :width 350px
+      :position relative
+      :top -11px
+      a
+        :padding 3px 4px 6px 6px
+    #search
+      :float right
+      :width 150px
+      :border 1px solid rgba(55, 55, 55, 0.2)
+      :-moz-box-shadow 0 0 5px rgba(0, 0, 0, 0.2)
+      :-webkit-box-shadow 0 0 5px rgba(0, 0, 0, 0.2)
+      :width 150px
+      :padding 2px
+      :background #fff url(/images/search-bg.png) no-repeat scroll 93% 6px
+      :-moz-border-radius 2px
+      :-webkit-border-radius 2px
+      :position relative
+      :top -19px
+      #search_button
+        :display none
+      :white-space nowrap
+      #q
+        :width 120px
+        :background #fff
+        :font-size 13px
+        :letter-spacing -0.2px
+        :font-family Arial
+        :border none
+        :padding 2px
+        :text-shadow 1px 1px 0 #fff
+      input[type="submit"]
+        :position relative
+        :left 1px
+        :top -2px
+      
 .wrap
-  :width 860px
+  :width 864px
   :margin 0 auto
 #wrapper.projects
   #main
@@ -401,6 +433,7 @@ form
       :padding 10px 0
       a:hover
         :text-decoration underline
+
 #sidebar
   :padding-left 40px
   :height 100%
@@ -416,21 +449,6 @@ form
       :font-size 11px
     img
       :width 30px
-  #search
-    :white-space nowrap
-    #q
-      :width 120px
-      :background #fff
-      :font-size 13px
-      :letter-spacing -0.2px
-      :font-family Arial
-      :border none
-      :padding 2px
-      :text-shadow 1px 1px 0 #fff
-    input[type="submit"]
-      :position relative
-      :left 1px
-      :top -2px
   #recent_articles, #recent_comments
     :padding 10px 0
     ul
@@ -478,9 +496,7 @@ form
 #footer
   :margin-top 20px
   :padding 0px 0px 30px 0
-  :border-top 1px solid #ccc
-  :border-bottom 1px solid #ddd
-  :background #ddd
+  :background #f8f8f8
   #links
     :width 860px
     :margin 0 auto

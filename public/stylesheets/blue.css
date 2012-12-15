@@ -108,41 +108,22 @@ h3.leave_comment {
   color: #444444; }
 
 #header {
-  background: transparent url(/images/theme/blue_header.png) top left repeat-x;
-  color: white; }
+  color: #222222; }
   #header #name h2 {
     letter-spacing: -1px;
     font-family: "Palatino Linotype", Palatino, Palladio, "URW Palladio L", "Book Antiqua", Baskerville, "Bookman Old Style", "Bitstream Charter", "Nimbus Roman No9 L", Garamond, "Apple Garamond", "ITC Garamond Narrow", "New Century Schoolbook", "Century Schoolbook", "Century Schoolbook L", Georgia, serif;
-    color: #ededed; }
+    color: #222222; }
   #header a {
-    color: white; }
-  #header h1 {
-    text-shadow: -1px -1px 0 black; }
-  #header h2 {
-    text-shadow: -1px -1px 0 #000033; }
+    color: #222222; }
   #header #navigation a {
     font-size: 15px;
     text-transform: uppercase;
-    color: #ededed;
-    text-shadow: -1px -1px 0 #000033;
-    font-family: Helvetica, Arial;
+    color: #222222;
+    font-family: Helvetica, Arial, sans-serif;
     letter-spacing: -0.8px; }
   #header #navigation a:hover {
-    text-shadow: none;
-    text-decoration: underline;
-    color: white; }
+    text-decoration: underline; }
 
-#sidebar #search {
-  border: 1px solid rgba(55, 55, 55, 0.2);
-  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  width: 150px;
-  padding: 2px;
-  background: white url(/images/search-bg.png) no-repeat scroll 93% 6px;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px; }
-  #sidebar #search #search_button {
-    display: none; }
 #sidebar h3 {
   text-transform: uppercase;
   font-size: 14px;
@@ -181,8 +162,7 @@ h3.leave_comment {
     padding-top: 15px; }
 
 #footer {
-  border-top: 1px solid #dddddd;
-  background: #eeeeee; }
+  background: #f8f8f8; }
   #footer #page-list h4, #footer #tag-list h4, #footer #project-list h4, #footer #service-list h4 {
     font-weight: bold;
     color: #222222;

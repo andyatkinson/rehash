@@ -46,13 +46,18 @@
       .wrap
         #name
           %h1= link_to website.name, root_path
-          %h2= website.tagline
         #navigation
-          = link_to t(:home), root_path
-          = link_to t(:projects), projects_path if Project.all.any?
-          - for page in Page.released
-            = link_to page.name, page_slug_path(page)
-          = link_to t(:contact), contact_path
+          #search
+            - form_tag search_path, :method => 'get' do
+              = "<input type='text' id='q' name ='q' value='#{t(:search_box_text)}' />"
+              = submit_tag t(:search_button), :name => nil, :id => 'search_button'
+          #nav-wrapper
+            = link_to t(:home), root_path
+            = link_to t(:projects), projects_path if Project.all.any?
+            - for page in Page.released
+              = link_to page.name, page_slug_path(page)
+            = link_to t(:contact), contact_path
+          
     #wrapper{:class => yield(:css_class)}
       #main
         - flash.each do |name, msg|
@@ -63,11 +68,6 @@
         = yield
       #sidebar
         = yield(:sidebar)
-        #search
-          - form_tag search_path, :method => 'get' do
-            = "<input type='text' id='q' name ='q' value='#{t(:search_box_text)}' />"
-            = submit_tag t(:search_button), :name => nil, :id => 'search_button'
-          .clear
         #feed
           %h3= "Articles Feed"
           = link_to image_tag('feed.png', :title => 'Subscribe to the articles'), feed_path
