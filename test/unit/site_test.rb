@@ -2,7 +2,6 @@ require 'test_helper'
 
 class SiteTest < ActiveSupport::TestCase
   should validate_presence_of(:name)
-  should validate_presence_of(:tagline)
   should validate_presence_of(:owner_name)
   should validate_presence_of(:password)
   should_not allow_value("foo").for(:owner_email)

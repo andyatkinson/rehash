@@ -181,7 +181,7 @@ h3.leave_comment {
     padding-top: 15px; }
 
 #footer {
-  border-top: 2px solid #cccccc;
+  border-top: 1px solid #dddddd;
   background: #eeeeee; }
   #footer #page-list h4, #footer #tag-list h4, #footer #project-list h4, #footer #service-list h4 {
     font-weight: bold;

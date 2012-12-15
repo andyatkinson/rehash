@@ -1,7 +1,7 @@
 class Site < ActiveRecord::Base
   attr_accessible :name, :tagline, :owner_name, :owner_email, :password, :password_confirmation, 
   :open_id_delegate, :open_id_server, :flickr_username, :twitter_username, :google_analytics_code
-  validates_presence_of :name, :tagline, :owner_name
+  validates_presence_of :name, :owner_name
   validates_confirmation_of :password, :if => :perform_password_validation?
   validates_presence_of :password, :if => :perform_password_validation?
   EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
