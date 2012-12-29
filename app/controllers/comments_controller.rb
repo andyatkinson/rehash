@@ -1,21 +1,46 @@
 class CommentsController < ApplicationController
   before_filter :require_admin, :except => [:create]
+  before_filter :find_article_by_article_id
   
-  make_resourceful do
-    belongs_to :article
-    actions :index, :new, :create, :edit, :update, :destroy
-    
-    response_for :create do
-      expire_page :controller => :articles, :action => :index
-      expire_page :controller => :articles, :action => :show, :id => @article
+  def index
+    @comments = @article.comments
+  end
+  
+  def new
+    @comment = @article.comments.build
+  end
+  
+  def create
+    @comment = @article.comments.build(params[:comment])
+    if @comment.save
       flash[:notice] = 'Comment saved'
-      redirect_to @comment.article
+      redirect_to @article
+    else
+      render :new
     end
-    response_for :update do
-      expire_page :controller => :articles, :action => :index
-      expire_page :controller => :articles, :action => :show, :id => @article
+  end
+  
+  def edit
+    @comment = @article.comments.find(params[:id])
+  end
+  
+  def update
+    @comment = @article.comments.find(params[:id])
+    if @comment.update_attributes(params[:comment])
       flash[:notice] = 'Comment saved'
       redirect_to comments_path
+    else
+      render :edit
+    end
+  end
+  
+  def destroy
+    @comment = @article.comments.find(params[:id])
+    if @comment.destroy
+      flash[:notice] = 'Comment destroyed'
+      redirect_to article_comments_path(@article)
+    else
+      render :edit
     end
   end
   

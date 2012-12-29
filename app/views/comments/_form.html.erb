@@ -1,0 +1,25 @@
+<%= javascript 'form_submit_button' %>
+
+<% form_for [article, comment], :html => {:class => 'form'} do |f| %>
+  <%= f.error_messages %>
+  <fieldset>
+    <legend>New comment</legend>
+    <%= f.label :name, "Your name" %>
+    <%= f.text_field :name, :placeholder => "Bob Jones" %>
+
+    <%= f.label :email, 'Your email' %>
+    <%= f.text_field :email, :placeholder => "bob@example.com" %>
+
+    <%= f.label :body, "Your comments" %>
+    <%= f.text_area :body, :rows => 3 %>
+
+    <% if comment.new_record? %>
+      <%= f.label :challenge, 'What is two plus two (as a number)?' %>
+      <%= f.text_field :challenge %>
+    <% end %>
+
+    <div class="controls">
+      <%= f.submit "Save comment", :id => 'form_submit_button', :class => "btn btn-primary" %>
+    </div>
+  </fieldset>
+<% end %>

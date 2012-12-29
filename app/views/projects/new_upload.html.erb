@@ -1,0 +1,51 @@
+<% javascript 'swfobject', 'jquery.uploadify.min' %>
+<% stylesheet 'uploadify/uploadify' %>
+
+<% session_key_name = ActionController::Base.session_options[:key] %>
+<script>
+  $(function() {
+    $('form.new_upload .buttons').hide();
+    $('form.new_upload').append("<p class='notice'>Tip: Control or command-click multiple files to upload them all at once</p>");
+    $("#upload_data").uploadify({
+      uploader: '/flash/uploadify.swf',
+      script: <%= "/projects/#{params[:id]}/create_upload" %>,
+      scriptData : {
+              <%= "#{session_key_name}" %> : encodeURIComponent('<%= "#{u cookies[session_key_name]}" %>'),
+              <%= "authenticity_token" %>  : encodeURIComponent('<%= "#{u form_authenticity_token if protect_against_forgery?}" %>')
+            },  
+      fileDataName: 'upload[data]',
+      method: 'get',
+      scriptAccess: 'always',
+      multi: true,
+      auto: true,
+      cancelImg: '/images/cancel.png',
+      onComplete: function(event, queueID, fileObj, response, data) {
+        $('form.new_upload').prepend('<p class="success">Upload finished!</p>');
+      }, 
+      onAllComplete: function(event, data) {
+        var html = "<p>Redirecting or <a href='<%= "/projects/#{params[:id]}" %>'>click here</a>...</p>";
+        $('form.new_upload').prepend(html);
+        window.location = '<%= "/projects/#{params[:id]}" %>';
+      },
+      onError:function() {
+        alert('Error with upload.');
+      }
+    });
+  });
+</script>
+  
+
+<% form_for @upload, :url => create_upload_project_path(@project), :html => {:multipart => true} do |f| %>
+  <%= hidden_field_tag :attachable_type, @project.class.to_s.underscore %>
+  <%= hidden_field_tag :attachable_id, @project.id %>
+  <p>
+    <%= f.label :data, 'Pick a file' %>
+    <br>
+    <%= f.file_field :data %>
+  </br>
+  <p class='buttons'>
+    <%= f.submit "Save" %>
+    <%= link_to "Cancel", projects_path, :class => 'cancel' %>
+  </p>
+</p>
+<% end %>

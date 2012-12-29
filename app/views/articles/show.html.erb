@@ -1,0 +1,38 @@
+<% title h(@article.title), false %>
+<% meta_description @article.description %>
+<% meta_keywords @article.tag_list %>
+
+<% content_for :recent_articles do %>
+  <div id='recent_articles'>
+    <h3><%= "Recent Articles" %></h>
+    <ul>
+      <% @recent_articles.each do |article| %>
+        <li>
+          <%= link_to article.title, article %>
+          <span class='date'><%= article.created_at %></span>
+        </li>
+      <% end %>
+    </ul>
+  </h3>
+</div>
+<% end %>
+
+<div class='article'>
+  <h1><%= h(@article.title) %></h1>
+  <div class='body'><%= highlight(@article.body.to_html) %></div>
+</div>
+
+<div class='meta'>
+  <h3><%= pluralize @article.comments.count, 'comment' %></h3>
+</div>
+
+<div id='comments'>
+  <%= render :partial => 'comments/comment', :collection => @article.comments %>
+</div>
+
+<% if article_eligible_for_comments?(@article) %>
+  <h3 class='leave_comment'><%= 'Leave a comment' %></h3>
+  <div><%= render 'comments/form', {:article => @article, :comment => @article.comments.build} %></div>
+<% else %>
+  <div><%= "Comments are closed." %></div>
+<% end %>

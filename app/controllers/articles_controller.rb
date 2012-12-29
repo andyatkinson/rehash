@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   before_filter :ensure_site_exists
-  before_filter :require_admin, :except => [:index, :show, :search, :tagged]
+  before_filter :require_admin, :except => [:index, :show, :tagged]
   before_filter :find_article, :only => [:show, :edit, :update, :destroy]
   before_filter :load_recent_articles, :only => [:show]
   before_filter :load_recent_comments, :only => [:index, :show]
@@ -8,7 +8,6 @@ class ArticlesController < ApplicationController
   
   def index
     @articles = Article.ordered.paginate :page => params[:page], :per_page => 5
-    # BUG published named_scope caused friendly_id problems
     @articles.reject!{|a| !a.published} unless admin?
     respond_to do |format|
       format.html
@@ -61,12 +60,6 @@ class ArticlesController < ApplicationController
     else
       render 'edit'
     end
-  end
-  
-  def search
-    @articles = Article.ordered.search(params[:q]).paginate :page => params[:page], :per_page => 10
-    @articles.empty? ? flash.now[:error] = "No results" : flash.now[:notice] = "Found articles for #{params[:q]}"
-    render 'index'
   end
   
   def tagged

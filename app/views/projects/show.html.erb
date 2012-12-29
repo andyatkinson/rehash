@@ -1,0 +1,10 @@
+<% title h(@project.name), false %>
+
+<div class='project'>
+  <h2 class='title'><%= @project.name %></h2>
+  <div><%= render :partial => 'images' %></div>
+
+  <div class='description'><p><%= @project.description %></p></div>
+  <div class='role'><p><%= "#{t(:project_role)}: <strong>#{@project.role}</strong>" %></p></div>
+  <div class='duration'><p><%= "#{t(:project_duration)}: <strong>#{@project.duration}</strong>" %></p></div>
+</div>

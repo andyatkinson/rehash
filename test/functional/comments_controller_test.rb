@@ -74,7 +74,7 @@ class CommentsControllerTest < ActionController::TestCase
         context "destroy action" do
           should "destroy model and redirect to index action" do
             delete :destroy, :article_id => @article.id, :id => @comment
-            assert_redirected_to article_comments_url(@article)
+            assert_redirected_to article_comments_path(@article)
             assert !Comment.exists?(@comment)
           end
         end

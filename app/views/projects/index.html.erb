@@ -1,0 +1,17 @@
+<% title t(:projects) %>
+
+<div class="">
+  <ul class="thumbnails">
+    <% @projects.each do |project| %>
+      <li class="span4">
+        <div class="thumbnail">
+          <img src="<%= project_image_url(project) %>" alt="<%= h(project.name) %>" style="width:300px;height:200px;">
+          <div class="caption">
+            <h3><%= h(project.name) %></h3>
+            <p><a href='<%= "#{project_path(project)}" %>' class='btn btn-primary'>Details</a></p>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>

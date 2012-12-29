@@ -17,7 +17,3 @@ production:
   adapter: sqlite3
   database: db/production.sqlite3
   timeout: 5000
-
-# uncomment this if you are running the cucumber tests
-#cucumber:
-#  <<: *TEST

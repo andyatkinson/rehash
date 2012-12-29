@@ -1,0 +1,13 @@
+<div class="row-fluid">
+  <ul class="thumbnails">
+  <% @project.uploads.each do |upload| %>
+  <li class="span2">
+    <div class="thumbnail">
+      <a href="<%= upload.data.url(:large) %>">
+        <img src="<%= upload.data.url(:small) %>" alt="<%= h(@project.name) %>" style="width:150px;height:50px;">
+      </a>
+    </div>
+  </li>
+  <% end %>
+</ul>
+</div>

@@ -37,7 +37,7 @@ class ActiveSupport::TestCase
   # Add more helper methods to be used by all tests here...
   def create_site
     Site.destroy_all
-    Site.create! :name => "MySite", :tagline => "Site tagline", :owner_name => "Owner", :password => "1234"
+    Site.create!({:name => "MySite", :tagline => "Site tagline", :owner_name => "Owner", :owner_email => "bob@example.com", :password => "1234", :password_confirmation => "1234"})
   end
   def log_in
     old_controller = @controller

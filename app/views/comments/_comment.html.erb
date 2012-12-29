@@ -1,0 +1,7 @@
+<div class="comment">
+  <div class='gravatar'><%= image_tag comment.gravatar_url %></div>
+  <div class='details'>
+    <div class='author'><%= "<span class='name'>#{h(comment.name)}</span> wrote #{time_ago_in_words comment.created_at} ago" %></div>
+    <div class='body'><%= auto_link(comment.body) %></div>
+  </div>
+</div>

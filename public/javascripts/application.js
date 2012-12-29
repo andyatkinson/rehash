@@ -10,6 +10,4 @@ $(function() {
     $('.new_session #password').focus();
     $('.new_session #password').css('background', '#ffd');
   }
-    
-  $('#tweets').tweets({username: 'webandy', count: 3});
 });

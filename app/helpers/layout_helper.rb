@@ -16,10 +16,6 @@ module LayoutHelper
     content_for(:meta_keywords) {keywords}
   end
   
-  def css_class(css_class)
-    content_for(:css_class) {css_class}
-  end
-  
   def show_title?
     @show_title
   end

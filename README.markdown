@@ -1,8 +1,6 @@
 rehash
 ===
-Open-source blog and portfolio app written in Ruby on Rails.
-
-Rehash was created by [Andy Atkinson](http://webandy.com).
+Ruby on Rails blog and portfolio app.
 
 ### Installation
 
@@ -13,45 +11,11 @@ Rehash was created by [Andy Atkinson](http://webandy.com).
   bundle exec rake db:create
   bundle exec rake db:migrate
   bundle exec rake
-
+  Site.create!({:name => "my site", :owner_name => "Andy Atkinson", :owner_email => "andyatkinson@gmail.com", :password => "test1234", :password_confirmation => "test1234"})
 
 ### Testing
 
-Rehash is covered by [Cucumber](http://cukes.info/) features throughout the app. The Cucumber screencasts [1] [2] from Ryan Bates are excellent resources when getting started. [Shoulda](http://www.thoughtbot.com/projects/shoulda/) is used for controller and model tests.
-
-[1] [Beginning with Cucumber](http://railscasts.com/episodes/155-beginning-with-cucumber)
-[2] [More on Cucumber](http://railscasts.com/episodes/159-more-on-cucumber)
-
-
-### Plugins and gems
-
-`acts_as_taggable_on_steroids` [Github](http://github.com/jviney/acts_as_taggable_on_steroids/tree/master) Contact person: [Jonathan Viney](mailto:jonathan.viney@gmail.com)
-
-`acts_as_markup` [Github](http://github.com/vigetlabs/acts_as_markup/tree/master) Contact person: [Brian Landau](mailto:brian.landau@viget.com)
-
-`friendly_id` [Github](http://github.com/norman/friendly_id/tree/master) [RDoc](http://friendly-id.rubyforge.org/) Authors: [Norman Clarke](mailto:norman@randomba.org), [Adrian Mugnolo](mailto:adrian@randomba.org), [Emilio Tagua](mailto:miloops@gmail.com)
-
-`make_resourceful` [Github](http://github.com/hcatlin/make_resourceful/tree/master) Authors: [Hampton Catlin](mailto:contact@hamptoncatlin.com), Nathan Weizenbaum, and Jeff Hardy
-
-`haml` [Website](http://haml-lang.com/) and `sass` [Website](http://sass-lang.com/)
-
-`will_paginate` [Website](http://github.com/mislav/will_paginate) Contact person: [Mislav](mailto:mislav.marohnic@gmail.com)
-
-`gravtastic` [Website](http://github.com/chrislloyd/gravtastic) Author: [Chris Lloyd](mailto:christopher.lloyd@gmail.com)
-
-`paperclip` from [Thoughtbot](http://thoughtbot.com)
-
-`sass_on_heroku` from [Heroku](http://heroku.com)
-
-`aws-s3`
-
-### Uploads
-More details soon on S3 and Heroku.
-
-### Credits
-
-Much credit goes to [Ryan Bates](http://www.workingwithrails.com/person/6491-ryan-bates) and his [Railscasts.com](http://railscasts.com/) screencasts.
-
+  rake
 
 ### MIT License
 

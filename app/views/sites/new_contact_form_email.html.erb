@@ -1,0 +1,22 @@
+<%= javascript 'form_submit_button' %>
+
+<% form_tag create_contact_form_email_path do %>
+  <fieldset>
+    
+    <%= label_tag :sender_name, 'Your Name' %>
+    <%= text_field_tag :sender_name, nil, :placeholder => "John Doe" %>
+    
+    <%= label_tag :email %>
+    <%= text_field_tag :email, nil, :placeholder => "me@example.com" %>
+    
+    <%= label_tag :challenge, 'What is two plus two (as a number)?' %>
+    <%= text_field_tag :challenge, nil %>
+    
+    <%= label_tag :message %>
+    <%= text_area_tag :message %>
+    
+    <div class="controls">
+      <button type="submit" class="btn" id="form_submit_button">Submit</button>
+    </div>
+  </fieldset>
+<% end %>

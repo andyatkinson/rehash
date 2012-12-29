@@ -1,0 +1,16 @@
+<% title @page.name %>
+
+<div class='page'>
+  <div class='body'>
+    <p><%= @page.body %></p>
+  </div>
+</div>
+
+<% content_for :sidebar do %>
+  <% if admin? %>
+    <p class='admin'>
+      <%= link_to "Edit", edit_page_path(@page), :id => "edit_page_#{@page.id}" %>
+      <%= link_to "Destroy", @page, :confirm => 'Are you sure?', :method => :delete, :id => "delete_page_#{@page.id}" %>
+    </p>
+  <% end %>
+<% end %>

@@ -1,0 +1,29 @@
+<% stylesheet 'pagination' %>
+<% title t(:articles), false %>
+
+<% @article = @articles.first %>
+<% if @article.present? %>
+  <div class="jumbotron">
+    <h1><%= h(@article.title) %></h1>
+    <p class="lead"><%= truncate(strip_tags(@article.body.to_html), :length => 300) %></p>
+    <a class="btn btn-large btn-primary" href="<%= article_path(@article) %>">Read article</a>
+  </div>
+  
+  <hr/>
+<% end %>
+
+<% if @articles.present? && @articles.length > 1 %>
+  <div class="row-fluid">
+    <% @articles[1..@articles.length].each do |article| %>
+      <div class="span12">
+        <h2 class="article-title"><%= h(article.title) %></h2>
+        <div><%= truncate(strip_tags(article.body.to_html), :length => 300) %></div>
+        <p><a class="btn" href="<%= article_path(article) %>">Read article »</a></p>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="pagination pagination-centered">
+    <%= will_paginate @articles %>
+  </div>
+<% end %>

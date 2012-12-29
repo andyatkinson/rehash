@@ -1,9 +1,8 @@
 class ApplicationController < ActionController::Base
   include SiteHelper
-  helper :all # include all helpers, all the time
-  protect_from_forgery # See ActionController::RequestForgeryProtection for details
+  helper :all
+  protect_from_forgery
 
-  # Scrub sensitive parameters from your log
   filter_parameter_logging :password
   helper_method :admin?, :require_admin
   
@@ -15,10 +14,7 @@ class ApplicationController < ActionController::Base
       render :file => "#{RAILS_ROOT}/public/500.html", :status => 401 unless admin?
     end
     def ensure_site_exists
-      if Site.all.empty?
-        redirect_to new_site_path
-        false
-      end
+      render :text => "No site found. Site must exist." unless Site.first.present?
     end
     def load_recent_articles
       @recent_articles ||= Article.released.ordered.recent
@@ -29,16 +25,20 @@ class ApplicationController < ActionController::Base
     def load_recent_projects
       @recent_projects ||= Project.ordered.recent
     end
+    def find_comment_by_id
+      
+    end
+    def find_page_by_id
+      @page = Page.find(params[:id])
+    end
+    def find_project_by_id
+      @project = Project.find(params[:id])
+    end
+    def find_tag_by_id
+      @tag = Tag.find(params[:id])
+    end
+    
+    def find_article_by_article_id
+      @article = Article.find(params[:article_id])
+    end
 end
-
-# TODO introduce locale detection
-# before_filter :set_locale  
-# def set_locale
-#   logger.debug "* Accept-Language: #{request.env['HTTP_ACCEPT_LANGUAGE']}"
-#   I18n.locale = extract_locale_from_accept_language_header
-#   logger.debug "* Locale set to '#{I18n.locale}'"
-# end
-# private
-#   def extract_locale_from_accept_language_header
-#     request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first
-#   end

@@ -1,0 +1,28 @@
+<div class='pages_form'>
+  <% form_for @page, :html => {:class => 'form'} do |f| %>
+    <%= f.error_messages %>
+    <p>
+      <%= f.label :name %>
+      <br>
+      <%= f.text_field :name %>
+    </br>
+    <p>
+      <%= f.label :body %>
+      <span><%= "Plain HTML only" %></span>
+      <br>
+      </br>
+      <%= f.text_area :body, :class => 'big' %>
+    </p>
+    <p>
+      <%= f.label :published %>
+      <br>
+      </br>
+      <%= f.check_box :published %>
+    </p>
+    <p>
+      <%= f.submit "Submit" %>
+      <%= link_to "Cancel", @page, :class => 'cancel' %>
+    </p>
+  </p>
+  <% end %>
+</div>
