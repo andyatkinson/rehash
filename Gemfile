@@ -11,6 +11,7 @@ gem 'aws-s3', '0.6.2', :require => 'aws/s3'
 gem 'mysql'
 gem 'syntax'
 gem 'hpricot'
+gem "yaml_db", "0.1.0"
 
 group :development do
   gem 'sqlite3-ruby'

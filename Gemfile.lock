@@ -77,6 +77,7 @@ GEM
     wikitext (2.1.1)
     will_paginate (2.3.14)
     xml-simple (1.0.14)
+    yaml_db (0.1.0)
 
 PLATFORMS
   ruby
@@ -101,3 +102,4 @@ DEPENDENCIES
   syntax
   webrat (>= 0.4.4)
   will_paginate (= 2.3.14)
+  yaml_db (= 0.1.0)
