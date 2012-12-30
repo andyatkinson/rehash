@@ -4,18 +4,18 @@ Ruby on Rails blog and portfolio app.
 
 ### Installation
 
-  brew install imagemagick
-  gem install bundler
-  bundle install
-  cp config/database.sample.yml config/database.yml
-  bundle exec rake db:create
-  bundle exec rake db:migrate
-  bundle exec rake
-  Site.create!({:name => "my site", :owner_name => "Andy Atkinson", :owner_email => "andyatkinson@gmail.com", :password => "test1234", :password_confirmation => "test1234"})
+    brew install imagemagick
+    gem install bundler
+    bundle install
+    cp config/database.sample.yml config/database.yml
+    bundle exec rake db:create
+    bundle exec rake db:migrate
+    bundle exec rake
+    Site.create!({:name => "my site", :owner_name => "Andy Atkinson", :owner_email => "andyatkinson@gmail.com", :password => "test1234", :password_confirmation => "test1234"})
 
 ### Testing
 
-  rake
+    rake
 
 ### MIT License
 
