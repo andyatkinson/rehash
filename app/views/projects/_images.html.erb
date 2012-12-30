@@ -3,9 +3,7 @@
   <% @project.uploads.each do |upload| %>
   <li class="span2">
     <div class="thumbnail">
-      <a href="<%= upload.data.url(:large) %>">
-        <img src="<%= upload.data.url(:small) %>" alt="<%= h(@project.name) %>" style="width:150px;height:50px;">
-      </a>
+      <%= link_to(image_tag(upload.data.url(:small)), upload.data.url(:large)) %>
     </div>
   </li>
   <% end %>
