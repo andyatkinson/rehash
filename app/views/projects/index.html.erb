@@ -1,17 +1,22 @@
 <% title t(:projects) %>
 
-<div>
-  <ul class="thumbnails">
-    <% @projects.each do |project| %>
-      <li class="span3">
-        <div class="thumbnail">
-          <img src="<%= project_image_url(project) %>" alt="<%= h(project.name) %>">
-          <div class="caption">
-            <h3><%= h(project.name) %></h3>
-            <p><a href='<%= "#{project_path(project)}" %>' class='btn btn-primary'>Details</a></p>
-          </div>
-        </div>
-      </li>
-    <% end %>
-  </ul>
-</div>
+<% @projects.in_groups_of(3) do |group| %>
+  
+  <div class="row-fluid">
+      <ul class="thumbnails">
+        <% group.each do |project| %>
+          <% next unless project %>
+          <li class="span4">
+            <div class="thumbnail">
+              <img src="<%= project_image_url(project) %>" alt="<%= h(project.name) %>">
+              <div class="caption">
+                <h3><%= h(project.name) %></h3>
+                <p><a href='<%= "#{project_path(project)}" %>' class='btn btn-primary'>Details</a></p>
+              </div>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  
+<% end %>

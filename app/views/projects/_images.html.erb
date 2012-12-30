@@ -1,11 +1,11 @@
 <div class="row-fluid">
   <ul class="thumbnails">
-  <% @project.uploads.each do |upload| %>
-  <li class="span2">
-    <div class="thumbnail">
-      <%= link_to(image_tag(upload.data.url(:small)), upload.data.url(:large)) %>
-    </div>
-  </li>
+  <% @project.uploads.each_with_index do |upload, index| %>
+    <li class="span2">
+      <div class="thumbnail">
+        <%= link_to(image_tag(upload.data.url(:small), :alt => "#{@project.name} image #{index}"), upload.data.url(:large)) %>
+      </div>
+    </li>
   <% end %>
-</ul>
+  </ul>
 </div>
