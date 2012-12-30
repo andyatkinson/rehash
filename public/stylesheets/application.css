@@ -24,7 +24,24 @@ body {
 .row-fluid .span4 {
 }
 
+.caption {
+  text-align:center;
+}
 .caption h3 {
-  font-size:20px;
-  line-height:20px;
+  font-size:18px;
+  line-height:18px;
+}
+
+.article {
+  padding:10px 0;
+}
+.article h1 {
+  margin-bottom:20px;
+}
+.article .control-group {
+  padding:8px 0;
+}
+
+.article .code {
+  margin:25px 0;
 }

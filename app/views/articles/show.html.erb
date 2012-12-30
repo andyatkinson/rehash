@@ -31,8 +31,7 @@
 </div>
 
 <% if article_eligible_for_comments?(@article) %>
-  <h3 class='leave_comment'><%= 'Leave a comment' %></h3>
-  <div><%= render 'comments/form', {:article => @article, :comment => @article.comments.build} %></div>
+  <%= render 'comments/form', {:article => @article, :comment => @article.comments.build} %>
 <% else %>
   <div><%= "Comments are closed." %></div>
 <% end %>
