@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= "#{website.name} - #{h(yield(:title))}" %></title>
+    <title><%= yield(:title) %></title>
     <meta content='<%= yield(:meta_description) %>' name='description' />
     <meta content='<%= yield(:meta_keywords) %>' name='keywords' />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,13 +12,9 @@
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
           <li><a href="/">Home</a></li>
-          <li><%= link_to(t(:projects), projects_path) if Project.all.any? %></li>
-          <% for page in Page.released %>
-            <li><%= link_to page.name, page_slug_path(page) %></li>
-          <% end %>
-          <li><%= link_to t(:contact), contact_path %></li>
+          <li><%= link_to t(:contact), new_contact_form_path %></li>
         </ul>
-        <h3 class="muted"><%= link_to website.name, root_path %></h3>
+        <h3 class="muted"><%= link_to WEBSITE_CONFIG['title'], root_path %></h3>
       </div>
       
       <hr/>
@@ -26,22 +22,22 @@
       <% if flash[:notice] %>
         <div class="alert"><%= flash[:notice] %></div>
       <% elsif flash[:error] %>
-        <div class="alert alert-error"><%= flash[:notice] %></div>
+        <div class="alert alert-error"><%= flash[:error] %></div>
       <% end %>
       
       <%= yield %>
 
       <div class="footer">
-        <p>&copy; <%= website.owner_name %></p>
+        <p>&copy; <%= WEBSITE_CONFIG['owner'] %></p>
       </div>
     
     </div> <!-- /container -->
     
     <%= javascript_include_tag 'jquery-1.5.1.min', 'application' %>
-    <% if website.google_analytics_code.present? %>
+    <% if WEBSITE_CONFIG['google_analytics_code'].present? %>
       <script>
         var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', '<%= website.google_analytics_code %>']);
+        _gaq.push(['_setAccount', '<%= WEBSITE_CONFIG['google_analytics_code'] %>']);
         _gaq.push(['_trackPageview']);
         (function() {
           var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;

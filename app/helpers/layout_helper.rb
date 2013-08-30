@@ -1,11 +1,11 @@
-# These helper methods can be called in your template to set variables to be used in the layout
-# This module should be included in all views globally,
-# to do so you may need to add this line to your ApplicationController
-#   helper :layout
 module LayoutHelper
-  def title(page_title, show_title = true)
-    @content_for_title = page_title.to_s
-    @show_title = show_title
+  def title(article_title)
+    content_for(:title) {
+      parts = []
+      parts << WEBSITE_CONFIG['title']
+      parts << article_title if article_title.present?
+      parts.join(' - ')
+    }
   end
   
   def meta_description(desc)
@@ -15,11 +15,7 @@ module LayoutHelper
   def meta_keywords(keywords)
     content_for(:meta_keywords) {keywords}
   end
-  
-  def show_title?
-    @show_title
-  end
-  
+   
   def stylesheet(*args)
     content_for(:head) { stylesheet_link_tag(*args.map(&:to_s)) }
   end

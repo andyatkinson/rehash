@@ -1,96 +1,46 @@
 require 'test_helper'
 
 class ArticlesControllerTest < ActionController::TestCase
-  context "with a site" do
-    setup do
-      create_site
-    end
-    context "index action" do
-      should "render index template" do
-        get :index
-        assert_template 'index'
-      end
-    end
-    context "and a article that has tags" do
-      setup do
-        @article = Article.create! :title => "title", :body => "body", :tag_list => "awesome"
-      end
-      should "render tagged articles for all visitors" do
-        get :tagged, :tag => "awesome"
-        assert_response :success
-        assert_template 'index'
-      end
-    end
+  test "articles can be displayed in a list" do
+    @article = Factory(:article)
+    get :index
+    assert_response :ok
+    assert_template :index
+    assert assigns(:articles).include?(@article)
   end
   
-  context "and admin user" do
-    setup do
-      create_site
-      log_in
-    end
+  test "the article show template works" do
+    @article = Factory(:article)
+    get :show, :id => @article.to_param
+    assert_template :show
+    assert_response :ok
+    assert_equal @article, assigns(:article)
+  end
+  
+  test "unpublished articles should not be displayed" do
+    @article = Factory(:article, published: false, published_on: nil)
+    get :index
+    assert_response :ok
+    assert !assigns(:articles).include?(@article)
+  end
 
-    context "new action" do
-      should "render new template" do
-        get :new
-        assert_template 'new'
-      end
-    end
-    
-    context "create action" do
-       should "render new template when model is invalid" do
-         Article.any_instance.stubs(:valid?).returns(false)
-         post :create
-         assert_template 'new'
-       end
-     end
-    
-    
-    context "and a valid article" do
-      setup do
-        @article = Article.create! :title => "title", :body => "body"
-      end
-      should "redirect when model is valid" do
-        post :create, :article => @article.attributes
-        assert_redirected_to article_url(assigns(:article))
-      end
-      
-        context "show action" do
-             should "render show template" do
-               get :show, :id => @article.id
-               assert_template 'show'
-             end
-           end
-          
-           context "edit action" do
-            should "render edit template" do
-              get :edit, :id => @article.id
-              assert_template 'edit'
-            end
-          end
-           
-           context "update action" do
-            should "render edit template when model is invalid" do
-              Article.any_instance.stubs(:valid?).returns(false)
-              put :update, :id => @article.id
-              assert_template 'edit'
-            end
-           
-            should "redirect when model is valid" do
-              Article.any_instance.stubs(:valid?).returns(true)
-              put :update, :id => @article.id
-              assert_redirected_to article_url(assigns(:article))
-            end
-          end
-   
-       context "destroy action" do
-         should "destroy model and redirect to index action" do
-           delete :destroy, :id => @article.id
-           assert_redirected_to articles_url
-           assert !Article.exists?(@article.id)
-         end
-       end
-      end
+  test "can find articles by a tag" do
+    @article = Factory(:article, tag_list: "Fun")
+    get :index, tag: "Fun"
+    assert assigns(:articles).include?(@article)
+    assert_equal "Articles tagged Fun", flash[:notice]
+  end
 
-    end
+  test "can get a feed of articles" do
+    @article = Factory(:article)
+    get :index, :format => :atom
+    assert assigns(:articles)  
+    assert_template :index
+  end
 
+  test "can find an article by the old URL" do
+    @article = Factory(:article, title: "Working with data")
+    get :show, :id => "working-with-data"
+    assert_redirected_to article_path(@article)
+  end
 end

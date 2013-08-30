@@ -1,25 +1,41 @@
 rehash
 ===
-Ruby on Rails blog and portfolio app.
+Rehash is a Ruby on Rails app that can host a personal blog. The intended audience is programmers as it does not have an administrative UI. The code for the app favors making it easier to upgrade Rails and gem versions so it uses few gems. 
+
+To create new articles, borrowing from the concept of a static site generator, articles are composed using Markdown syntax in a text editor and a generator script is run to turn them into HTML and insert them into a local database. Images that are added to articles must be linkable in development and production. Uploading images manually to S3 is the approach at this time.
+
+No plugins are used for tags on articles, slugs on articles, or image uploads.
+
+When a article has been previewed locally and the author is happy with it, the entire database can be pushed to production. 
+
+Visitors may leave comments on articles for a period of time after the article is published. Authors of comments may edit and delete their comments for a period of time after the comment has been created. This is implemented with cookies so that visitors are not required to create an account or log in.
 
 ### Installation
 
-    brew install imagemagick
-    gem install bundler
-    bundle install
+If you wish to develop for Rehash, create a gemset and install bundler manually. A gemset name and ruby version are specified in the project. Once bundler is installed, install the gems with the `bundle` command, copy the `database.yml` file in to place and supply values, create the database and start the app.
+
+    bundle
     cp config/database.sample.yml config/database.yml
     bundle exec rake db:create
     bundle exec rake db:migrate
-    bundle exec rake
-    Site.create!({:name => "my site", :owner_name => "Andy Atkinson", :owner_email => "andyatkinson@gmail.com", :password => "test1234", :password_confirmation => "test1234"})
+    bundle exec rails server
+
+Converting an existing blog
+===========================
+Scripts in the `script` directory can be used to convert from database articles to text files (yml) in the `articles` directory at the application root. There is a script that also publishes text yml files to database records. Note that foreign keys like the article_id on comments must remain intact.
+
+Eventually a generator will be added to start a blank article template.
+    
 
 ### Testing
+
+Rehash uses test unit and tries to keep the tests very simple using test unit, and having good coverage of controllers and models. In the past Rehash used Cucumber and shoulda with nested contexts, but this became difficult to maintain and they have both since been removed in favor of simple tests.
 
     rake
 
 ### MIT License
 
-Copyright (c) 2009 Andy Atkinson http://webandy.com
+Copyright (c) 2009-2013 Andy Atkinson
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation

@@ -1,0 +1,21 @@
+<%= javascript 'form_submit_button' %>
+
+<%= form_for @contact_form, as: :contact_form, url: {action: "create"} do |f| %>
+  <fieldset> 
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    
+    <%= f.label :challenge_response, 'What is two plus two?' %>
+    <%= f.text_field :challenge_response %>
+    
+    <%= f.label :message %>
+    <%= f.text_area :message %>
+    
+    <div class="controls">
+      <%= f.submit "Submit", id: "form_submit_button", class: 'submit' %>
+    </div>
+  </fieldset>
+<% end %>

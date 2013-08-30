@@ -1,25 +1,15 @@
-<% title h(@article.title), false %>
+<% title @article.title %>
 <% meta_description @article.description %>
 <% meta_keywords @article.tag_list %>
 
-<% content_for :recent_articles do %>
-  <div id='recent_articles'>
-    <h3><%= "Recent Articles" %></h>
-    <ul>
-      <% @recent_articles.each do |article| %>
-        <li>
-          <%= link_to article.title, article %>
-          <span class='date'><%= article.created_at %></span>
-        </li>
-      <% end %>
-    </ul>
-  </h3>
-</div>
-<% end %>
-
 <div class='article'>
-  <h1><%= h(@article.title) %></h1>
-  <div class='body'><%= highlight(@article.body.to_html) %></div>
+  <h1><%= @article.title %></h1>
+  <%= raw(highlight(@article.body.to_html)) %>
+</div>
+
+<div class='tags'>
+  <h3>Tags</h3>
+  <%= raw @article.tags.map(&:name).map { |t| link_to t, "/articles/tags/#{t}" }.join(', ') %>
 </div>
 
 <div class='meta'>
@@ -30,8 +20,8 @@
   <%= render :partial => 'comments/comment', :collection => @article.comments %>
 </div>
 
-<% if article_eligible_for_comments?(@article) %>
+<% if @article.can_accept_comments? %>
   <%= render 'comments/form', {:article => @article, :comment => @article.comments.build} %>
 <% else %>
-  <div><%= "Comments are closed." %></div>
+  <div>Comments are closed.</div>
 <% end %>

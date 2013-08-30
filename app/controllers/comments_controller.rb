@@ -1,11 +1,8 @@
 class CommentsController < ApplicationController
-  before_filter :require_admin, :except => [:create]
   before_filter :find_article_by_article_id
-  
-  def index
-    @comments = @article.comments
-  end
-  
+  before_filter :find_comment, only: [:edit, :update, :destroy]
+  before_filter :reject_comment_modifications_unless_author_cookie_present, only: [:edit, :update, :destroy]
+ 
   def new
     @comment = @article.comments.build
   end
@@ -13,44 +10,48 @@ class CommentsController < ApplicationController
   def create
     @comment = @article.comments.build(params[:comment])
     if @comment.save
+      unique_identifier = SecureRandom.hex(5)
+      cookies['comment'] = {value: unique_identifier, expires: 10.minutes.from_now}
+      session[@comment.id] = unique_identifier
       flash[:notice] = 'Comment saved'
       redirect_to @article
     else
+      flash[:error] = 'Error saving comment'
       render :new
     end
   end
   
   def edit
-    @comment = @article.comments.find(params[:id])
   end
   
   def update
-    @comment = @article.comments.find(params[:id])
     if @comment.update_attributes(params[:comment])
       flash[:notice] = 'Comment saved'
-      redirect_to comments_path
+      redirect_to @article
     else
+      flash[:error] = 'Error saving comment'
       render :edit
     end
   end
   
   def destroy
-    @comment = @article.comments.find(params[:id])
     if @comment.destroy
-      flash[:notice] = 'Comment destroyed'
-      redirect_to article_comments_path(@article)
+      flash[:notice] = 'Comment removed'
+      redirect_to @article
     else
       render :edit
     end
   end
-  
-  def all
-    @comments = Comment.all
-    if @comments.any?
-      render :partial => 'comments/comment', :collection => @comments, :layout => 'application'
-    else
-      flash[:error] = "No comments"
-      redirect_to root_path
+
+  private
+
+  def find_comment
+    @comment = @article.comments.find(params[:id])
+  end
+
+  def reject_comment_modifications_unless_author_cookie_present
+    unless session[@comment.id] && cookies['comment'] && session[@comment.id] == cookies['comment']
+      render nothing: true, status: 404
     end
   end
 end

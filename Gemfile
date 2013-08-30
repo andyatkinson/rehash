@@ -1,17 +1,22 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
-gem 'rails', '2.3.9'
-gem 'acts_as_markup', '1.3.4'
-gem 'friendly_id', '2.1.3'
-gem 'paperclip', '2.3.1.1'
-gem 'will_paginate', '2.3.14'
+gem 'rails', '3.2.11'
+gem 'rails_autolink'
 gem 'gravtastic', '3.0.0'
-gem 'aws-s3', '0.6.2', :require => 'aws/s3'
-gem 'mysql'
+gem 'mysql2', '>=0.3'
+gem 'kaminari'
+
+gem 'acts_as_markup', '1.3.4'
 gem 'syntax'
 gem 'hpricot'
 
 group :test do
-  gem 'shoulda'
-  gem 'mocha'
+  gem 'factory_girl_rails', '~> 1.3.0'
+  gem 'mocha', '0.13.2', :require => false
+end
+
+group :development do
+  # workaround for heroku taps tool
+  gem 'sqlite3'
+  gem 'taps'
 end

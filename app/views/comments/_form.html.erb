@@ -1,9 +1,7 @@
 <%= javascript 'form_submit_button' %>
 
-<% form_for [article, comment], :html => {:class => 'form'} do |f| %>
-  <%= f.error_messages %>
+<%= form_for [article, comment], :html => {:class => 'form'} do |f| %>
   <fieldset>
-    <legend>New comment</legend>
     <%= f.label :name, "Your name" %>
     <%= f.text_field :name, :placeholder => "Bob Jones" %>
 
