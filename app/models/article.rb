@@ -33,5 +33,12 @@ class Article < ActiveRecord::Base
   def self.find_by_old_url(url)
     Article.where("lower(title) LIKE (?)", url.split("-").join(" ")).first
   end
+
+  def self.find_in_parameterized_titles(url)
+    @all_titles ||= Article.all.map{|a| [a.title.parameterize, a.id]}
+    if a = @all_titles.detect{|x| x[0].include?(url)}
+      Article.find(a[1])
+    end
+  end
 end
 

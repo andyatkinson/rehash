@@ -13,11 +13,12 @@ class ArticlesController < ApplicationController
   end
   
   def show
-    @article = Article.published.find_by_id(params[:id]) 
-    unless @article
-      if @article = Article.find_by_old_url(params[:id])
-        redirect_to article_path(@article)
-      end
+    if @article = Article.published.find_by_id(params[:id]) 
+      render :show
+    elsif @article = Article.find_by_old_url(params[:id])
+      redirect_to @article
+    elsif @article = Article.find_in_parameterized_titles(params[:id])
+      redirect_to @article
     end
   end
 end
