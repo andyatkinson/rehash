@@ -13,9 +13,8 @@ class ArticlesController < ApplicationController
   end
   
   def show
-    begin
-      @article = Article.published.find_by_id!(params[:id]) 
-    rescue ActiveRecord::RecordNotFound
+    @article = Article.published.find_by_id(params[:id]) 
+    unless @article
       if @article = Article.find_by_old_url(params[:id])
         redirect_to article_path(@article)
       end
