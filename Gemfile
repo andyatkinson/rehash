@@ -5,7 +5,6 @@ gem 'rails_autolink'
 gem 'gravtastic', '3.0.0'
 gem 'mysql2', '>=0.3'
 gem 'kaminari'
-
 gem 'acts_as_markup', '1.3.4'
 gem 'syntax'
 gem 'hpricot'
@@ -19,4 +18,8 @@ group :development do
   # workaround for heroku taps tool
   gem 'sqlite3'
   gem 'taps'
+end
+
+group :production do
+  gem "activerecord-postgresql-adapter"
 end
