@@ -31,7 +31,7 @@ class Article < ActiveRecord::Base
   end
 
   def self.find_by_old_url(url)
-    Article.where("title LIKE (?)", url.split("-").join(" ")).first
+    Article.where("lower(title) LIKE (?)", url.split("-").join(" ")).first
   end
 end
 
