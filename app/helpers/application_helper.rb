@@ -15,4 +15,9 @@ module ApplicationHelper
   def show_comment_edit_links?(comment)
     cookies['comment'] && session[comment.id] && session[comment.id] == cookies['comment']
   end
+
+  def comments_link_for_article(article)
+    return unless article.comments.any?
+    raw "&mdash; #{link_to(pluralize(article.comments.count, "comment"), "#{article_path(article)}#comments")}"
+  end
 end

@@ -4,13 +4,16 @@
 
 <div class='article'>
   <h1><%= @article.title %></h1>
+  <p class="muted">Published: <%= time_ago_in_words(@article.published_on) %> ago</p>
   <%= raw(highlight(@article.body.to_html)) %>
 </div>
 
 <div class='tags'>
-  <h3>Tags</h3>
+  <h3>Tagged</h3>
   <%= raw @article.tags.map(&:name).map { |t| link_to t, "/articles/tags/#{t}" }.join(', ') %>
 </div>
+
+<hr/>
 
 <div class='meta'>
   <h3><%= pluralize @article.comments.count, 'comment' %></h3>

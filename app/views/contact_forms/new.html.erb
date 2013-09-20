@@ -12,10 +12,10 @@
     <%= f.text_field :challenge_response %>
     
     <%= f.label :message %>
-    <%= f.text_area :message %>
+    <%= f.text_area :message, rows: 5 %>
     
     <div class="controls">
-      <%= f.submit "Submit", id: "form_submit_button", class: 'submit' %>
+      <%= f.submit "Send message", id: "form_submit_button", class: 'submit btn btn-primary' %>
     </div>
   </fieldset>
 <% end %>

@@ -13,7 +13,7 @@
 
     <% if comment.new_record? %>
       <%= f.label :challenge, 'What is two plus two (as a number)?' %>
-      <%= f.text_field :challenge %>
+      <%= f.text_field :challenge, class: "input-small" %>
     <% end %>
 
     <div class="controls">
