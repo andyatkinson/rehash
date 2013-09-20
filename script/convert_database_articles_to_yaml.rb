@@ -10,7 +10,10 @@ FileUtils.mkdir(ARTICLES_DIR) unless File.exists?(ARTICLES_DIR)
 Article.all.each do |article|
   file = File.join(ARTICLES_DIR, "#{article.to_param}.yml")
   File.open(file, "w") do |file|
-    file.write(article.attributes.slice("title", "description", "body", "published", "published_on", "id").to_yaml)
+    file_content = {}
+    file_content.merge!(article.attributes.slice("title", "description", "body", "published", "published_on", "id"))
+    file_content.merge!("tag_list" => article.tag_list.split(" ").join(", "))
+    file.write(file_content.to_yaml)
   end
 end
 
