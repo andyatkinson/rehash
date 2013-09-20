@@ -12,13 +12,16 @@ Visitors may leave comments on articles for a period of time after the article i
 
 ### Installation
 
-If you wish to develop for Rehash, create a gemset and install bundler manually. A gemset name and ruby version are specified in the project. Once bundler is installed, install the gems with the `bundle` command, copy the `database.yml` file in to place and supply values, create the database and start the app.
+If you wish to develop for Rehash, create a gemset and install bundler. A gemset name and ruby version are specified in the project. Once bundler is installed, install the gems with the `bundle` command, create a `database.yml` file from the sample, create a `.env` file from the sample, and supply both your database credentials and environment variables. 
+
+If you start the application with foreman, your `.env` environment variables will be set. To [add Heroku configuration variables](https://devcenter.heroku.com/articles/config-vars) reference this article.
 
     bundle
     cp config/database.sample.yml config/database.yml
     bundle exec rake db:create
     bundle exec rake db:migrate
-    bundle exec rails server
+    cp .sample.env .env 
+    foreman start
 
 Converting an existing blog
 ===========================

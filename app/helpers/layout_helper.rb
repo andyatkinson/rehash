@@ -2,7 +2,7 @@ module LayoutHelper
   def title(article_title)
     content_for(:title) {
       parts = []
-      parts << WEBSITE_CONFIG['title']
+      parts << ENV['TITLE']
       parts << article_title if article_title.present?
       parts.join(' - ')
     }

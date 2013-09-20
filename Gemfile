@@ -18,6 +18,7 @@ group :development do
   # workaround for heroku taps tool
   gem 'sqlite3'
   gem 'taps'
+  gem 'foreman'
 end
 
 group :production do

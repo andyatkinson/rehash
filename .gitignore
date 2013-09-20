@@ -19,3 +19,4 @@ public/cache
 rerun.txt
 script/cucumber
 articles
+.env

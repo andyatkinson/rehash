@@ -14,7 +14,7 @@
           <li><a href="/">Home</a></li>
           <li><%= link_to t(:contact), new_contact_form_path %></li>
         </ul>
-        <h3 class="muted"><%= link_to WEBSITE_CONFIG['title'], root_path %></h3>
+        <h3 class="muted"><%= link_to ENV['TITLE'], root_path %></h3>
       </div>
       
       <hr/>
@@ -28,16 +28,16 @@
       <%= yield %>
 
       <div class="footer">
-        <p>&copy; <%= WEBSITE_CONFIG['owner'] %></p>
+        <p>&copy; <%= ENV['OWNER'] %></p>
       </div>
     
     </div> <!-- /container -->
     
     <%= javascript_include_tag 'jquery-1.5.1.min', 'application' %>
-    <% if WEBSITE_CONFIG['google_analytics_code'].present? %>
+    <% if ENV['GOOGLE_ANALYTICS_CODE'].present? %>
       <script>
         var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', '<%= WEBSITE_CONFIG['google_analytics_code'] %>']);
+        _gaq.push(['_setAccount', '<%= ENV['GOOGLE_ANALYTICS_CODE'] %>']);
         _gaq.push(['_trackPageview']);
         (function() {
           var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
