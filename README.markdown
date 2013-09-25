@@ -25,10 +25,20 @@ If you start the application with foreman, your `.env` environment variables wil
 
 Converting an existing blog
 ===========================
-Scripts in the `script` directory can be used to convert from database articles to text files (yml) in the `articles` directory at the application root. There is a script that also publishes text yml files to database records. Note that foreign keys like the article_id on comments must remain intact.
+To dump articles from a database to text files:
 
-Eventually a generator will be added to start a blank article template.
-    
+  ./script/rehash dump
+
+This will put plain text files in the "articles" directory at the Rails root, which is ignored from git. To remove line ending characters the `dos2unix` program can be used. To remove the characters for all articles, run: `dos2unix articles/*`.
+
+To create a new article template, where you can start writing the metadata and content of the article:
+
+  ./script/rehash generate
+
+Finally when you are ready to publish everything in the "articles" directory:
+
+  ./script/rehash publish
+
 
 ### Testing
 

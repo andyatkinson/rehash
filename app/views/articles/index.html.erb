@@ -6,7 +6,7 @@
   <div class="jumbotron">
     <h1><%= @article.title %></h1>
     <p class="muted">Published: <%= time_ago_in_words(@article.published_on) %> ago &mdash; Tagged: <%= @article.tag_list %> <%= comments_link_for_article(@article) %></p>
-    <p class="lead"><%= truncate(strip_tags(@article.body.to_html), :length => 300) %></p>
+    <p class="lead"><%= @article.description || truncate(strip_tags(@article.body.to_html), :length => 300) %></p>
     <a class="btn btn-large btn-primary" href="<%= article_path(@article) %>">Read article »</a>
   </div>
   

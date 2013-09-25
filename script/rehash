@@ -1,0 +1,84 @@
+#!/usr/bin/env ruby
+
+# Load the Rails environment
+require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
+
+class RehashTasks
+  ARTICLES_DIR = Rails.root.join("articles")
+  FILE_EXTENSION = "md"
+
+  ARTICLE_YML_ATTRS = %w( title description published published_on )
+  
+  def self.dump
+    FileUtils.mkdir(ARTICLES_DIR) unless File.exists?(ARTICLES_DIR)
+
+    Article.all.each do |article|
+      file = File.join(ARTICLES_DIR, "#{article.to_param}.#{FILE_EXTENSION}")
+      File.open(file, "w") do |file|
+        file_content = {}
+        file_content.merge!(article.attributes.slice(*ARTICLE_YML_ATTRS))
+        file_content.merge!("tag_list" => article.tag_list.split(" ").join(", "))
+        file.write(file_content.to_yaml)
+        file.write("---\n")
+        file.write(article.body)
+      end
+    end
+  end
+
+  def self.publish
+    Dir.glob(File.join(ARTICLES_DIR, "*.#{FILE_EXTENSION}")) do |file|
+      article_attrs = YAML.load_file(file)
+
+      article = Article.find_or_initialize_by_title(article_attrs["title"])
+      ARTICLE_YML_ATTRS.each do |attr|
+        article.send(:"#{attr}=", article_attrs["#{attr}"])
+      end
+      article.tag_list = article_attrs["tag_list"]
+      
+      article.body = File.read(file).split(/---\n/)[2..-1].join
+      article.save
+
+      puts "Saved article: #{article.title}"
+    end
+  end
+
+  def self.generate
+    attributes = {}
+    attributes.merge!(Hash[ARTICLE_YML_ATTRS.zip])
+    attributes.merge!("tag_list" => nil)
+    filename = File.join(ARTICLES_DIR, "new-article.#{FILE_EXTENSION}")
+    File.open(filename, "w") do |f| 
+      f.write(attributes.to_yaml)
+      f.write("---\n")
+      f.write("This is a story with a [link](http://example.com)")
+    end
+    puts "Created file: #{filename}"
+  end
+end
+
+
+
+commands = %w( dump publish generate )
+
+command = commands.include?(ARGV[0]) ? ARGV[0] : nil
+
+unless command
+  puts %Q{
+    Usage: rehash [command]
+    
+    Valid commands are: #{commands.join(', ')}
+  }
+  exit
+end
+
+case command
+  when "publish"
+    RehashTasks.publish
+
+  when "dump"
+    RehashTasks.dump
+
+  when "generate"
+    RehashTasks.generate
+
+end
