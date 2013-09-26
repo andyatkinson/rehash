@@ -34,4 +34,8 @@ module ApplicationHelper
     return unless article.tags.any?
     raw tag_links(article)
   end
+
+  def flash_message_tagged_articles(tag)
+    raw "Articles tagged #{tag}. #{link_to 'See all articles', articles_path}."
+  end
 end

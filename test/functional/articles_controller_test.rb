@@ -28,7 +28,7 @@ class ArticlesControllerTest < ActionController::TestCase
     @article = Factory(:article, tag_list: "Fun")
     get :index, tag: "Fun"
     assert assigns(:articles).include?(@article)
-    assert_equal "Articles tagged Fun", flash[:notice]
+    assert_equal "Articles tagged Fun. <a href=\"/articles\">See all articles</a>.", flash[:notice]
   end
 
   test "can get a feed of articles" do
