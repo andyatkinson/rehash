@@ -32,4 +32,26 @@ class ArticleTest < ActiveSupport::TestCase
     old_url = "working-with-large-amounts-of-data"
     assert_equal @article, Article.find_by_old_url(old_url)
   end
+  
+  test "article tags are replaced on update" do
+    @article = Factory(:article, tag_list: "foo, bar")
+    @article.tag_list = "baz, bong"
+    @article.save
+    assert_equal 2, @article.tag_list.split(" ").size
+    assert @article.tag_list.split(" ").include?("baz")
+    assert !@article.tag_list.split(" ").include?("foo")
+  end
+
+  test "destroying an article destroys the tagging records" do
+    tag = Tag.create(name: "Ruby")
+    article = Factory(:article, tag_list: "Ruby")
+    article.destroy
+    assert !Tagging.exists?(tag_id: Tag.find_by_name("Ruby").id)
+  end
+
+  test "article has no tags if tag_list is empty" do
+    @article = Factory(:article, tag_list: "foo, bar")
+    @article.update_attribute(:tag_list, nil)
+    assert @article.tag_list.empty?
+  end
 end

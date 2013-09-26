@@ -20,4 +20,18 @@ module ApplicationHelper
     return unless article.comments.any?
     raw "&mdash; #{link_to(pluralize(article.comments.count, "comment"), "#{article_path(article)}#comments")}"
   end
+
+  def tag_links(article)
+    article.tags.map(&:name).map{|t| link_to t, "/articles/tags/#{t}" }.join(', ')
+  end
+
+  def article_header_tags(article)
+    return unless article.tags.any?
+    raw "&mdash; Tagged: #{tag_links(article)}"
+  end
+
+  def article_footer_tags(article)
+    return unless article.tags.any?
+    raw tag_links(article)
+  end
 end

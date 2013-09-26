@@ -34,7 +34,8 @@ class RehashTasks
         article.send(:"#{attr}=", article_attrs["#{attr}"])
       end
       article.tag_list = article_attrs["tag_list"]
-      
+     
+      # split out the YAML part and take the rest of the file as the article "body"
       article.body = File.read(file).split(/---\n/)[2..-1].join
       article.save
 

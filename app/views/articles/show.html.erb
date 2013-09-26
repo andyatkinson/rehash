@@ -9,8 +9,10 @@
 </div>
 
 <div class='tags'>
-  <h3>Tagged</h3>
-  <%= raw @article.tags.map(&:name).map { |t| link_to t, "/articles/tags/#{t}" }.join(', ') %>
+  <% if @article.tags.any? %>
+    <h3>Tagged</h3>
+    <%= article_footer_tags(@article) %>
+  <% end %>
 </div>
 
 <hr/>

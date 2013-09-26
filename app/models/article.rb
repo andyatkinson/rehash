@@ -2,7 +2,8 @@ class Article < ActiveRecord::Base
   validates_presence_of :title, :body
   has_many :comments
   has_many :taggings
-  has_many :tags, through: :taggings
+  has_many :tags, through: :taggings, dependent: :destroy
+  attr_accessible :title, :description, :body, :published, :published_on
   acts_as_markdown :body
 
   scope :published, where(published: true).order('published_on DESC') 
@@ -16,6 +17,8 @@ class Article < ActiveRecord::Base
   end
 
   def tag_list=(names)
+    tags.destroy_all
+    return unless names
     self.tags = names.split(",").map do |name|
       Tag.where(name: name.strip).first_or_create!
     end 
