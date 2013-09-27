@@ -23,6 +23,19 @@ If you start the application with foreman, your `.env` environment variables wil
     cp .sample.env .env 
     foreman start
 
+Pulling the database from Heroku
+================================
+I'm using mysql locally so I still want to use the Heroku `db:pull` functionality via the taps gem to pull the local tables from postgres down to mysql. The project is currently set up to do this.
+
+    heroku db:pull
+
+
+After this to dump the articles to plain text files. Run `dos2unix` on each article as well.
+
+    rm articles/*
+    ./script/rehash dump
+    dos2unix articles/*
+
 Converting an existing blog
 ===========================
 To dump articles from a database to text files:
