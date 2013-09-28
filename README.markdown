@@ -36,6 +36,10 @@ After this to dump the articles to plain text files. Run `dos2unix` on each arti
     ./script/rehash dump
     dos2unix articles/*
 
+When articles are created and updated, push the changes to Heroku:
+
+    heroku db:push
+
 Converting an existing blog
 ===========================
 To dump articles from a database to text files:
