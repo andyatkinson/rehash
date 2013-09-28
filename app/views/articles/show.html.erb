@@ -10,7 +10,7 @@
 
 <div class='tags'>
   <% if @article.tags.any? %>
-    <h3>Tagged</h3>
+    <p class="muted">Tagged</p>
     <%= article_footer_tags(@article) %>
   <% end %>
 </div>
@@ -28,5 +28,5 @@
 <% if @article.can_accept_comments? %>
   <%= render 'comments/form', {:article => @article, :comment => @article.comments.build} %>
 <% else %>
-  <div>Comments are closed.</div>
+  <div>Comments are automatically closed after 12 months. Please use the <%= link_to 'contact form', '/contact' %> to get in touch.</div>
 <% end %>

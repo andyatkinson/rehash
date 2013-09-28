@@ -18,7 +18,7 @@
       <div class="span12 article">
         <h2 class="article-title"><%= article.title %></h2>
         <p class="muted">Published: <%= time_ago_in_words(article.published_on) %> ago <%= article_header_tags(article) %> <%= comments_link_for_article(article) %></p>
-        <div><%= truncate(strip_tags(article.body.to_html), :length => 300) %></div>
+        <div><%= article.description || truncate(strip_tags(article.body.to_html), :length => 300) %></div>
         <div class="control-group button">
           <a class="btn btn-default" href="<%= article_path(article) %>">Read article »</a>
         </div>

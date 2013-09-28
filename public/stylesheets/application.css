@@ -12,7 +12,6 @@ body {
   margin: 30px 0;
 }
 
-
 .article-title {
   font-size:20px;
   line-height:20px;
@@ -20,10 +19,6 @@ body {
 .row-fluid .span12 {
   margin-left:0;
 }
-
-.row-fluid .span4 {
-}
-
 .caption {
   text-align:center;
 }
@@ -36,7 +31,13 @@ body {
   padding:10px 0;
 }
 .article h1 {
+  font-size:30px;
+  line-height:34px;
   margin-bottom:20px;
+}
+.article h2 {
+  font-size: 22px;
+  line-height: 24px;
 }
 .article .control-group {
   padding:8px 0;

@@ -2,9 +2,9 @@ class ArticlesController < ApplicationController
   def index
     if params[:tag]
       flash.now[:notice] = view_context.flash_message_tagged_articles(params[:tag])
-      @articles = Article.published.tagged_with(params[:tag]).page(params[:page]).per(5)
+      @articles = Article.published.tagged_with(params[:tag]).page(params[:page]).per(10)
     else
-      @articles = Article.published.page(params[:page]).per(5)
+      @articles = Article.published.page(params[:page]).per(10)
     end
     respond_to do |format|
       format.html
