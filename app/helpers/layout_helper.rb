@@ -4,24 +4,16 @@ module LayoutHelper
       parts = []
       parts << ENV['TITLE']
       parts << article_title if article_title.present?
-      parts.join(' - ')
+      parts.compact.join(' - ')
     }
   end
   
-  def meta_description(desc)
-    content_for(:meta_description) {desc}
+  def meta_description(desc = "")
+    content_for(:meta_description) {desc.to_s + ENV['META_DESCRIPTION'].to_s}
   end
   
-  def meta_keywords(keywords)
-    content_for(:meta_keywords) {keywords}
-  end
-   
-  def stylesheet(*args)
-    content_for(:head) { stylesheet_link_tag(*args.map(&:to_s)) }
-  end
-  
-  def javascript(*args)
-    args = args.map { |arg| arg == :defaults ? arg : arg.to_s }
-    content_for(:head) { javascript_include_tag(*args) }
+  def meta_keywords(keywords = "")
+    words = keywords.split(",") + ENV['META_KEYWORDS'].to_s.split(",").map(&:strip)
+    content_for(:meta_keywords){ words.join(", ") }
   end
 end

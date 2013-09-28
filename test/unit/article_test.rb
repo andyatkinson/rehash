@@ -9,7 +9,7 @@ class ArticleTest < ActiveSupport::TestCase
   test "an article can store a list of tags" do
     @article = Factory(:article)
     @article.update_attribute(:tag_list, "foo, bar, baz")
-    assert_equal "foo bar baz", @article.tag_list
+    assert_equal "foo, bar, baz", @article.tag_list
   end 
   
   test "an article should have a to_param representation" do
@@ -37,9 +37,9 @@ class ArticleTest < ActiveSupport::TestCase
     @article = Factory(:article, tag_list: "foo, bar")
     @article.tag_list = "baz, bong"
     @article.save
-    assert_equal 2, @article.tag_list.split(" ").size
-    assert @article.tag_list.split(" ").include?("baz")
-    assert !@article.tag_list.split(" ").include?("foo")
+    assert_equal 2, @article.tag_list.split(",").size
+    assert @article.tag_list.split(",").include?("baz")
+    assert !@article.tag_list.split(",").include?("foo")
   end
 
   test "destroying an article destroys the tagging records" do
